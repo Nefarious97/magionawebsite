@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mangiona - Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta name="keywords" content="Mangiona, food delivery, order food online, fast food, meals, restaurant">
+    <meta property="og:title" content="Mangiona | Food Delivery">
+    <meta property="og:description" content="Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="image/Logo m 2.png">
+    <title>Mangiona-Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS-files/style.css">
+    <link rel="shortcut icon" href="image/Logo m 2.png" type="image/x-icon">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+    <link rel="stylesheet" href="CSS-files/global-sync.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="mangiona-logo">
+                <img src="image/Logo m 2.png" alt="">
+            </div>
+            <div class="mangiona-nav-links" id="mobileNav">
+                <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="restaurant.html" class="nav-link">Restaurant</a></li>
+                <li><a href="transaction.html" class="nav-link">Transactions</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+              </ul>
+              <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+                <iconify-icon icon="mdi:close" width="26" height="26"></iconify-icon>
+              </button>
+            </div>
+            <div class="mangiona-order">
+                <div class="cart-container">
+                <iconify-icon icon="solar:cart-outline" title="cart" width="24" height="24" onclick="openCart()" class="cart-icon"></iconify-icon>
+                <span class="cart-count2">0</span>
+                </div>
+                <button class="mobile-nav-toggle" id="mobileNavOpen" aria-label="Open menu">
+                    <iconify-icon icon="mdi:menu" width="28" height="28"></iconify-icon>
+                </button>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <a href="sign-up.html"><button class="order-btn" style="display: flex; align-items: center; gap: 4px;"><iconify-icon icon="mdi:user-outline" width="20" height="20"></iconify-icon>Sign Up</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="blog-hero chowdeck-hero">
+        <div class="hero-content">
+            <h1>Mangiona <span style="color:#047857">Blog</span></h1>
+            <p class="hero-copy" style="margin-left: auto; margin-right: auto; max-width: 600px; font-size: 18px;">
+                Discover the latest food trends, restaurant reviews, and tips on getting the most out of your Mangiona deliveries.
+            </p>
+            <div class="input-box" style="margin-top: 40px; max-width: 500px;">
+                <iconify-icon icon="iconamoon:search-thin" class="search-icon"></iconify-icon>
+                <input type="text" placeholder="Search articles...">
+                <button class="search-btn">Search</button>
+            </div>
+        </div>
+    </section>
+    <main class="blog-main">
+        <section class="blog-content">
+            <div class="blog-cards">
+                <article class="blog-card">
+                    <img src="image/delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-pizza-box-showing-mobile-phone-you-check-order-isolated-grey-studio-background-copy-space 1.png" alt="Delivery update">
+                    <div class="blog-card-body">
+                        <span class="tag">Shipping Updates</span>
+                        <div class="meta">May 20, 2024</div>
+                        <h3>We’re Delivering Smiles, Faster!</h3>
+                        <p>Our delivery network is stronger than ever. Here’s what’s new in your city.</p>
+                        <a href="#" class="read-more">Read More <iconify-icon icon="ic:outline-arrow-right-alt"></iconify-icon></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="image/fresh-delicious-flying-burger-with-beef-cheese-tomato-sauce-lettuce-transparent-background 1.png" alt="Pasta recipes">
+                    <div class="blog-card-body">
+                        <span class="tag">Food & Recipes</span>
+                        <div class="meta">May 15, 2024</div>
+                        <h3>5 Easy Pasta Recipes to Try at Home</h3>
+                        <p>Delicious, quick, and perfect for any occasion. Cook happiness in every bite.</p>
+                        <a href="#" class="read-more">Read More <iconify-icon icon="ic:outline-arrow-right-alt"></iconify-icon></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="image/36392 1.png" alt="New pizza launch">
+                    <div class="blog-card-body">
+                        <span class="tag">Product News</span>
+                        <div class="meta">May 10, 2024</div>
+                        <h3>New on Mangiona: Spicy Peri Peri Pizza</h3>
+                        <p>Bold flavors. Fresh ingredients. Limited time only ? try the newest menu hit.</p>
+                        <a href="#" class="read-more">Read More <iconify-icon icon="ic:outline-arrow-right-alt"></iconify-icon></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="image/pizza-delivery-man-with-thumbs-up-pizza-boxes 1.png" alt="App update">
+                    <div class="blog-card-body">
+                        <span class="tag">App Updates</span>
+                        <div class="meta">May 5, 2024</div>
+                        <h3>New App Features You’ll Love</h3>
+                        <p>Easier ordering, real-time tracking, and personalized recommendations to make every order faster.</p>
+                        <a href="#" class="read-more">Read More <iconify-icon icon="ic:outline-arrow-right-alt"></iconify-icon></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="image/Rectangle 4193.png" alt="Healthy eating">
+                    <div class="blog-card-body">
+                        <span class="tag">Healthy Eating</span>
+                        <div class="meta">Apr 28, 2024</div>
+                        <h3>Healthy Eating Made Simple</h3>
+                        <p>Nutritious meals that don?t compromise on taste. Fast, balanced options for your busy week.</p>
+                        <a href="#" class="read-more">Read More <iconify-icon icon="ic:outline-arrow-right-alt"></iconify-icon></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="image/Rectangle 4193 (1).png" alt="Restaurant spotlight">
+                    <div class="blog-card-body">
+                        <span class="tag">Restaurant Spotlight</span>
+                        <div class="meta">Apr 20, 2024</div>
+                        <h3>Restaurant Spotlight: Bella Trattoria</h3>
+                        <p>Meet our top-rated restaurant partner loved by thousands for their fresh dishes and fast service.</p>
+                        <a href="#" class="read-more">Read More <iconify-icon icon="ic:outline-arrow-right-alt"></iconify-icon></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <aside class="blog-sidebar">
+            <div class="sidebar-card search-card">
+                <h3>Search blog</h3>
+                <div class="search-group">
+                    <input type="text" placeholder="Search blog?">
+                    <button type="button"><iconify-icon icon="ci:search"></iconify-icon></button>
+                </div>
+            </div>
+            <div class="sidebar-card categories-card">
+                <h3>Categories</h3>
+                <ul class="categories-list">
+                    <li class="active">All Posts</li>
+                    <li>Shipping Updates</li>
+                    <li>Product News</li>
+                    <li>Food & Recipes</li>
+                    <li>Healthy Eating</li>
+                    <li>App Updates</li>
+                    <li>Restaurant Spotlight</li>
+                </ul>
+            </div>
+            <div class="sidebar-card recent-card">
+                <h3>Recent Posts</h3>
+                <div class="recent-list">
+                    <div class="recent-item">
+                        <img src="image/delivery-concept-portrait-handsome-african-american-delivery-man-courier-with-pizza-box-showing-mobile-phone-you-check-order-isolated-grey-studio-background-copy-space 1.png" alt="Recent post">
+                        <div class="recent-text">
+                            <strong>We?re Delivering Smiles, Faster!</strong>
+                            <span>May 20, 2024</span>
+                        </div>
+                    </div>
+                    <div class="recent-item">
+                        <img src="image/fresh-delicious-flying-burger-with-beef-cheese-tomato-sauce-lettuce-transparent-background 1.png" alt="Recent post">
+                        <div class="recent-text">
+                            <strong>5 Easy Pasta Recipes to Try at Home</strong>
+                            <span>May 15, 2024</span>
+                        </div>
+                    </div>
+                    <div class="recent-item">
+                        <img src="image/36392 1.png" alt="Recent post">
+                        <div class="recent-text">
+                            <strong>New on Mangiona: Spicy Peri Peri Pizza</strong>
+                            <span>May 10, 2024</span>
+                        </div>
+                    </div>
+                    <div class="recent-item">
+                        <img src="image/pizza-delivery-man-with-thumbs-up-pizza-boxes 1.png" alt="Recent post">
+                        <div class="recent-text">
+                            <strong>New App Features You?ll Love</strong>
+                            <span>May 5, 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-card subscribe-card">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to get the latest news, recipes, and offers.</p>
+                <div class="subscribe">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="button">Subscribe</button>
+                </div>
+                <p class="small-note">No spam, unsubscribe anytime.</p>
+            </div>
+        </aside>
+    </main>
+    <section class="pagination">
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">&hellip;</button>
+        <button class="page-btn">8</button>
+        <button class="page-btn"><iconify-icon icon="eva:arrow-right-fill"></iconify-icon></button>
+    </section>
+    <footer style="position: relative;">
+                <div class="footer" style="overflow: hidden;">
+                <div class="footer-grid">
+                    <div class="footer-col address-col">
+                        <div class="mangiona-logo" style="margin-bottom: 20px; background: white; display: inline-block; padding: 10px 15px; border-radius: 10px;">
+                            <img src="image/Logo m 2.png" alt="Mangiona Logo" style="width: 120px; display: block;">
+                        </div>
+                        <p>Flat 5 Block C, Sunshine Apartments,<br>
+                        18 Admiralty Way, Lekki Phase 1,<br>
+                        Lagos State, 106104, Nigeria.</p>
+                        <p style="margin-top: 25px;">Mangionafoods@Gmail.Com</p>
+                        <p style="margin-top: 25px;">+234 812 345 6789</p>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">QUICK LINKS</p>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="restaurant.html">Menu</a></li>
+                            <li><a href="about.html">Services</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">COMPANY</p>
+                        <ul>
+                            <li><a href="about.html">Why Mangiona</a></li>
+                            <li><a href="about.html">Partner With Us</a></li>
+                            <li><a href="about.html">Services</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">SUPPORT</p>
+                        <ul>
+                            <li><a href="about.html">FAQs</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col app-col" style="display: flex; flex-direction: column; justify-content: flex-end;">
+                        <button class="store-btn google-btn">
+                            <iconify-icon icon="logos:google-play-icon"></iconify-icon>
+                            <div class="source">
+                                <p>GET IT ON</p>
+                                <h3>Google Play</h3>
+                            </div>
+                        </button>
+                        <button class="store-btn apple-btn">
+                            <iconify-icon icon="ic:baseline-apple" style="color: black;"></iconify-icon>
+                            <div class="source">
+                                <p>Download on the</p>
+                                <h3>App Store</h3>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <hr class="footer-hr">
+                <div class="mangiona-policy">
+                    <p><a href="terms.html">TERMS & CONDITIONS</a></p>
+                    <p><a href="privacy.html">PRIVACY POLICY</a></p>
+                </div>
+                <h1 class="watermark">MANGIONA</h1>
+            </div>
+           </footer>
+    <div class="bg-overlay" onclick="closeCart()"></div>
+    <div class="cart-panel">
+        <div class="top-cart-panel">
+            <button class="close-btn" onclick="closeCart()" aria-label="Close Cart"><iconify-icon icon="mdi:close" width="24" height="24"></iconify-icon></button>
+            <h2>My Cart</h2>
+        </div>
+        <div class="cart-notification">
+            <iconify-icon icon="solar:cart-outline" width="24" height="24" class="items"></iconify-icon>
+            You Have <span class="cart-count">0</span> Items In Your Cart
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-items-summary">
+            <p>Total Items</p>
+            <p class="total-cost"></p>
+            <button class="checkout-btn" onclick="checkout()">Check Out</button>
+        </div>
+    </div>
+    <script src="Javascript-files/script.js"></script>
+</body>
+</html>
+

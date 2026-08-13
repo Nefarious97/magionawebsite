@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mangiona - Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta name="keywords" content="Mangiona, food delivery, order food online, fast food, meals, restaurant">
+    <meta property="og:title" content="Mangiona | Food Delivery">
+    <meta property="og:description" content="Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="image/Logo m 2.png">
+    <title>Mangiona-Sign-up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="image/Logo m 2.png" type="image/x-icon">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+    <link rel='stylesheet' href='CSS-files/style.css?v=2'>
+    <link rel="stylesheet" href="CSS-files/auth.css">
+    <link rel="stylesheet" href="CSS-files/global-sync.css">
+</head>
+<body>
+    <div class="cd-auth-page">
+        <div class="cd-auth-card">
+            <div class="cd-auth-logo">
+                <img src="image/Logo m 2.png" alt="Mangiona Logo">
+            </div>
+            <div class="cd-auth-header">
+                <h2>Create your account</h2>
+                <p>Start enjoying fresh, hot meals today.</p>
+            </div>
+            <form class="cd-auth-form" onsubmit="event.preventDefault(); signUp();">
+                <div class="cd-form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="username cd-input" placeholder="Username" required>
+                </div>
+                <div class="cd-form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="email cd-input" placeholder="example@gmail.com" required>
+                </div>
+                <div class="cd-form-group">
+                    <label for="password">Password</label>
+                    <div class="cd-password-wrapper">
+                        <input type="password" name="password" placeholder="Password" class="password cd-input" id="password" required>
+                        <iconify-icon icon="mdi:eye-outline" class="eye-icon" onclick="togglePassword()"></iconify-icon>
+                    </div>
+                </div>
+                <div class="cd-form-group">
+                    <label for="confirm">Confirm Password</label>
+                    <div class="cd-password-wrapper">
+                        <input type="password" name="password" placeholder="Confirm Password" class="confirm-password cd-input" id="confirm" required>
+                        <iconify-icon icon="mdi:eye-outline" class="eye-icon" onclick="toggleConfirm()"></iconify-icon>
+                    </div>
+                    <p class="password-error" style="color: red; font-size: 13px; margin-top: 5px;"></p>
+                </div>
+                <div class="cd-auth-terms">
+                    <input type="checkbox" class="checkbox" required>
+                    <label>I agree to the <a href="#">Terms & Privacy Policy</a></label>
+                </div>
+                <button class="cd-auth-submit" type="submit">Sign Up</button>
+                <div class="cd-auth-divider">
+                    <span></span>
+                    <p>Or Sign up with</p>
+                    <span></span>
+                </div>
+                <div class="cd-social-logins">
+                    <button type="button" class="cd-social-btn" onclick="googleAuth()">
+                        <iconify-icon icon="flat-color-icons:google"></iconify-icon> Google
+                    </button>
+                </div>
+                <p class="cd-auth-switch">Already have an account? <a href="sign-in.html">Login</a></p>
+            </form>
+        </div>
+    </div>
+           <footer style="position: relative;">
+                <div class="footer" style="overflow: hidden;">
+                <div class="footer-grid">
+                    <div class="footer-col address-col">
+                        <div class="mangiona-logo" style="margin-bottom: 20px; background: white; display: inline-block; padding: 10px 15px; border-radius: 10px;">
+                            <img src="image/Logo m 2.png" alt="Mangiona Logo" style="width: 120px; display: block;">
+                        </div>
+                        <p>Flat 5 Block C, Sunshine Apartments,<br>
+                        18 Admiralty Way, Lekki Phase 1,<br>
+                        Lagos State, 106104, Nigeria.</p>
+                        <p style="margin-top: 25px;">Mangionafoods@Gmail.Com</p>
+                        <p style="margin-top: 25px;">+234 812 345 6789</p>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">QUICK LINKS</p>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="restaurant.html">Menu</a></li>
+                            <li><a href="about.html">Services</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">COMPANY</p>
+                        <ul>
+                            <li><a href="about.html">Why Mangiona</a></li>
+                            <li><a href="about.html">Partner With Us</a></li>
+                            <li><a href="about.html">Services</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">SUPPORT</p>
+                        <ul>
+                            <li><a href="about.html">FAQs</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col app-col" style="display: flex; flex-direction: column; justify-content: flex-end;">
+                        <button class="store-btn google-btn">
+                            <iconify-icon icon="logos:google-play-icon"></iconify-icon>
+                            <div class="source">
+                                <p>GET IT ON</p>
+                                <h3>Google Play</h3>
+                            </div>
+                        </button>
+                        <button class="store-btn apple-btn">
+                            <iconify-icon icon="ic:baseline-apple" style="color: black;"></iconify-icon>
+                            <div class="source">
+                                <p>Download on the</p>
+                                <h3>App Store</h3>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <hr class="footer-hr">
+                <div class="mangiona-policy">
+                    <p><a href="terms.html">TERMS & CONDITIONS</a></p>
+                    <p><a href="privacy.html">PRIVACY POLICY</a></p>
+                </div>
+                <h1 class="watermark">MANGIONA</h1>
+            </div>
+           </footer>
+    <script src="Javascript-files/script.js"></script>
+</body>
+</html>
+

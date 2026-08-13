@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mangiona - Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta name="keywords" content="Mangiona, food delivery, order food online, fast food, meals, restaurant">
+    <meta property="og:title" content="Mangiona | Food Delivery">
+    <meta property="og:description" content="Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="image/Logo m 2.png">
+    <title>Mangiona-Restaurnt</title>
+    <link rel="shortcut icon" href="image/Logo m 2.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+    <link rel="stylesheet" href="CSS-files/food.css">
+    <link rel="stylesheet" href="CSS-files/global-sync.css">
+    <link rel="stylesheet" href="CSS-files/sections-sync.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="mangiona-logo">
+                <img src="image/Logo m 2.png" alt="">
+            </div>
+            <div class="mangiona-nav-links" id="mobileNav">
+                <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="restaurant.html" class="nav-link">Restaurant</a></li>
+                <li><a href="transaction.html" class="nav-link">Transactions</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+              </ul>
+              <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+                <iconify-icon icon="mdi:close" width="26" height="26"></iconify-icon>
+              </button>
+            </div>
+            <div class="mangiona-order">
+                <div class="cart-container">
+                <iconify-icon icon="solar:cart-outline" title="cart" width="24" height="24" onclick="openCart()" class="cart-icon"></iconify-icon>
+                <span class="cart-count2">0</span>
+                </div>
+                <button class="mobile-nav-toggle" id="mobileNavOpen" aria-label="Open menu">
+                    <iconify-icon icon="mdi:menu" width="28" height="28"></iconify-icon>
+                </button>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <a href="sign-up.html"><button class="order-btn" style="display: flex; align-items: center; gap: 4px;"><iconify-icon icon="mdi:user-outline" width="20" height="20"></iconify-icon>Sign Up</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="cd-restaurant-page">
+        <div class="cd-restaurant-banner">
+            <div class="cd-banner-img">
+                <img src="image/fresh-delicious-flying-burger-with-beef-cheese-tomato-sauce-lettuce-transparent-background 1.png" alt="King's Restaurant">
+            </div>
+            <div class="cd-banner-content">
+                <div class="cd-banner-info">
+                    <h2>King's Restaurant</h2>
+                    <div class="cd-banner-meta">
+                        <span><iconify-icon icon="mdi:location" class="icon-loc"></iconify-icon> Aba, Abia State</span>
+                        <span><iconify-icon icon="mdi:clock-outline"></iconify-icon> Mon - Sat 8:00am - 11:00pm</span>
+                    </div>
+                </div>
+                <div class="cd-banner-stats">
+                    <div class="cd-stat-box">
+                        <iconify-icon icon="material-symbols:star" class="icon-star"></iconify-icon>
+                        <div>
+                            <p>4.7</p>
+                            <span>Reviews</span>
+                        </div>
+                    </div>
+                    <div class="cd-stat-box">
+                        <iconify-icon icon="mdi:location" class="icon-loc-red"></iconify-icon>
+                        <div>
+                            <p>2.8 Km</p>
+                            <span>Distance</span>
+                        </div>
+                    </div>
+                    <div class="cd-stat-box">
+                        <iconify-icon icon="ion:time" class="icon-time"></iconify-icon>
+                        <div>
+                            <p>15 - 25</p>
+                            <span>Mins</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cd-menu-container">
+            <div class="cd-menu-section">
+                <h3 class="cd-section-title">Today's Offer</h3>
+                <div class="cd-menu-grid">
+                <div class="cd-menu-card" data-id="food1">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199.png" alt="Fried Rice & Turkey">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Fried Rice & Turkey</h4>
+                        <p class="cd-menu-desc">Chill Mixture</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 2,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="food2">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199.png" alt="Fried Rice & Turkey">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Fried Rice & Turkey</h4>
+                        <p class="cd-menu-desc">Chill Mixture</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 2,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="food3">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199.png" alt="Fried Rice & Turkey">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Fried Rice & Turkey</h4>
+                        <p class="cd-menu-desc">Chill Mixture</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 2,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="food4">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199.png" alt="Fried Rice & Turkey">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Fried Rice & Turkey</h4>
+                        <p class="cd-menu-desc">Chill Mixture</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 2,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="food5">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199.png" alt="Fried Rice & Turkey">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Fried Rice & Turkey</h4>
+                        <p class="cd-menu-desc">Chill Mixture</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 2,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="food6">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199.png" alt="Fried Rice & Turkey">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Fried Rice & Turkey</h4>
+                        <p class="cd-menu-desc">Chill Mixture</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 2,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="food7">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199.png" alt="Fried Rice & Turkey">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Fried Rice & Turkey</h4>
+                        <p class="cd-menu-desc">Chill Mixture</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 2,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="food8">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199.png" alt="Fried Rice & Turkey">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Fried Rice & Turkey</h4>
+                        <p class="cd-menu-desc">Chill Mixture</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 2,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="cd-menu-section">
+                <h3 class="cd-section-title">Main Course</h3>
+                <div class="cd-menu-grid">
+                <div class="cd-menu-card" data-id="snack1">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4200.png" alt="Twin Burger & Chips">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Twin Burger & Chips</h4>
+                        <p class="cd-menu-desc">White & Red Sauce</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 5,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="snack2">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4200.png" alt="Twin Burger & Chips">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Twin Burger & Chips</h4>
+                        <p class="cd-menu-desc">White & Red Sauce</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 5,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="snack3">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4200.png" alt="Twin Burger & Chips">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Twin Burger & Chips</h4>
+                        <p class="cd-menu-desc">White & Red Sauce</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 5,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="snack4">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4200.png" alt="Twin Burger & Chips">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Twin Burger & Chips</h4>
+                        <p class="cd-menu-desc">White & Red Sauce</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 5,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="cd-menu-section">
+                <h3 class="cd-section-title">Drinks & Desserts</h3>
+                <div class="cd-menu-grid">
+                <div class="cd-menu-card" data-id="drink1">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199 (1).png" alt="Watermelon Slushie">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Watermelon Slushie</h4>
+                        <p class="cd-menu-desc">Lime</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 10,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="drink2">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199 (2).png" alt="Chocolate Blueberry">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Chocolate Blueberry</h4>
+                        <p class="cd-menu-desc">Blueberry</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 2,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="drink3">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199 (1).png" alt="Watermelon Slushie">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Watermelon Slushie</h4>
+                        <p class="cd-menu-desc">Lime</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 10,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cd-menu-card" data-id="drink4">
+                    <div class="cd-menu-img">
+                        <img src="image/Rectangle 4199 (2).png" alt="Chocolate Blueberry">
+                    </div>
+                    <div class="cd-menu-info">
+                        <h4>Chocolate Blueberry</h4>
+                        <p class="cd-menu-desc">Blueberry</p>
+                        <div class="cd-menu-bottom">
+                            <p class="cd-menu-price">&#8358; 2,200</p>
+                            <div class="cd-menu-actions">
+                                <button class="cd-add-btn" onclick="cartValue(this)">Add +</button>
+                                <button class="cd-remove-btn" onclick="removeItem(this)">Remove</button>
+                                <span class="quantity" style="display:none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="bg-overlay" onclick="closeCart()"></div>
+<div class="cart-panel">
+    <div class="top-cart-panel">
+    <button class="close-btn" onclick="closeCart()" aria-label="Close Cart"><iconify-icon icon="mdi:close" width="24" height="24"></iconify-icon></button>
+    <h2>My Cart</h2>
+    </div>
+    <div class="cart-notification">
+         <iconify-icon icon="solar:cart-outline"
+                 width="24" height="24" class="items"></iconify-icon>
+    You Have <span class="cart-count">0</span> Items In Your Cart
+</div>
+    <div class="cart-items">
+    </div>
+    <div class="cart-items-summary">
+        <p>Total Items</p>
+        <p class="total-cost"></p>
+    <button class="checkout-btn" onclick="checkout()">
+        Check Out
+    </button>
+    </div>
+</div>
+          <section>
+            <div class="mangiona-news-letter">
+                <div class="news-letter-left">
+                    <h1>Join Our <span>Newsletter</span></h1>
+                    <h3>Get <span>&#8358;500</span> Off Your First Order</h3>
+                    <h4>Sign UP TO Receive Exclusive Deals, Discounts,<br> And Updates
+                        On Your Favourite Meals.
+                    </h4>
+                    <div class="update-input">
+                    <input type="email" placeholder="Enter Your Email Address"> <button class="update-btn">Get Started</button>
+                    </div>
+                </div>
+                 <div class="news-letter-right">
+                    <div class="bg-effect"></div>
+                    <img src="image/Modell 1.png" alt="">
+                 </div>
+            </div>
+          </section>
+           <footer style="position: relative;">
+                <div class="footer" style="overflow: hidden;">
+                <div class="footer-grid">
+                    <div class="footer-col address-col">
+                        <div class="mangiona-logo" style="margin-bottom: 20px; background: white; display: inline-block; padding: 10px 15px; border-radius: 10px;">
+                            <img src="image/Logo m 2.png" alt="Mangiona Logo" style="width: 120px; display: block;">
+                        </div>
+                        <p>Flat 5 Block C, Sunshine Apartments,<br>
+                        18 Admiralty Way, Lekki Phase 1,<br>
+                        Lagos State, 106104, Nigeria.</p>
+                        <p style="margin-top: 25px;">Mangionafoods@Gmail.Com</p>
+                        <p style="margin-top: 25px;">+234 812 345 6789</p>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">QUICK LINKS</p>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="restaurant.html">Menu</a></li>
+                            <li><a href="about.html">Services</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">COMPANY</p>
+                        <ul>
+                            <li><a href="about.html">Why Mangiona</a></li>
+                            <li><a href="about.html">Partner With Us</a></li>
+                            <li><a href="about.html">Services</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">SUPPORT</p>
+                        <ul>
+                            <li><a href="about.html">FAQs</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col app-col" style="display: flex; flex-direction: column; justify-content: flex-end;">
+                        <button class="store-btn google-btn">
+                            <iconify-icon icon="logos:google-play-icon"></iconify-icon>
+                            <div class="source">
+                                <p>GET IT ON</p>
+                                <h3>Google Play</h3>
+                            </div>
+                        </button>
+                        <button class="store-btn apple-btn">
+                            <iconify-icon icon="ic:baseline-apple" style="color: black;"></iconify-icon>
+                            <div class="source">
+                                <p>Download on the</p>
+                                <h3>App Store</h3>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <hr class="footer-hr">
+                <div class="mangiona-policy">
+                    <p><a href="terms.html">TERMS & CONDITIONS</a></p>
+                    <p><a href="privacy.html">PRIVACY POLICY</a></p>
+                </div>
+                <h1 class="watermark">MANGIONA</h1>
+            </div>
+           </footer>
+    <!-- <script src="food.js"></script> -->
+    <script src="Javascript-files/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mangiona Driver App - Web Preview</title>
+    <link rel="shortcut icon" href="image/Logo m 2.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
+        body { background: #0F172A; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+        
+        /* Top Navigation Controls Bar */
+        .top-demo-nav {
+            display: flex;
+            gap: 6px;
+            background: #1E293B;
+            padding: 10px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 650px;
+        }
+        .demo-nav-btn {
+            background: rgba(255,255,255,0.08);
+            color: #94A3B8;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 7px 12px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s ease;
+        }
+        .demo-nav-btn.active {
+            background: #10B981;
+            color: #FFFFFF;
+            border-color: #10B981;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        }
+        .demo-nav-btn:hover { color: #FFF; border-color: rgba(255,255,255,0.3); }
+
+        /* Phone Shell */
+        .phone-shell {
+            width: 390px;
+            height: 780px;
+            background: #F8FAFC;
+            border-radius: 44px;
+            border: 12px solid #1E293B;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .phone-notch {
+            width: 140px;
+            height: 24px;
+            background: #1E293B;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+
+        .app-content { flex: 1; padding: 36px 18px 18px; overflow-y: auto; scrollbar-width: none; }
+        .app-content::-webkit-scrollbar { display: none; }
+
+        .tab-page { display: none; }
+        .tab-page.active-page { display: block; }
+
+        /* Header */
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .app-title-group { display: flex; align-items: center; gap: 10px; }
+        .brand-logo-img { height: 36px; width: auto; object-fit: contain; }
+        .app-title { font-size: 16px; font-weight: 800; color: #0F172A; }
+        .app-sub { font-size: 11px; color: #64748B; font-weight: 600; }
+        
+        .status-toggle {
+            display: flex;
+            align-items: center;
+            background: #FFFFFF;
+            padding: 6px 12px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            gap: 8px;
+            cursor: pointer;
+        }
+        .status-dot { width: 8px; height: 8px; border-radius: 4px; background: #10B981; }
+        .status-dot.offline { background: #94A3B8; }
+        .status-text { font-size: 11px; font-weight: 800; color: #059669; }
+        .status-text.offline { color: #64748B; }
+
+        /* Solid Emerald Green Hero Card */
+        .hero-card {
+            background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+            border-radius: 22px;
+            padding: 20px;
+            color: white;
+            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35);
+            margin-bottom: 16px;
+        }
+        .hero-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+        .hero-label { font-size: 12px; color: rgba(255,255,255,0.9); font-weight: 600; }
+        .hero-amount { font-size: 30px; font-weight: 800; margin-top: 2px; }
+        .hero-badge { background: #FFFFFF; color: #059669; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 12px; display: flex; align-items: center; gap: 4px; }
+
+        .metrics-row { display: flex; background: rgba(0,0,0,0.14); border-radius: 16px; padding: 10px; justify-content: space-around; }
+        .metric-item { text-align: center; }
+        .metric-val { font-size: 15px; font-weight: 800; }
+        .metric-lbl { font-size: 10px; color: rgba(255,255,255,0.85); }
+        .metric-divider { width: 1px; background: rgba(255,255,255,0.25); }
+
+        .card-box {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            margin-bottom: 14px;
+        }
+
+        .primary-action-btn {
+            width: 100%;
+            background: #10B981;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Onboarding Screen Specifics */
+        .onboarding-hero {
+            text-align: center;
+            padding: 20px 10px;
+        }
+        .onboarding-logo {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+        }
+        .onboarding-badge {
+            display: inline-block;
+            background: #D1FAE5;
+            color: #059669;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        /* Available Deliveries Feed Items */
+        .delivery-feed-item {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 14px;
+            margin-bottom: 10px;
+            border: 1px solid #E2E8F0;
+        }
+        .feed-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .feed-rest { font-size: 14px; font-weight: 800; color: #0F172A; }
+        .feed-payout { font-size: 16px; font-weight: 800; color: #059669; background: #D1FAE5; padding: 2px 8px; border-radius: 8px; }
+        .feed-sub { font-size: 11px; color: #64748B; }
+
+        /* Map Canvas */
+        .map-view-shell {
+            height: 320px;
+            background: #1E293B;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 14px;
+        }
+        .turn-guidance {
+            position: absolute;
+            top: 10px; left: 10px; right: 10px;
+            background: #059669;
+            color: white;
+            padding: 10px 14px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10;
+        }
+        .road-h { position: absolute; top: 40%; left: 0; right: 0; height: 14px; background: #334155; }
+        .road-v { position: absolute; left: 45%; top: 0; bottom: 0; width: 14px; background: #334155; }
+        .route-path { position: absolute; top: 25%; left: 25%; width: 50%; height: 50%; border: 4px dashed #10B981; border-radius: 20px; }
+        .pin { position: absolute; display: flex; flex-direction: column; align-items: center; }
+        .pin-bubble { width: 28px; height: 28px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; }
+
+        /* Auth Forms */
+        .auth-card { background: #FFFFFF; border-radius: 22px; padding: 22px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 12px; }
+        .form-label { font-size: 11px; font-weight: 700; color: #0F172A; margin-bottom: 4px; display: block; }
+        .form-input { width: 100%; height: 44px; border-radius: 12px; border: 1px solid #E2E8F0; padding: 0 12px; font-size: 13px; font-weight: 600; outline: none; }
+        .form-input:focus { border-color: #10B981; }
+
+        .otp-inputs { display: flex; gap: 8px; justify-content: center; margin: 16px 0; }
+        .otp-box { width: 44px; height: 48px; text-align: center; font-size: 18px; font-weight: 800; border-radius: 10px; border: 1px solid #E2E8F0; }
+
+        /* Bottom Nav Bar */
+        .bottom-nav {
+            height: 65px;
+            background: #FFFFFF;
+            border-top: 1px solid #E2E8F0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .nav-item { display: flex; flex-direction: column; align-items: center; color: #94A3B8; font-size: 10px; font-weight: 700; cursor: pointer; border: none; background: none; }
+        .nav-item.active { color: #059669; }
+        .nav-item iconify-icon { font-size: 20px; margin-bottom: 2px; }
+    </style>
+</head>
+<body>
+
+    <!-- Top View Switcher Navigation Bar (Lucide Icons) -->
+    <div class="top-demo-nav">
+        <button class="demo-nav-btn active" id="demoBtnOnboarding" onclick="switchTab('Onboarding')">
+            <iconify-icon icon="lucide:rocket"></iconify-icon> Onboarding
+        </button>
+        <button class="demo-nav-btn" id="demoBtnAuth" onclick="switchTab('Auth')">
+            <iconify-icon icon="lucide:lock"></iconify-icon> Auth & Login
+        </button>
+        <button class="demo-nav-btn" id="demoBtnVerification" onclick="switchTab('Verification')">
+            <iconify-icon icon="lucide:shield-check"></iconify-icon> OTP Verification
+        </button>
+        <button class="demo-nav-btn" id="demoBtnDashboard" onclick="switchTab('Dashboard')">
+            <iconify-icon icon="lucide:layout-dashboard"></iconify-icon> Dashboard & Feed
+        </button>
+        <button class="demo-nav-btn" id="demoBtnDelivery" onclick="switchTab('Delivery')">
+            <iconify-icon icon="lucide:package"></iconify-icon> Delivery Workflow
+        </button>
+        <button class="demo-nav-btn" id="demoBtnGPSMap" onclick="switchTab('GPSMap')">
+            <iconify-icon icon="lucide:navigation"></iconify-icon> Navigation Map
+        </button>
+        <button class="demo-nav-btn" id="demoBtnEarnings" onclick="switchTab('Earnings')">
+            <iconify-icon icon="lucide:wallet"></iconify-icon> Earnings & Withdrawal
+        </button>
+        <button class="demo-nav-btn" id="demoBtnAccount" onclick="switchTab('Account')">
+            <iconify-icon icon="lucide:user-cog"></iconify-icon> Account & Settings
+        </button>
+    </div>
+
+    <!-- Phone Shell -->
+    <div class="phone-shell">
+        <div class="phone-notch"></div>
+
+        <!-- Custom In-App Toast Notification -->
+        <div id="toastContainer" style="position: absolute; top: 32px; left: 50%; transform: translateX(-50%); z-index: 2000; display: none; background: #0F172A; color: white; padding: 10px 16px; border-radius: 20px; font-size: 12px; font-weight: 800; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); white-space: nowrap; align-items: center; gap: 8px;">
+            <iconify-icon icon="lucide:bell" style="color: #10B981; font-size: 16px;"></iconify-icon>
+            <span id="toastText">Notification</span>
+        </div>
+
+        <div class="app-content">
+
+            <!-- PAGE 0: ONBOARDING WITH MANGIONA LOGO -->
+            <div id="pageOnboarding" class="tab-page active-page">
+                <div class="onboarding-hero">
+                    <img src="image/Logo m 2.png" alt="Mangiona Logo" class="onboarding-logo">
+                    <br>
+                    <span class="onboarding-badge">Courier Partner Network</span>
+
+                    <h2 style="font-size: 24px; font-weight: 800; color: #0F172A; margin-bottom: 12px;">Deliver & Earn Big</h2>
+                    <p style="font-size: 13px; color: #64748B; line-height: 1.6; max-width: 290px; margin: 0 auto 24px;">
+                        Join Mangiona's top-tier courier fleet. Earn up to ₦150,000 weekly with flexible hours, customer tips, and instant daily cash-outs.
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+                        <div style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; padding: 12px 16px; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
+                            <div style="width: 38px; height: 38px; border-radius: 12px; background: #D1FAE5; color: #059669; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+                                <iconify-icon icon="lucide:wallet"></iconify-icon>
+                            </div>
+                            <div style="text-align: left;">
+                                <div style="font-size: 13px; font-weight: 800; color: #0F172A;">Instant Daily Payouts</div>
+                                <div style="font-size: 11px; color: #64748B;">Withdraw earnings straight to your bank</div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; padding: 12px 16px; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
+                            <div style="width: 38px; height: 38px; border-radius: 12px; background: #D1FAE5; color: #059669; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+                                <iconify-icon icon="lucide:clock"></iconify-icon>
+                            </div>
+                            <div style="text-align: left;">
+                                <div style="font-size: 13px; font-weight: 800; color: #0F172A;">Flexible Working Hours</div>
+                                <div style="font-size: 11px; color: #64748B;">Deliver whenever and wherever you want</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="primary-action-btn" onclick="switchTab('Auth')">
+                        Become a Courier Partner <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+
+            <!-- PAGE 1: AUTHENTICATION & LOGIN -->
+            <div id="pageAuth" class="tab-page">
+                <div class="auth-card">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <img src="image/Logo m 2.png" alt="Mangiona Logo" style="height: 38px; width: auto;">
+                        <div>
+                            <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Mangiona Courier</div>
+                            <div style="font-size: 11px; color: #64748B;">Partner Portal Login</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone Number or Email</label>
+                        <input type="text" class="form-input" value="+234 812 345 6789">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-input" value="••••••••">
+                    </div>
+
+                    <button class="primary-action-btn" onclick="switchTab('Verification')">
+                        Log In & Continue <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                    </button>
+
+                    <div style="text-align: center; margin-top: 14px;">
+                        <a href="#" style="color: #059669; font-size: 12px; font-weight: 700; text-decoration: none;" onclick="switchTab('Verification')">Sign in with 4-Digit SMS OTP Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 2: OTP VERIFICATION -->
+            <div id="pageVerification" class="tab-page">
+                <div class="auth-card" style="text-align: center;">
+                    <div style="width: 56px; height: 56px; border-radius: 28px; background: #D1FAE5; color: #059669; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 12px;">
+                        <iconify-icon icon="lucide:shield-check"></iconify-icon>
+                    </div>
+                    <h3 style="font-size: 18px; font-weight: 800; color: #0F172A;">Security Verification</h3>
+                    <p style="font-size: 12px; color: #64748B; margin-top: 4px;">Enter 4-digit code sent to +234 812 *** 6789</p>
+
+                    <div class="otp-inputs">
+                        <input type="text" class="otp-box" value="4">
+                        <input type="text" class="otp-box" value="8">
+                        <input type="text" class="otp-box" value="1">
+                        <input type="text" class="otp-box" value="9">
+                    </div>
+
+                    <button class="primary-action-btn" onclick="switchTab('Dashboard')">
+                        Verify & Go Online
+                    </button>
+                </div>
+            </div>
+
+            <!-- PAGE 3: DASHBOARD & AVAILABLE DELIVERIES -->
+            <div id="pageDashboard" class="tab-page">
+                <div class="header">
+                    <div class="app-title-group">
+                        <img src="image/Logo m 2.png" alt="Mangiona Logo" class="brand-logo-img">
+                        <div>
+                            <div class="app-title">Mangiona Courier</div>
+                            <div class="app-sub">ID: MNG-DRV-4092</div>
+                        </div>
+                    </div>
+                    <div class="status-toggle" onclick="toggleDriverOnline()">
+                        <div class="status-dot" id="statusDot"></div>
+                        <span class="status-text" id="statusText">ONLINE</span>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-top">
+                        <div>
+                            <div class="hero-label">Today's Payout</div>
+                            <div class="hero-amount" id="totalEarnings">₦18,500</div>
+                        </div>
+                        <div class="hero-badge">
+                            <iconify-icon icon="lucide:shield-check"></iconify-icon> Verified
+                        </div>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-item">
+                            <div class="metric-val" id="tripsCount">14</div>
+                            <div class="metric-lbl">Deliveries</div>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <div class="metric-val">42.5 km</div>
+                            <div class="metric-lbl">Distance</div>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <div class="metric-val">4.9 ★</div>
+                            <div class="metric-lbl">Rating</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 14px; font-weight: 800; color: #0F172A; margin-bottom: 8px;">Available Deliveries Feed</div>
+                
+                <div class="delivery-feed-item">
+                    <div class="feed-header">
+                        <span class="feed-rest">Mama Cass Kitchen</span>
+                        <span class="feed-payout">₦1,450</span>
+                    </div>
+                    <div class="feed-sub">Pickup: Commercial Ave, Yaba • Drop: Admiralty Way, Lekki</div>
+                    <button class="primary-action-btn" style="margin-top: 10px; padding: 10px; font-size: 13px;" onclick="switchTab('Delivery')">
+                        Accept Order
+                    </button>
+                </div>
+
+                <div class="delivery-feed-item">
+                    <div class="feed-header">
+                        <span class="feed-rest">Kilimanjaro Bistro</span>
+                        <span class="feed-payout">₦1,800</span>
+                    </div>
+                    <div class="feed-sub">Pickup: Maryland Mall • Drop: Bode Thomas St, Surulere</div>
+                    <button class="primary-action-btn" style="margin-top: 10px; padding: 10px; font-size: 13px;" onclick="switchTab('Delivery')">
+                        Accept Order
+                    </button>
+                </div>
+            </div>
+
+            <!-- PAGE 4: DELIVERY WORKFLOW -->
+            <div id="pageDelivery" class="tab-page">
+                <div class="card-box">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <span style="background: #D1FAE5; color: #059669; font-size: 11px; font-weight: 800; padding: 4px 8px; border-radius: 8px;">ACTIVE DELIVERY</span>
+                        <span style="font-size: 18px; font-weight: 800; color: #059669;">₦1,450</span>
+                    </div>
+
+                    <!-- Pickup Details -->
+                    <div style="background: #F8FAFC; border-radius: 12px; padding: 12px; margin-bottom: 10px;">
+                        <div style="font-size: 10px; font-weight: 700; color: #94A3B8; text-transform: uppercase;">PICKUP DETAILS</div>
+                        <div style="font-size: 14px; font-weight: 800; color: #0F172A; margin-top: 2px;">Mama Cass Kitchen</div>
+                        <div style="font-size: 11px; color: #64748B;">24 Commercial Avenue, Yaba</div>
+                        <div style="font-size: 11px; font-weight: 700; color: #059669; margin-top: 4px;">Items: 2x Jollof Rice Special, 2x Malt Drink</div>
+                    </div>
+
+                    <!-- Customer Details -->
+                    <div style="background: #F8FAFC; border-radius: 12px; padding: 12px; margin-bottom: 14px;">
+                        <div style="font-size: 10px; font-weight: 700; color: #94A3B8; text-transform: uppercase;">CUSTOMER DETAILS</div>
+                        <div style="font-size: 14px; font-weight: 800; color: #0F172A; margin-top: 2px;">Adebayo O. (+234 803 111 2233)</div>
+                        <div style="font-size: 11px; color: #64748B;">14 Admiralty Way, Lekki Phase 1</div>
+                    </div>
+
+                    <button class="primary-action-btn" onclick="showToast('🎉 Delivery Confirmed & Completed! +₦1,450 added to wallet.'); switchTab('Earnings');">
+                        Confirm Delivery & Collect ₦1,450
+                    </button>
+                </div>
+            </div>
+
+            <!-- PAGE 5: LIVE GPS MAP NAVIGATION -->
+            <div id="pageGPSMap" class="tab-page">
+                <div class="map-view-shell">
+                    <div class="turn-guidance">
+                        <iconify-icon icon="lucide:navigation" style="font-size: 24px;"></iconify-icon>
+                        <div>
+                            <div style="font-size: 9px; font-weight: 700; text-transform: uppercase; opacity: 0.8;">In 200m</div>
+                            <div style="font-size: 13px; font-weight: 800;">Turn Right onto Admiralty Way</div>
+                        </div>
+                    </div>
+
+                    <div class="road-h"></div>
+                    <div class="road-v"></div>
+                    <div class="route-path"></div>
+
+                    <!-- Pickup Marker -->
+                    <div class="pin" style="top: 22%; left: 22%;">
+                        <div class="pin-bubble" style="background: #10B981;"><iconify-icon icon="lucide:store"></iconify-icon></div>
+                        <span style="font-size: 9px; color: white; background: #0F172A; padding: 2px 4px; border-radius: 4px; margin-top: 2px;">Mama Cass</span>
+                    </div>
+
+                    <!-- Driver Live Pin -->
+                    <div class="pin" style="top: 46%; left: 46%;">
+                        <div class="pin-bubble" style="background: #059669; border: 2px solid white; box-shadow: 0 0 15px #10B981;"><iconify-icon icon="lucide:bike"></iconify-icon></div>
+                    </div>
+
+                    <!-- Dropoff Marker -->
+                    <div class="pin" style="top: 70%; left: 70%;">
+                        <div class="pin-bubble" style="background: #EF4444;"><iconify-icon icon="lucide:home"></iconify-icon></div>
+                    </div>
+                </div>
+
+                <button class="primary-action-btn" onclick="showToast('Opening Google Maps route...')">
+                    <iconify-icon icon="lucide:map-pin"></iconify-icon> Launch Google Maps Route
+                </button>
+            </div>
+
+            <!-- PAGE 6: EARNINGS & WITHDRAWAL -->
+            <div id="pageEarnings" class="tab-page">
+                <div class="header">
+                    <div>
+                        <div class="app-title">Earnings & Withdrawal</div>
+                        <div class="app-sub">Daily & Weekly Financials</div>
+                    </div>
+                    <span style="background: #E2E8F0; font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 8px;">NGN (₦)</span>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-top">
+                        <div>
+                            <div class="hero-label">Available Balance</div>
+                            <div class="hero-amount">₦18,500</div>
+                        </div>
+                        <button style="background: white; color: #059669; border: none; padding: 8px 14px; border-radius: 14px; font-size: 12px; font-weight: 800; cursor: pointer;" onclick="showToast('⚡ Withdrawal Initiated! ₦18,500 transferred to GTBank ****4819.')">
+                            <iconify-icon icon="lucide:zap"></iconify-icon> Withdraw
+                        </button>
+                    </div>
+                    <div style="font-size: 11px; background: rgba(0,0,0,0.15); padding: 6px 10px; border-radius: 10px; display: inline-flex; align-items: center; gap: 4px;">
+                        <iconify-icon icon="lucide:building-2"></iconify-icon> GTBank (Account ****4819)
+                    </div>
+                </div>
+
+                <div class="card-box">
+                    <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 800; margin-bottom: 8px;">
+                        <span>Daily Earnings (Today)</span>
+                        <span style="color: #059669;">₦18,500</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 800;">
+                        <span>Weekly Earnings (This Week)</span>
+                        <span style="color: #059669;">₦128,450</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 7: ACCOUNT & SETTINGS -->
+            <div id="pageAccount" class="tab-page">
+                <div class="card-box" style="text-align: center;">
+                    <div style="width: 64px; height: 64px; border-radius: 32px; background: #D1FAE5; color: #059669; display: flex; align-items: center; justify-content: center; font-size: 32px; margin: 0 auto 8px;">
+                        <iconify-icon icon="lucide:user"></iconify-icon>
+                    </div>
+                    <div style="font-size: 18px; font-weight: 800; color: #0F172A;">Samuel Okoro</div>
+                    <div style="font-size: 12px; color: #64748B;">4.9 ★ Rating • Platinum Courier</div>
+                </div>
+
+                <div class="card-box">
+                    <div style="font-size: 13px; font-weight: 800; color: #0F172A; margin-bottom: 6px;">Vehicle Information</div>
+                    <div style="font-size: 12px; color: #64748B;">Honda Ace 125 Motorcycle • Plate: LND-482-XY</div>
+                </div>
+
+                <div class="card-box">
+                    <div style="font-size: 13px; font-weight: 800; color: #0F172A; margin-bottom: 6px;">Documents Verification</div>
+                    <div style="font-size: 12px; color: #059669; font-weight: 700;">✓ Driver's License & Insurance Verified</div>
+                </div>
+
+                <div class="card-box">
+                    <div style="font-size: 13px; font-weight: 800; color: #0F172A; margin-bottom: 6px;">Settings & Preferences</div>
+                    <div style="font-size: 12px; color: #64748B;">Order Notifications: ON • Auto-Accept: OFF</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Tab Navigation (Lucide Icons) -->
+        <div class="bottom-nav">
+            <button class="nav-item active" id="tabBtnDashboard" onclick="switchTab('Dashboard')">
+                <iconify-icon icon="lucide:layout-dashboard"></iconify-icon>
+                <span>Job</span>
+            </button>
+            <button class="nav-item" id="tabBtnDelivery" onclick="switchTab('Delivery')">
+                <iconify-icon icon="lucide:package"></iconify-icon>
+                <span>Order</span>
+            </button>
+            <button class="nav-item" id="tabBtnGPSMap" onclick="switchTab('GPSMap')">
+                <iconify-icon icon="lucide:navigation"></iconify-icon>
+                <span>Map</span>
+            </button>
+            <button class="nav-item" id="tabBtnEarnings" onclick="switchTab('Earnings')">
+                <iconify-icon icon="lucide:wallet"></iconify-icon>
+                <span>Earnings</span>
+            </button>
+            <button class="nav-item" id="tabBtnAccount" onclick="switchTab('Account')">
+                <iconify-icon icon="lucide:user"></iconify-icon>
+                <span>Account</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let isOnline = true;
+
+        function showToast(message) {
+            const toast = document.getElementById('toastContainer');
+            const toastText = document.getElementById('toastText');
+            if (toast && toastText) {
+                toastText.textContent = message;
+                toast.style.display = 'flex';
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 2800);
+            }
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-page').forEach(el => el.classList.remove('active-page'));
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.demo-nav-btn').forEach(el => el.classList.remove('active'));
+
+            const targetPage = document.getElementById('page' + tabName);
+            if (targetPage) targetPage.classList.add('active-page');
+
+            const targetTabBtn = document.getElementById('tabBtn' + tabName);
+            if (targetTabBtn) targetTabBtn.classList.add('active');
+
+            const targetDemoBtn = document.getElementById('demoBtn' + tabName);
+            if (targetDemoBtn) targetDemoBtn.classList.add('active');
+        }
+
+        function toggleDriverOnline() {
+            isOnline = !isOnline;
+            const dot = document.getElementById('statusDot');
+            const txt = document.getElementById('statusText');
+
+            if (isOnline) {
+                dot.className = 'status-dot';
+                txt.className = 'status-text';
+                txt.textContent = 'ONLINE';
+            } else {
+                dot.className = 'status-dot offline';
+                txt.className = 'status-text offline';
+                txt.textContent = 'OFFLINE';
+            }
+        }
+    </script>
+</body>
+</html>

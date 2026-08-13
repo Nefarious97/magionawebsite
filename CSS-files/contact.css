@@ -1,0 +1,214 @@
+* { padding: 0;
+    margin: 0;
+    box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Open Sans', 'Manrope', arial, sans-serif;
+    background-color: #fafafa; }
+header { padding: 0px 50px;
+    margin-top: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    width: 100%; }
+nav { display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap; }
+.cart-container { position: relative;
+    display: inline-block; }
+.cart-icon { font-size: 30px;
+    cursor: pointer; }
+.cart-count2 { display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px; }
+.mangiona-nav-links { display: flex;
+    flex-wrap: nowrap; }
+.mangiona-nav-links ul { display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: nowrap; }
+.mangiona-nav-links a { text-decoration: none;
+    color: #1A1A1A;
+    font-weight: 500;
+    font-size: 16px;
+    flex-wrap: nowrap; }
+.mangiona-nav-links .active { color: #047857;
+    font-weight: 700;
+    font-size: 18px; }
+.order-btn { padding: 10px 20px;
+    background-color: #047857;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.3s; }
+.order-btn:hover { background-color: #03664a; }
+.mobile-nav-toggle, .mobile-nav-close { display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px; }
+@media (max-width: 900px) { header { padding: 0px 20px; }
+.mangiona-nav-links { position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        z-index: 1001; }
+.mangiona-nav-links.active { right: 0; }
+.mangiona-nav-links ul { flex-direction: column;
+        gap: 30px;
+        width: 100%; }
+.mobile-nav-toggle, .mobile-nav-close { display: block; }
+.mobile-nav-close { position: absolute;
+        top: 20px;
+        right: 20px; }
+.mangiona-order { display: flex;
+        align-items: center;
+        gap: 15px; }
+ }
+.cd-contact-page { padding: 60px 20px 100px;
+    background-color: #fafafa;
+    min-height: 80vh; }
+.cd-contact-header { text-align: center;
+    margin-bottom: 50px; }
+.cd-contact-header h1 { font-size: 40px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 15px; }
+.cd-contact-header p { font-size: 16px;
+    color: #555;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6; }
+.cd-contact-container { max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    align-items: start; }
+.cd-form-card { background: #fff;
+    border-radius: 16px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    padding: 40px; }
+.cd-form-card h2 { font-size: 24px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 30px; }
+.cd-contact-form { display: flex;
+    flex-direction: column;
+    gap: 20px; }
+.cd-input-group { display: flex;
+    flex-direction: column;
+    gap: 8px; }
+.cd-input-group label { font-size: 14px;
+    font-weight: 600;
+    color: #333; }
+.cd-input-group input, 
+.cd-input-group textarea { padding: 16px;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+    background-color: #fafafa; }
+.cd-input-group input:focus, 
+.cd-input-group textarea:focus { border-color: #047857;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.1); }
+.cd-input-group textarea { resize: vertical; }
+.cd-submit-btn { margin-top: 10px;
+    padding: 18px;
+    background-color: #047857;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s; }
+.cd-submit-btn:hover { background-color: #03664a; }
+.cd-submit-btn:active { transform: scale(0.98); }
+.cd-contact-right { display: flex;
+    flex-direction: column;
+    gap: 20px; }
+.cd-info-card { background: #fff;
+    border-radius: 16px;
+    border: 1px solid #eaeaea;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease; }
+.cd-info-card:hover { transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
+.cd-icon-wrap { width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #fff5f3;
+    color: #047857;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; }
+.cd-info-text h3 { font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 6px; }
+.cd-info-text p { font-size: 14px;
+    color: #555;
+    line-height: 1.5; }
+.cd-social-card { background: #fff;
+    border-radius: 16px;
+    border: 1px solid #eaeaea;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    text-align: center; }
+.cd-social-card h3 { font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 16px; }
+.cd-social-links { display: flex;
+    justify-content: center;
+    gap: 15px; }
+.cd-social-icon { width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fafafa;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid #eaeaea;
+    transition: all 0.2s ease; }
+.cd-social-icon:hover { background: #047857;
+    color: #fff;
+    border-color: #047857;
+    transform: translateY(-2px); }
+@media (max-width: 900px) { .cd-contact-container { grid-template-columns: 1fr; }
+.cd-form-card { padding: 24px; }
+ }

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mangiona - Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta name="keywords" content="Mangiona, food delivery, order food online, fast food, meals, restaurant">
+    <meta property="og:title" content="Mangiona | Food Delivery">
+    <meta property="og:description" content="Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="image/Logo m 2.png">
+    <title>Mangiona-Home</title>
+    <link rel="stylesheet" href="CSS-files/style.css?v=2">
+    <link rel="stylesheet" href="CSS-files/global-sync.css">
+    <link rel="stylesheet" href="CSS-files/sections-sync.css">
+    <link rel="shortcut icon" href="image/Logo m 2.png" type="image/x-icon">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="mangiona-logo">
+                <img src="image/Logo m 2.png" alt="Mangiona Logo">
+            </div>
+            <div class="mangiona-nav-links" id="mobileNav">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="restaurant.html" class="nav-link">Restaurant</a></li>
+                    <li><a href="transaction.html" class="nav-link">Transactions</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+                    <iconify-icon icon="mdi:close" width="26" height="26"></iconify-icon>
+                </button>
+            </div>
+            <div class="mangiona-order">
+                <div class="cart-container">
+                    <iconify-icon icon="solar:cart-outline" title="cart" width="24" height="24" onclick="openCart()" class="cart-icon"></iconify-icon>
+                    <span class="cart-count2">0</span>
+                </div>
+                <button class="mobile-nav-toggle" id="mobileNavOpen" aria-label="Open menu">
+                    <iconify-icon icon="mdi:menu" width="28" height="28"></iconify-icon>
+                </button>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <a href="sign-up.html"><button class="order-btn" style="display: flex; align-items: center; gap: 4px;"><iconify-icon icon="mdi:user-outline" width="20" height="20"></iconify-icon>Sign Up</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section>
+        <div class="hero chowdeck-hero-split home-hero">
+            <!-- Left Side: Text and Search -->
+            <div class="hero-left hero-content home-hero-content">
+                <span class="hero-eyebrow"><iconify-icon icon="mdi:map-marker-radius"></iconify-icon> Fast delivery across your city</span>
+                <h1>Your Favourite <span>Restaurants,</span><br>Just One <span>Tap Away.</span></h1>
+                <p class="hero-lead">Skip the line! Mangiona directly connects you to top-rated local restaurants. Browse menus, place your order, and enjoy blazing-fast delivery straight to your door.</p>
+                <form class="input-box hero-address-form" role="search">
+                    <iconify-icon icon="mdi:map-marker-outline" class="search-icon"></iconify-icon>
+                    <label class="visually-hidden" for="heroDeliveryAddress">Delivery address</label>
+                    <input id="heroDeliveryAddress" type="text" autocomplete="street-address" placeholder="Enter your delivery address...">
+                    <button class="search-btn" type="submit">Find Food <iconify-icon icon="mdi:arrow-right"></iconify-icon></button>
+                </form>
+                <div class="hero-trust-row" aria-label="Mangiona service highlights">
+                    <div><strong>4.8<iconify-icon icon="mdi:star"></iconify-icon></strong><span>Customer rating</span></div>
+                    <div><strong>30 min</strong><span>Average delivery</span></div>
+                    <div><strong>100+</strong><span>Local restaurants</span></div>
+                </div>
+            </div>
+            <!-- Right Side: Dynamic Image -->
+            <div class="hero-right home-hero-visual">
+                <div class="delivery-guy home-delivery-visual">
+                    <div class="bg-shape"></div>
+                    <div class="bg-shape-2"></div>
+                    <img src="image/pizza-delivery-man-with-thumbs-up-pizza-boxes 1.png" alt="Mangiona courier carrying freshly packed pizzas" class="hero-img">
+
+                    <!-- Floating Badge 1 (Courier) -->
+                    <div class="floating-badge badge-1 courier-badge">
+                        <img src="image/58 11.png" alt="Courier Richard">
+                        <div>
+                            <strong>Richard W.</strong>
+                            <span>Top courier <iconify-icon icon="mdi:star"></iconify-icon></span>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 2 (Delivery Time) -->
+                    <div class="floating-badge badge-2 delivery-time-badge">
+                        <div class="delivery-badge-icon">
+                            <iconify-icon icon="mdi:bike-fast"></iconify-icon>
+                        </div>
+                        <div>
+                            <strong>Delivery</strong>
+                            <span>in 30 mins</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Ticker -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span><iconify-icon icon="mdi:bike-fast"></iconify-icon> Fast Delivery</span>
+            <span><iconify-icon icon="mdi:fire"></iconify-icon> Hot Meals</span>
+            <span><iconify-icon icon="mdi:star"></iconify-icon> Top Restaurants</span>
+            <span><iconify-icon icon="mdi:shield-check"></iconify-icon> Secure Payments</span>
+            <span><iconify-icon icon="mdi:leaf"></iconify-icon> Fresh Ingredients</span>
+            <span><iconify-icon icon="mdi:bike-fast"></iconify-icon> Fast Delivery</span>
+            <span><iconify-icon icon="mdi:fire"></iconify-icon> Hot Meals</span>
+            <span><iconify-icon icon="mdi:star"></iconify-icon> Top Restaurants</span>
+            <span><iconify-icon icon="mdi:shield-check"></iconify-icon> Secure Payments</span>
+            <span><iconify-icon icon="mdi:leaf"></iconify-icon> Fresh Ingredients</span>
+        </div>
+    </div>
+
+    <!-- 2. How It Works Section -->
+    <section>
+        <div class="service-review how-it-works-container reveal-on-scroll">
+            <div class="how-it-works-header">
+                <span class="section-eyebrow"><iconify-icon icon="mdi:lightning-bolt-outline"></iconify-icon> Easy 4-step ordering</span>
+                <h2>How Mangiona Works</h2>
+                <p>From kitchen prep to courier delivery, ordering your favourite meals has never been this simple.</p>
+            </div>
+            <div class="how-it-works-grid">
+                <div class="how-step-card">
+                    <span class="step-badge">Step 01</span>
+                    <div class="step-icon">
+                        <iconify-icon icon="mdi:map-marker-radius-outline"></iconify-icon>
+                    </div>
+                    <h3>1. Select Location</h3>
+                    <p>Enter your address to discover top-rated local restaurants and popular dishes nearby.</p>
+                </div>
+                <div class="how-step-card">
+                    <span class="step-badge">Step 02</span>
+                    <div class="step-icon">
+                        <iconify-icon icon="mdi:silverware-fork-knife"></iconify-icon>
+                    </div>
+                    <h3>2. Choose Your Meal</h3>
+                    <p>Browse menus, customise your ingredients, and add delicious meals to your cart.</p>
+                </div>
+                <div class="how-step-card">
+                    <span class="step-badge">Step 03</span>
+                    <div class="step-icon">
+                        <iconify-icon icon="mdi:chef-hat"></iconify-icon>
+                    </div>
+                    <h3>3. Fresh Prep</h3>
+                    <p>Certified partner chefs prepare your food fresh with premium hygienic packaging.</p>
+                </div>
+                <div class="how-step-card">
+                    <span class="step-badge">Step 04</span>
+                    <div class="step-icon">
+                        <iconify-icon icon="mdi:bike-fast"></iconify-icon>
+                    </div>
+                    <h3>4. Fast Delivery</h3>
+                    <p>Track your rider in real-time as your food arrives piping hot in under 30 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Top Restaurants Section -->
+    <section>
+        <div class="top-restaurants reveal-on-scroll">
+            <div class="restaurant-section-heading">
+                <span class="section-eyebrow"><iconify-icon icon="mdi:map-marker-radius"></iconify-icon> Popular near you</span>
+                <h2>Top Restaurants</h2>
+                <p>Discover highly rated local favourites serving delicious meals, delivered fresh and fast.</p>
+            </div>
+            <div class="top-restaurant-grid">
+                <a href="food.html" class="vendor-card">
+                    <div class="card-header">
+                        <img src="image/36392 1.png" alt="Pizza and sides from The Place">
+                        <div class="rating-pill"><iconify-icon icon="mdi:star"></iconify-icon> 4.8</div>
+                        <span class="delivery-badge">20–30 min</span>
+                    </div>
+                    <div class="card-body restaurant-card-body">
+                        <div class="restaurant-title-row"><h5>The Place</h5><iconify-icon icon="mdi:chevron-right"></iconify-icon></div>
+                        <p class="restaurant-cuisine">Nigerian • Grills • Pizza</p>
+                        <div class="restaurant-meta"><span><iconify-icon icon="mdi:bike-fast"></iconify-icon> ₦1,200 delivery</span><span>Min. ₦10,000</span></div>
+                    </div>
+                </a>
+                <a href="food.html" class="vendor-card">
+                    <div class="card-header">
+                        <img src="image/3392 1.png" alt="Burger meal from Burger Place">
+                        <div class="rating-pill"><iconify-icon icon="mdi:star"></iconify-icon> 4.5</div>
+                        <span class="delivery-badge">15–25 min</span>
+                    </div>
+                    <div class="card-body restaurant-card-body">
+                        <div class="restaurant-title-row"><h5>Burger Place</h5><iconify-icon icon="mdi:chevron-right"></iconify-icon></div>
+                        <p class="restaurant-cuisine">Burgers • Fries • Shakes</p>
+                        <div class="restaurant-meta"><span><iconify-icon icon="mdi:bike-fast"></iconify-icon> ₦900 delivery</span><span>Min. ₦10,000</span></div>
+                    </div>
+                </a>
+                <a href="food.html" class="vendor-card">
+                    <div class="card-header">
+                        <img src="image/fresh-delicious-flying-burger-with-beef-cheese-tomato-sauce-lettuce-transparent-background 1.png"
+                            alt="Signature beef burger from King Restaurant">
+                        <div class="rating-pill"><iconify-icon icon="mdi:star"></iconify-icon> 4.9</div>
+                        <span class="delivery-badge">25–35 min</span>
+                    </div>
+                    <div class="card-body restaurant-card-body">
+                        <div class="restaurant-title-row"><h5>King Restaurant</h5><iconify-icon icon="mdi:chevron-right"></iconify-icon></div>
+                        <p class="restaurant-cuisine">Continental • Burgers • Grills</p>
+                        <div class="restaurant-meta"><span><iconify-icon icon="mdi:bike-fast"></iconify-icon> ₦1,000 delivery</span><span>Min. ₦15,000</span></div>
+                    </div>
+                </a>
+            </div>
+            <a href="restaurant.html" class="view-all-restaurants">Explore all restaurants <iconify-icon icon="mdi:arrow-right"></iconify-icon></a>
+        </div>
+    </section>
+
+    <!-- 4. Popular Meals Section -->
+    <section>
+        <div class="popular-meals reveal-on-scroll">
+            <div class="popular-meals-heading">
+                <span class="meals-eyebrow"><iconify-icon icon="mdi:fire"></iconify-icon> Most ordered</span>
+                <h2>Popular Meals</h2>
+                <p>Customer favourites made fresh and ready to satisfy your next craving.</p>
+            </div>
+            <div class="popular-meals-grid">
+                <div class="vendor-card menu" data-id="popular-spicy-pasta">
+                    <div class="card-header">
+                        <img src="image/pasta.png" alt="Spicy pasta served with seasoned meat">
+                        <div class="meal-rating"><iconify-icon icon="mdi:star"></iconify-icon> 4.9</div>
+                        <span class="meal-tag">Bestseller</span>
+                    </div>
+                    <div class="card-body popular-meal-body">
+                        <p class="meal-category">Pasta • Spicy</p>
+                        <h5 class="name">Spicy Pasta &amp; Meat</h5>
+                        <p class="meal-description ingredent">Pasta tossed in a rich pepper sauce with tender seasoned meat.</p>
+                        <div class="meal-order-row"><p class="price">₦12,000</p><button class="meal-add-btn" type="button" onclick="cartValue(this)" aria-label="Add Spicy Pasta and Meat to cart"><iconify-icon icon="mdi:plus"></iconify-icon><span>Add</span></button></div>
+                        <p class="quantity" aria-live="polite"></p>
+                        <button class="remove-btn" type="button" onclick="removeItem(this)" aria-label="Remove Spicy Pasta and Meat from cart">Remove one</button>
+                    </div>
+                </div>
+                <div class="vendor-card menu" data-id="popular-beef-burger">
+                    <div class="card-header">
+                        <img src="image/Burger.png"
+                            alt="Classic beef burger with cheese and fresh vegetables">
+                        <div class="meal-rating"><iconify-icon icon="mdi:star"></iconify-icon> 4.8</div>
+                        <span class="meal-tag">Chef's pick</span>
+                    </div>
+                    <div class="card-body popular-meal-body">
+                        <p class="meal-category">Burgers • Grilled</p>
+                        <h5 class="name">Classic Beef Burger</h5>
+                        <p class="meal-description ingredent">Juicy grilled beef, melted cheese and crisp vegetables in a soft bun.</p>
+                        <div class="meal-order-row"><p class="price">₦10,000</p><button class="meal-add-btn" type="button" onclick="cartValue(this)" aria-label="Add Classic Beef Burger to cart"><iconify-icon icon="mdi:plus"></iconify-icon><span>Add</span></button></div>
+                        <p class="quantity" aria-live="polite"></p>
+                        <button class="remove-btn" type="button" onclick="removeItem(this)" aria-label="Remove Classic Beef Burger from cart">Remove one</button>
+                    </div>
+                </div>
+                <div class="vendor-card menu" data-id="popular-cheese-pizza">
+                    <div class="card-header">
+                        <img src="image/pizza.png" alt="Freshly baked cheese pizza">
+                        <div class="meal-rating"><iconify-icon icon="mdi:star"></iconify-icon> 4.9</div>
+                        <span class="meal-tag">Popular</span>
+                    </div>
+                    <div class="card-body popular-meal-body">
+                        <p class="meal-category">Pizza • Cheesy</p>
+                        <h5 class="name">Cheese Pizza</h5>
+                        <p class="meal-description ingredent">Stone-baked pizza topped with rich tomato sauce and melted cheese.</p>
+                        <div class="meal-order-row"><p class="price">₦8,500</p><button class="meal-add-btn" type="button" onclick="cartValue(this)" aria-label="Add Cheese Pizza to cart"><iconify-icon icon="mdi:plus"></iconify-icon><span>Add</span></button></div>
+                        <p class="quantity" aria-live="polite"></p>
+                        <button class="remove-btn" type="button" onclick="removeItem(this)" aria-label="Remove Cheese Pizza from cart">Remove one</button>
+                    </div>
+                </div>
+            </div>
+            <a href="food.html" class="browse-meals-link">Browse the full menu <iconify-icon icon="mdi:arrow-right"></iconify-icon></a>
+        </div>
+    </section>
+
+    <!-- 5. Services Section -->
+    <section>
+        <div class="mangiona-service home-services reveal-on-scroll">
+            <div class="service home-services-heading">
+                <span class="services-eyebrow"><iconify-icon icon="mdi:silverware-fork-knife"></iconify-icon> Our services</span>
+                <h2>Everything You Need For A <span>Better Meal.</span></h2>
+                <p>Experience the convenience of having your favourite local and intercontinental dishes delivered fresh, fast, and reliably right to your doorstep.</p>
+            </div>
+            <div class="home-services-grid">
+                <article class="service-card home-service-card">
+                    <div class="service-card-top"><span class="service-number">01</span><span class="service-icon"><iconify-icon icon="mdi:bike-fast"></iconify-icon></span></div>
+                    <div class="service-image-wrap"><img src="image/fast delivery.png" alt="Mangiona rider delivering a food order"></div>
+                    <h3>Fast Food Delivery</h3>
+                    <p>Get your favourite meals delivered quickly from top restaurants straight to your doorstep.</p>
+                    <a href="track.html">Track a delivery <iconify-icon icon="mdi:arrow-right"></iconify-icon></a>
+                </article>
+                <article class="service-card home-service-card featured-service-card">
+                    <div class="service-card-top"><span class="service-number">02</span><span class="service-icon"><iconify-icon icon="mdi:storefront-outline"></iconify-icon></span></div>
+                    <div class="service-image-wrap"><img src="image/newRestaurant.png" alt="A colourful selection of local restaurants"></div>
+                    <h3>More Choice, One Place</h3>
+                    <p>Explore a wide variety of cuisines and top-rated local restaurants, all in one place.</p>
+                    <a href="restaurant.html">Explore restaurants <iconify-icon icon="mdi:arrow-right"></iconify-icon></a>
+                </article>
+                <article class="service-card home-service-card">
+                    <div class="service-card-top"><span class="service-number">03</span><span class="service-icon"><iconify-icon icon="mdi:food-outline"></iconify-icon></span></div>
+                    <div class="service-image-wrap"><img src="image/food.png" alt="Freshly prepared meal with colourful ingredients"></div>
+                    <h3>Fresh &amp; Delicious</h3>
+                    <p>Enjoy freshly prepared, piping hot meals perfectly packaged to satisfy every craving.</p>
+                    <a href="food.html">Browse popular meals <iconify-icon icon="mdi:arrow-right"></iconify-icon></a>
+                </article>
+            </div>
+            <div class="services-trust-strip">
+                <span><iconify-icon icon="mdi:shield-check-outline"></iconify-icon> Secure checkout</span>
+                <span><iconify-icon icon="mdi:map-marker-path"></iconify-icon> Live order tracking</span>
+                <span><iconify-icon icon="mdi:headset"></iconify-icon> Helpful support</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. App Download Section -->
+    <section>
+        <div class="get-app">
+            <div class="mangiona-get-app reveal-on-scroll">
+                <div class="overlay">
+                    <div class="get-app-left">
+                        <h6><iconify-icon icon="mdi:cellphone-badge"></iconify-icon> FOOD AT YOUR FINGERTIPS</h6>
+                        <h1>Order, Track, <br> And Enjoy Your Favourite Meals <br> With The Mangiona App.</h1>
+                        <p>Get The Mangiona App To Browse Menus, Order Meals, Track Delivery, <br> And Pay Securely. All On Your Phone.</p>
+                        <div class="app-feature-pills">
+                            <span><iconify-icon icon="mdi:flash-outline"></iconify-icon> Fast Delivery</span>
+                            <span><iconify-icon icon="mdi:map-marker-radius-outline"></iconify-icon> Live GPS Tracking</span>
+                            <span><iconify-icon icon="mdi:shield-check-outline"></iconify-icon> Secure Payment</span>
+                        </div>
+                        <div class="app-btn-group">
+                            <a href="#" class="app-btn store-badge">
+                                <iconify-icon icon="logos:google-play-icon"></iconify-icon>
+                                <div class="btn-text">
+                                    <span class="sub">GET IT ON</span>
+                                    <span class="main">Google Play</span>
+                                </div>
+                            </a>
+                            <a href="#" class="app-btn store-badge">
+                                <iconify-icon icon="bi:apple" style="color: #0F172A;"></iconify-icon>
+                                <div class="btn-text">
+                                    <span class="sub">DOWNLOAD ON THE</span>
+                                    <span class="main">App Store</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="get-app-right">
+                        <img src="image/Home Page 2 1.png" alt="Mangiona Mobile Application preview">
+                        <div class="app-floating-rating">
+                            <div class="rating-stars">
+                                <iconify-icon icon="mdi:star"></iconify-icon>
+                                <strong>4.9 Rating</strong>
+                            </div>
+                            <span>50k+ Happy Downloads</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Testimonials Section -->
+    <section class="mangiona-testimonials reveal-on-scroll">
+        <div class="testimonials-header">
+            <span class="testimonials-eyebrow">Testimonials</span>
+            <h2 class="testimonials-title">What Our Customers Say</h2>
+            <p class="testimonials-subtitle">Join thousands of happy foodies who rely on Mangiona for their daily cravings.</p>
+        </div>
+        <div class="infinite-scroll-container">
+            <div class="infinite-scroll-track">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                    </div>
+                    <p class="testimonial-quote">"Absolutely incredible service! My food arrived piping hot and perfectly packaged in under 30 minutes. Mangiona is easily the best food delivery app in Lagos."</p>
+                    <div class="user">
+                        <div class="avatar avatar-aisha">A</div>
+                        <div class="user-info">
+                            <h4>Aisha Bello</h4>
+                            <p>Food Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                    </div>
+                    <p class="testimonial-quote">"I love the huge variety of restaurants available. Whether I want local amala or a gourmet pizza, Mangiona always delivers seamlessly."</p>
+                    <div class="user">
+                        <div class="avatar avatar-oluwaseun">O</div>
+                        <div class="user-info">
+                            <h4>Oluwaseun Ayo</h4>
+                            <p>Tech Professional</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star-half-full"></iconify-icon>
+                    </div>
+                    <p class="testimonial-quote">"The customer support is top-notch. I had a tiny issue with my order instruction once, and they resolved it instantly. You have a customer for life!"</p>
+                    <div class="user">
+                        <div class="avatar avatar-chika">C</div>
+                        <div class="user-info">
+                            <h4>Chika Odunze</h4>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicate Testimonials for smooth loop -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                        <iconify-icon icon="mdi:star"></iconify-icon>
+                    </div>
+                    <p class="testimonial-quote">"Absolutely incredible service! My food arrived piping hot and perfectly packaged in under 30 minutes. Mangiona is easily the best food delivery app in Lagos."</p>
+                    <div class="user">
+                        <div class="avatar avatar-aisha">A</div>
+                        <div class="user-info">
+                            <h4>Aisha Bello</h4>
+                            <p>Food Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 9. Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="mangiona-news-letter home-newsletter reveal-on-scroll">
+            <div class="newsletter-ring newsletter-ring-left"></div>
+            <div class="newsletter-ring newsletter-ring-right"></div>
+            <div class="newsletter-content">
+                <span class="newsletter-eyebrow"><iconify-icon icon="mdi:email-fast-outline"></iconify-icon> Deals in your inbox</span>
+                <h1>Never Miss A Bite.</h1>
+                <h4>Sign up for our newsletter to receive exclusive deals, discounts, and <span class="newsletter-discount">₦500 off</span> your first order.</h4>
+                <div class="update-input newsletter-form">
+                    <div class="newsletter-email-icon">
+                        <iconify-icon icon="mdi:email-outline"></iconify-icon>
+                    </div>
+                    <input type="email" aria-label="Email address" placeholder="Enter your email address">
+                    <button class="update-btn" type="button">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Footer Section -->
+    <footer style="position: relative;">
+        <div class="footer" style="overflow: hidden;">
+            <div class="footer-grid">
+                <div class="footer-col address-col">
+                    <div class="mangiona-logo" style="margin-bottom: 20px; background: white; display: inline-block; padding: 10px 15px; border-radius: 10px;">
+                        <img src="image/Logo m 2.png" alt="Mangiona Logo" style="width: 120px; display: block;">
+                    </div>
+                    <p>Flat 5 Block C, Sunshine Apartments,<br>
+                    18 Admiralty Way, Lekki Phase 1,<br>
+                    Lagos State, 106104, Nigeria.</p>
+                    <p style="margin-top: 25px;">Mangionafoods@Gmail.Com</p>
+                    <p style="margin-top: 25px;">+234 812 345 6789</p>
+                </div>
+                <div class="footer-col links-col">
+                    <p class="sub-title">QUICK LINKS</p>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="restaurant.html">Menu</a></li>
+                        <li><a href="about.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col links-col">
+                    <p class="sub-title">COMPANY</p>
+                    <ul>
+                        <li><a href="about.html">Why Mangiona</a></li>
+                        <li><a href="about.html">Partner With Us</a></li>
+                        <li><a href="about.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col links-col">
+                    <p class="sub-title">SUPPORT</p>
+                    <ul>
+                        <li><a href="about.html">FAQs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col app-col" style="display: flex; flex-direction: column; justify-content: flex-end;">
+                    <button class="store-btn google-btn">
+                        <iconify-icon icon="logos:google-play-icon"></iconify-icon>
+                        <div class="source">
+                            <p>GET IT ON</p>
+                            <h3>Google Play</h3>
+                        </div>
+                    </button>
+                    <button class="store-btn apple-btn">
+                        <iconify-icon icon="ic:baseline-apple" style="color: black;"></iconify-icon>
+                        <div class="source">
+                            <p>Download on the</p>
+                            <h3>App Store</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <hr class="footer-hr">
+            <div class="mangiona-policy">
+                <p><a href="terms.html">TERMS &amp; CONDITIONS</a></p>
+                <p><a href="privacy.html">PRIVACY POLICY</a></p>
+            </div>
+            <h1 class="watermark">MANGIONA</h1>
+        </div>
+    </footer>
+
+    <!-- Cart Overlay & Drawer -->
+    <div class="bg-overlay" onclick="closeCart()"></div>
+    <div class="cart-panel">
+        <div class="top-cart-panel">
+            <button class="close-btn" onclick="closeCart()" aria-label="Close Cart"><iconify-icon icon="mdi:close" width="24" height="24"></iconify-icon></button>
+            <h2>My Cart</h2>
+        </div>
+        <div class="cart-notification">
+            <iconify-icon icon="solar:cart-outline" width="24" height="24" class="items"></iconify-icon>
+            You Have <span class="cart-count">0</span> Items In Your Cart
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-items-summary">
+            <p>Total Items</p>
+            <p class="total-cost"></p>
+            <button class="checkout-btn" onclick="checkout()">Check Out</button>
+        </div>
+    </div>
+    <script src="Javascript-files/script.js"></script>
+</body>
+</html>

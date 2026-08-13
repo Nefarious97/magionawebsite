@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mangiona - Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta name="keywords" content="Mangiona, food delivery, order food online, fast food, meals, restaurant">
+    <meta property="og:title" content="Mangiona | Food Delivery">
+    <meta property="og:description" content="Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="image/Logo m 2.png">
+    <title>Mangion-Transactions</title>
+    <link rel="stylesheet" href="CSS-files/transaction.css">
+    <link rel="shortcut icon" href="image/Logo m 2.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+    <link rel='stylesheet' href='CSS-files/style.css?v=2'>
+    <link rel="stylesheet" href="CSS-files/global-sync.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="mangiona-logo">
+                <img src="image/Logo m 2.png" alt="">
+            </div>
+            <div class="mangiona-nav-links" id="mobileNav">
+                <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="restaurant.html" class="nav-link">Restaurant</a></li>
+                <li><a href="transaction.html" class="nav-link active">Transactions</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+              </ul>
+              <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+                <iconify-icon icon="mdi:close" width="26" height="26"></iconify-icon>
+              </button>
+            </div>
+            <div class="mangiona-order">
+                <div class="cart-container">
+                <iconify-icon icon="solar:cart-outline" title="cart" width="24" height="24" onclick="openCart()" class="cart-icon"></iconify-icon>
+                <span class="cart-count2">0</span>
+                </div>
+                <button class="mobile-nav-toggle" id="mobileNavOpen" aria-label="Open menu">
+                    <iconify-icon icon="mdi:menu" width="28" height="28"></iconify-icon>
+                </button>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <a href="sign-up.html"><button class="order-btn" style="display: flex; align-items: center; gap: 4px;"><iconify-icon icon="mdi:user-outline" width="20" height="20"></iconify-icon>Sign Up</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="checkout-page chowdeck-checkout">
+        <div class="checkout-container">
+            <div class="checkout-left">
+                <h2 class="cd-page-title">Checkout</h2>
+                <div class="cd-card delivery-card">
+                    <div class="cd-card-header">
+                        <h3><iconify-icon icon="mdi:location" width="22" height="22"></iconify-icon> Delivery Address</h3>
+                        
+                    </div>
+                    <div class="cd-card-body">
+                        <input type="text" class="delivery-address cd-input" placeholder="Enter delivery address..." style="width: 100%; box-sizing: border-box; font-size: 15px; margin-top: 10px;">
+                    </div>
+                </div>
+                <div class="cd-card payment-card">
+                    <div class="cd-card-header">
+                        <h3><iconify-icon icon="solar:wallet-bold" width="22" height="22"></iconify-icon> Payment Method</h3>
+                    </div>
+                    <div class="cd-card-body">
+                        <div class="payment-grid">
+                            <label class="cd-payment-option wallet-payment-option">
+                                <input type="radio" name="payment" value="wallet">
+                                <div class="cd-payment-box">
+                                    <iconify-icon icon="solar:wallet-money-bold" width="30" height="30"></iconify-icon>
+                                    <span>Mangiona Wallet</span>
+                                    <small class="wallet-option-balance">Balance: ₦0</small>
+                                </div>
+                            </label>
+                            <label class="cd-payment-option">
+                                <input type="radio" name="payment" value="paystack" checked>
+                                <div class="cd-payment-box">
+                                    <img src="image/idSL4BuSLF_1781950617768.svg" alt="Paystack" style="height: 24px;">
+                                </div>
+                            </label>
+                            <label class="cd-payment-option">
+                                <input type="radio" name="payment" value="opay">
+                                <div class="cd-payment-box">
+                                    <img src="image/opay-logo.svg" alt="Opay" style="height: 24px;">
+                                </div>
+                            </label>
+                            <label class="cd-payment-option">
+                                <input type="radio" name="payment" value="card">
+                                <div class="cd-payment-box">
+                                    <iconify-icon icon="logos:mastercard" width="30" height="30"></iconify-icon>
+                                    <span style="font-size: 13px; font-weight: 600; color: #111;">Credit Card</span>
+                                </div>
+                            </label>
+                            <label class="cd-payment-option">
+                                <input type="radio" name="payment" value="cash">
+                                <div class="cd-payment-box">
+                                    <iconify-icon icon="mdi:cash-multiple" width="30" height="30" style="color: #02c27f;"></iconify-icon>
+                                    <span style="font-size: 13px; font-weight: 600; color: #111;">Cash on Delivery</span>
+                                </div>
+                            </label>
+                            <label class="cd-payment-option" id="newCardLabel">
+                                <input type="radio" name="payment" value="new-card" id="newCard">
+                                <div class="cd-payment-box">
+                                    <iconify-icon icon="mdi:plus-circle-outline" width="24" height="24" style="color: #666;"></iconify-icon>
+                                    <span style="font-size: 13px; font-weight: 600; color: #111;">Add New Card</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="wallet-panel" id="walletPanel" hidden>
+                            <div>
+                                <span>Available balance</span>
+                                <strong class="wallet-balance">₦0</strong>
+                            </div>
+                            <button type="button" class="fund-wallet-btn" onclick="fundWallet()">Fund wallet</button>
+                        </div>
+                        <div class="card-form" id="cardForm" style="display: none; margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px;">
+                            <div class="cd-input-group">
+                                <label>Card Holder Name</label>
+                                <input type="text" placeholder="Sylvester">
+                            </div>
+                            <div class="cd-input-group">
+                                <label>Card Number</label>
+                                <input type="text" placeholder="6548 6847 8403 5794">
+                            </div>
+                            <div class="cd-row">
+                                <div class="cd-input-group">
+                                    <label>Expiry Date</label>
+                                    <input type="text" placeholder="09/23">
+                                </div>
+                                <div class="cd-input-group">
+                                    <label>CVV</label>
+                                    <input type="text" placeholder="123">
+                                </div>
+                            </div>
+                            <button class="cd-add-card-btn">Add Card</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="checkout-right">
+                <div class="cd-order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="checkout-cart-items"></div>
+                    <div class="cd-summary-details">
+                        <div class="cd-summary-row">
+                            <span>Subtotal</span>
+                            <span class="subtotal-cost">â‚¦ 0</span>
+                        </div>
+                        <div class="cd-summary-row">
+                            <span>Shipping</span>
+                            <span>â‚¦ 1,200</span>
+                        </div>
+                        <div class="cd-summary-row">
+                            <span>Taxes</span>
+                            <span>â‚¦ 0.00</span>
+                        </div>
+                        <div class="cd-summary-row cd-total-row">
+                            <span>Total</span>
+                            <span class="summary-total">â‚¦ 0</span>
+                        </div>
+                    </div>
+                    <button class="cd-checkout-btn confirm-payment-btn" onclick="confirmPayment()">Confirm Payment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="success-page" style="display: none; padding: 100px 20px; text-align: center; min-height: 50vh;">
+        <div class="cd-success-card" style="background: #fff; max-width: 500px; margin: 0 auto; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #eaeaea;">
+            <div style="width: 80px; height: 80px; background: #e6f7eb; color: #10b981; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <iconify-icon icon="mdi:check-bold" style="font-size: 40px;"></iconify-icon>
+            </div>
+            <h2 style="font-size: 28px; font-weight: 800; color: #111; margin-bottom: 10px;">Payment Successful!</h2>
+            <p style="font-size: 16px; color: #666; margin-bottom: 30px;">Your order has been confirmed and is now being processed.</p>
+            
+            <a href="track.html" style="display: inline-block; background: #047857; color: #fff; text-decoration: none; padding: 15px 30px; border-radius: 999px; font-weight: 700; font-size: 16px; transition: all 0.2s; box-shadow: 0 4px 15px rgba(4, 120, 87,0.2);">Track Your Order</a>
+        </div>
+    </section>
+
+<footer style="position: relative;">
+                <div class="footer" style="overflow: hidden;">
+                <div class="footer-grid">
+                    <div class="footer-col address-col">
+                        <div class="mangiona-logo" style="margin-bottom: 20px; background: white; display: inline-block; padding: 10px 15px; border-radius: 10px;">
+                            <img src="image/Logo m 2.png" alt="Mangiona Logo" style="width: 120px; display: block;">
+                        </div>
+                        <p>Flat 5 Block C, Sunshine Apartments,<br>
+                        18 Admiralty Way, Lekki Phase 1,<br>
+                        Lagos State, 106104, Nigeria.</p>
+                        <p style="margin-top: 25px;">Mangionafoods@Gmail.Com</p>
+                        <p style="margin-top: 25px;">+234 812 345 6789</p>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">QUICK LINKS</p>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="restaurant.html">Menu</a></li>
+                            <li><a href="about.html">Services</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">COMPANY</p>
+                        <ul>
+                            <li><a href="about.html">Why Mangiona</a></li>
+                            <li><a href="about.html">Partner With Us</a></li>
+                            <li><a href="about.html">Services</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">SUPPORT</p>
+                        <ul>
+                            <li><a href="about.html">FAQs</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col app-col" style="display: flex; flex-direction: column; justify-content: flex-end;">
+                        <button class="store-btn google-btn">
+                            <iconify-icon icon="logos:google-play-icon"></iconify-icon>
+                            <div class="source">
+                                <p>GET IT ON</p>
+                                <h3>Google Play</h3>
+                            </div>
+                        </button>
+                        <button class="store-btn apple-btn">
+                            <iconify-icon icon="ic:baseline-apple" style="color: black;"></iconify-icon>
+                            <div class="source">
+                                <p>Download on the</p>
+                                <h3>App Store</h3>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <hr class="footer-hr">
+                <div class="mangiona-policy">
+                    <p><a href="terms.html">TERMS & CONDITIONS</a></p>
+                    <p><a href="privacy.html">PRIVACY POLICY</a></p>
+                </div>
+                <h1 class="watermark">MANGIONA</h1>
+            </div>
+           </footer>
+<div class="bg-overlay" onclick="closeCart()"></div>
+<div class="cart-panel">
+    <div class="top-cart-panel">
+    <button class="close-btn" onclick="closeCart()" aria-label="Close Cart"><iconify-icon icon="mdi:close" width="24" height="24"></iconify-icon></button>
+    <h2>My Cart</h2>
+    </div>
+    <div class="cart-notification">
+         <iconify-icon icon="solar:cart-outline"
+                 width="24" height="24" class="items"></iconify-icon>
+    You Have <span class="cart-count">0</span> Items In Your Cart
+</div>
+    <div class="cart-items">
+    </div>
+    <div class="cart-items-summary">
+        <p>Total Items</p>
+        <p class="total-cost"></p>
+    <button class="checkout-btn" onclick="checkout()">
+        Check Out
+    </button>
+    </div>
+</div>
+    <script src="Javascript-files/script.js"></script>
+</body>
+</html>
+

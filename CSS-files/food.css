@@ -1,0 +1,298 @@
+* { padding: 0;
+    margin: 0;
+    box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Open Sans', 'Manrope', arial, sans-serif;
+    background-color: #fafafa; }
+header { padding: 0px 50px;
+    margin-top: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    width: 100%; }
+nav { display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap; }
+.cart-container { position: relative;
+    display: inline-block; }
+.cart-icon { font-size: 30px;
+    cursor: pointer; }
+.cart-count2 { display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px; }
+.mangiona-nav-links { display: flex;
+    flex-wrap: nowrap; }
+.mangiona-nav-links ul { display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: nowrap; }
+.mangiona-nav-links a { text-decoration: none;
+    color: #1A1A1A;
+    font-weight: 500;
+    font-size: 16px;
+    flex-wrap: nowrap; }
+.mangiona-nav-links .active { color: #047857;
+    font-weight: 700;
+    font-size: 18px; }
+.order-btn { padding: 10px 20px;
+    background-color: #047857;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.3s; }
+.order-btn:hover { background-color: #03664a; }
+.mobile-nav-toggle, .mobile-nav-close { display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px; }
+@media (max-width: 900px) { header { padding: 0px 20px; }
+.mangiona-nav-links { position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        z-index: 1001; }
+.mangiona-nav-links.active { right: 0; }
+.mangiona-nav-links ul { flex-direction: column;
+        gap: 30px;
+        width: 100%; }
+.mobile-nav-toggle, .mobile-nav-close { display: block; }
+.mobile-nav-close { position: absolute;
+        top: 20px;
+        right: 20px; }
+.mangiona-order { display: flex;
+        align-items: center;
+        gap: 15px; }
+ }
+.cd-restaurant-page { padding: 30px 20px 100px;
+    max-width: 1200px;
+    margin: 0 auto; }
+.cd-restaurant-banner { background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.03);
+    border: 1px solid #eaeaea;
+    margin-bottom: 50px; }
+.cd-banner-img { width: 100%;
+    height: 350px;
+    background-color: #fceceb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; }
+.cd-banner-img img { height: 140%;
+    object-fit: contain;
+    transform: translateY(10%); }
+.cd-banner-content { padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff; }
+.cd-banner-info h2 { font-size: 36px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 12px; }
+.cd-banner-meta { display: flex;
+    gap: 20px;
+    color: #555;
+    font-size: 15px;
+    font-weight: 500; }
+.cd-banner-meta span { display: flex;
+    align-items: center;
+    gap: 6px; }
+.cd-banner-meta .icon-loc { color: #047857;
+    font-size: 18px; }
+.cd-banner-stats { display: flex;
+    gap: 15px; }
+.cd-stat-box { background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px; }
+.cd-stat-box iconify-icon { font-size: 24px; }
+.icon-star { color: #f5a623; }
+.icon-loc-red { color: #047857; }
+.icon-time { color: #444; }
+.cd-stat-box p { font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.1; }
+.cd-stat-box span { font-size: 12px;
+    color: #777;
+    text-transform: uppercase;
+    font-weight: 600; }
+@media (max-width: 950px) { .cd-banner-content { flex-direction: column;
+        align-items: flex-start;
+        gap: 25px; }
+.cd-banner-stats { width: 100%;
+        justify-content: space-between; }
+ }
+@media (max-width: 600px) { .cd-banner-img { height: 200px; }
+.cd-banner-stats { flex-direction: column; }
+.cd-stat-box { width: 100%; }
+ }
+.cd-menu-container { display: flex;
+    flex-direction: column;
+    gap: 60px; }
+.cd-section-title { font-size: 24px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eaeaea; }
+.cd-menu-grid { display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px; }
+.cd-menu-card { background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column; }
+.cd-menu-card:hover { transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
+.cd-menu-img { height: 180px;
+    background: #fdfdfd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: 1px solid #f5f5f5; }
+.cd-menu-img img { max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; }
+.cd-menu-info { padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; }
+.cd-menu-info h4 { font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 6px;
+    line-height: 1.3; }
+.cd-menu-desc { font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; }
+.cd-menu-bottom { display: flex;
+    align-items: center;
+    justify-content: space-between; }
+.cd-menu-price { font-size: 18px;
+    font-weight: 800;
+    color: #047857; }
+.cd-menu-actions { display: flex;
+    gap: 5px; }
+.cd-add-btn { background: #047857;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s; }
+.cd-add-btn:hover { background: #03664a; }
+.cd-remove-btn { background: #f5f5f5;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    display: none; }
+.cd-remove-btn:hover { background: #e0e0e0; }
+.cd-menu-actions.in-cart .cd-add-btn { background: #e0e0e0;
+    color: #111; }
+.cd-menu-actions.in-cart .cd-remove-btn { display: block; }
+.quantity { display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 5px; }
+.mangiona-news-letter { display: flex;
+    background-color: #047857;
+    border-radius: 40px;
+    margin: 80px 20px 40px;
+    padding: 0 5%;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden; }
+.news-letter-left { flex: 1;
+    color: white;
+    padding: 60px 0; }
+.news-letter-left h1 { font-size: 45px;
+    font-weight: 800;
+    margin-bottom: 10px; }
+.news-letter-left h1 span, .news-letter-left h3 span { color: #f59e0b; }
+.news-letter-left h3 { font-size: 24px;
+    margin-bottom: 15px; }
+.news-letter-left h4 { font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 30px; }
+.update-input { display: flex;
+    background: white;
+    padding: 8px;
+    border-radius: 999px;
+    max-width: 450px; }
+.update-input input { flex: 1;
+    border: none;
+    padding: 0 20px;
+    outline: none;
+    font-size: 15px;
+    border-radius: 999px 0 0 999px; }
+.update-btn { background: #047857;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer; }
+.news-letter-right { flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-end; }
+.news-letter-right img { height: 400px;
+    object-fit: contain;
+    transform: translateY(20px); }
+@media (max-width: 900px) { .mangiona-news-letter { flex-direction: column;
+        text-align: center;
+        padding: 40px 20px 0; }
+.news-letter-right img { height: 300px;
+        transform: translateY(10px); }
+ }

@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mangiona - Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta name="keywords" content="Mangiona, food delivery, order food online, fast food, meals, restaurant">
+    <meta property="og:title" content="Mangiona | Food Delivery">
+    <meta property="og:description" content="Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="image/Logo m 2.png">
+    <title>Mangiona-Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS-files/restaurant.css">
+    <link rel="shortcut icon" href="image/Logo m 2.png" type="image/x-icon">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+    <link rel='stylesheet' href='CSS-files/style.css?v=2'>
+    <link rel="stylesheet" href="CSS-files/global-sync.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="mangiona-logo">
+                <img src="image/Logo m 2.png" alt="">
+            </div>
+            <div class="mangiona-nav-links" id="mobileNav">
+                <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="restaurant.html" class="nav-link active">Restaurant</a></li>
+                <li><a href="transaction.html" class="nav-link">Transactions</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+              </ul>
+              <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+                <iconify-icon icon="mdi:close" width="26" height="26"></iconify-icon>
+              </button>
+            </div>
+            <div class="mangiona-order">
+                <div class="cart-container">
+                <iconify-icon icon="solar:cart-outline" title="cart" width="24" height="24" onclick="openCart()" class="cart-icon"></iconify-icon>
+                <span class="cart-count2">0</span>
+                </div>
+                <button class="mobile-nav-toggle" id="mobileNavOpen" aria-label="Open menu">
+                    <iconify-icon icon="mdi:menu" width="28" height="28"></iconify-icon>
+                </button>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <a href="sign-up.html"><button class="order-btn" style="display: flex; align-items: center; gap: 4px;"><iconify-icon icon="mdi:user-outline" width="20" height="20"></iconify-icon>Sign Up</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+     <section>
+                <div class="hero chowdeck-hero">
+             <div class="hero-content">
+                <h1>Order from the best<br>restaurants near you</h1>
+                <p>Craving something tasty? We deliver fresh, hot meals fast.</p>
+                <div class="input-box">
+                    <iconify-icon icon="iconamoon:search-thin" class="search-icon"></iconify-icon>
+                    <input type="text" placeholder="Search for food, restaurants, or cuisines...">
+                    <button class="search-btn">Find Food</button>
+                </div>
+             </div>
+        </div>
+     </section>
+      <section>
+        <div class="sub-hero">
+            <div class="mangiona-offer"></div>
+        </div>
+      </section>
+       <section id="restaurant-list">
+        <div class="restaurant-list">
+            <h3>RESTAURANT</h3>
+            <h2>Popular Restaurants</h2>
+            <p>Behind mangiona is a passionate team dedicated to delivering great food experiences every day. 
+                From tech experts to delivery partners. <br> We work together to ensure speed, quality, and satisfaction in every order.
+            </p>
+            <div class="grid chowdeck-grid">
+                <a href="food.html" class="vendor-card">
+                    <div class="card-header">
+                        <img src="image/fresh-delicious-flying-burger-with-beef-cheese-tomato-sauce-lettuce-transparent-background 1.png" alt="">
+                        <div class="rating-pill">⭐ 4.7</div>
+                    </div>
+                    <div class="card-body">
+                        <h5>King's Restaurant</h5>
+                        <div class="icon">
+                           <iconify-icon icon="mdi:location" class="location"></iconify-icon><span class="p">Aba, Abia State</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="food.html" class="vendor-card">
+                    <div class="card-header">
+                        <img src="image/Rectangle 4193.png" alt="">
+                        <div class="rating-pill">⭐ 4.9</div>
+                    </div>
+                    <div class="card-body">
+                        <h5>The Golden Spoon</h5>
+                        <div class="icon">
+                           <iconify-icon icon="mdi:location" class="location"></iconify-icon><span class="p">Lekki, Lagos</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="food.html" class="vendor-card">
+                    <div class="card-header">
+                        <img src="image/image-italian-houses-courtyards-colorful-design-elements-bring-bright-energy 2.png" alt="">
+                        <div class="rating-pill">⭐ 4.8</div>
+                    </div>
+                    <div class="card-body">
+                        <h5>Casa Di Mangiona</h5>
+                        <div class="icon">
+                           <iconify-icon icon="mdi:location" class="location"></iconify-icon><span class="p">Victoria Island, Lagos</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="food.html" class="vendor-card">
+                    <div class="card-header">
+                        <img src="image/Rectangle 4193 (1).png" alt="">
+                        <div class="rating-pill">⭐ 4.5</div>
+                    </div>
+                    <div class="card-body">
+                        <h5>Spicy Basil</h5>
+                        <div class="icon">
+                           <iconify-icon icon="mdi:location" class="location"></iconify-icon><span class="p">Ikeja, Lagos</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="food.html" class="vendor-card">
+                    <div class="card-header">
+                        <img src="image/Rectangle 4199.png" alt="">
+                        <div class="rating-pill">⭐ 4.6</div>
+                    </div>
+                    <div class="card-body">
+                        <h5>Mama's Kitchen</h5>
+                        <div class="icon">
+                           <iconify-icon icon="mdi:location" class="location"></iconify-icon><span class="p">Garki, Abuja</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+       </section>
+       <footer style="position: relative;">
+                <div class="footer" style="overflow: hidden;">
+                <div class="footer-grid">
+                    <div class="footer-col address-col">
+                        <div class="mangiona-logo" style="margin-bottom: 20px; background: white; display: inline-block; padding: 10px 15px; border-radius: 10px;">
+                            <img src="image/Logo m 2.png" alt="Mangiona Logo" style="width: 120px; display: block;">
+                        </div>
+                        <p>Flat 5 Block C, Sunshine Apartments,<br>
+                        18 Admiralty Way, Lekki Phase 1,<br>
+                        Lagos State, 106104, Nigeria.</p>
+                        <p style="margin-top: 25px;">Mangionafoods@Gmail.Com</p>
+                        <p style="margin-top: 25px;">+234 812 345 6789</p>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">QUICK LINKS</p>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="restaurant.html">Menu</a></li>
+                            <li><a href="about.html">Services</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">COMPANY</p>
+                        <ul>
+                            <li><a href="about.html">Why Mangiona</a></li>
+                            <li><a href="about.html">Partner With Us</a></li>
+                            <li><a href="about.html">Services</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col">
+                        <p class="sub-title">SUPPORT</p>
+                        <ul>
+                            <li><a href="about.html">FAQs</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col app-col" style="display: flex; flex-direction: column; justify-content: flex-end;">
+                        <button class="store-btn google-btn">
+                            <iconify-icon icon="logos:google-play-icon"></iconify-icon>
+                            <div class="source">
+                                <p>GET IT ON</p>
+                                <h3>Google Play</h3>
+                            </div>
+                        </button>
+                        <button class="store-btn apple-btn">
+                            <iconify-icon icon="ic:baseline-apple" style="color: black;"></iconify-icon>
+                            <div class="source">
+                                <p>Download on the</p>
+                                <h3>App Store</h3>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <hr class="footer-hr">
+                <div class="mangiona-policy">
+                    <p><a href="terms.html">TERMS & CONDITIONS</a></p>
+                    <p><a href="privacy.html">PRIVACY POLICY</a></p>
+                </div>
+                <h1 class="watermark">MANGIONA</h1>
+            </div>
+           </footer>
+<div class="bg-overlay" onclick="closeCart()"></div>
+<div class="cart-panel">
+    <div class="top-cart-panel">
+    <button class="close-btn" onclick="closeCart()" aria-label="Close Cart"><iconify-icon icon="mdi:close" width="24" height="24"></iconify-icon></button>
+    <h2>My Cart</h2>
+    </div>
+    <div class="cart-notification">
+         <iconify-icon icon="solar:cart-outline"
+                 width="24" height="24" class="items"></iconify-icon>
+    You Have <span class="cart-count">0</span> Items In Your Cart
+</div>
+    <div class="cart-items">
+    </div>
+    <div class="cart-items-summary">
+        <p>Total Items</p>
+        <p class="total-cost"></p>
+    <button class="checkout-btn" onclick="checkout()">
+        Check Out
+    </button>
+    </div>
+</div>
+       <script src="Javascript-files/script.js"></script>
+</body>
+</html>
+

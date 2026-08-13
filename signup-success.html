@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mangiona - Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta name="keywords" content="Mangiona, food delivery, order food online, fast food, meals, restaurant">
+    <meta property="og:title" content="Mangiona | Food Delivery">
+    <meta property="og:description" content="Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="image/Logo m 2.png">
+    <title>Success - Mangiona</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: 'Open Sans', 'Manrope', arial, sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .cd-success-card {
+            background-color: #fff;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            border: 1px solid #eaeaea;
+            animation: slideUp 0.5s ease-out forwards;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .cd-check-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background-color: #e6f7eb;
+            color: #10b981;
+            border-radius: 50%;
+            margin-bottom: 25px;
+        }
+        .cd-check-icon iconify-icon {
+            font-size: 40px;
+        }
+        .cd-success-card h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 15px;
+        }
+        .cd-success-card p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .cd-success-card .username {
+            font-weight: 700;
+            color: #111;
+        }
+        .cd-loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #047857;
+        }
+        .cd-loader iconify-icon {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+    <div class="cd-success-card">
+        <div class="cd-check-icon">
+            <iconify-icon icon="mdi:check-bold"></iconify-icon>
+        </div>
+        <h1>Account Created!</h1>
+        <p>Welcome to Mangiona, <span class="username">Guest</span>! Get ready for fresh, hot meals.</p>
+        <div class="cd-loader">
+            <iconify-icon icon="mdi:loading"></iconify-icon>
+            Redirecting to homepage in <span class="countdown">3</span>s...
+        </div>
+    </div>
+    <script>
+        const user = JSON.parse(localStorage.getItem('user'));
+        const usernameEl = document.querySelector('.username');
+        if (user && user.username) {
+            usernameEl.textContent = user.username;
+        }
+        let seconds = 3;
+        const counter = document.querySelector('.countdown');
+        const interval = setInterval(() => {
+            seconds--;
+            counter.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(interval);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+    </script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+    <script src="Javascript-files/script.js"></script>
+</body>
+</html>

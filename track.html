@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mangiona - Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta name="keywords" content="Mangiona, food delivery, order food online, fast food, meals, restaurant">
+    <meta property="og:title" content="Mangiona | Food Delivery">
+    <meta property="og:description" content="Fast, fresh, and reliable food delivery service. Order your favourite meals online and track your delivery.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="image/Logo m 2.png">
+    <title>Mangiona-track-product</title>
+    
+       <link rel="shortcut icon" href="image/Logo m 2.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+    <script async
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7eCAxVdJ8Yjz4LXKHbUyGnaqJfz6p1bc&callback=initMap">
+</script>
+    <link rel='stylesheet' href='CSS-files/style.css?v=2'>
+    <link rel="stylesheet" href="CSS-files/global-sync.css">
+    <link rel="stylesheet" href="CSS-files/track.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="mangiona-logo">
+                <img src="image/Logo m 2.png" alt="">
+            </div>
+            <div class="mangiona-nav-links" id="mobileNav">
+                <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="restaurant.html" class="nav-link">Restaurant</a></li>
+                <li><a href="transaction.html" class="nav-link">Transactions</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+              </ul>
+              <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+                <iconify-icon icon="mdi:close" width="26" height="26"></iconify-icon>
+              </button>
+            </div>
+            <div class="mangiona-order">
+                <div class="cart-container">
+                <iconify-icon icon="solar:cart-outline" title="cart" width="24" height="24" onclick="openCart()" class="cart-icon"></iconify-icon>
+                <span class="cart-count2">0</span>
+                </div>
+                <button class="mobile-nav-toggle" id="mobileNavOpen" aria-label="Open menu">
+                    <iconify-icon icon="mdi:menu" width="28" height="28"></iconify-icon>
+                </button>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <a href="sign-up.html"><button class="order-btn" style="display: flex; align-items: center; gap: 4px;"><iconify-icon icon="mdi:user-outline" width="20" height="20"></iconify-icon>Sign Up</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="cd-track-page">
+        <div class="cd-track-dashboard">
+            <!-- Header section -->
+            <div class="cd-track-header">
+                <div class="cd-track-title">
+                    <h2>Track Your Order</h2>
+                    <p>Order ID: <span>#162738</span></p>
+                </div>
+                <div class="cd-track-status-pill">
+                    <div class="cd-pulse-dot"></div>
+                    Out for Delivery
+                </div>
+            </div>
+
+            <div class="cd-track-grid">
+                <!-- Left Column: Timeline & Summary -->
+                <div class="cd-track-left">
+                    
+                    <div class="cd-timeline-card">
+                        <h3>Order Status</h3>
+                        <div class="cd-timeline">
+                            <div class="cd-timeline-item completed">
+                                <div class="cd-timeline-icon"><iconify-icon icon="mdi:check-bold"></iconify-icon></div>
+                                <div class="cd-timeline-content">
+                                    <h4>Order Placed</h4>
+                                    <p>11:45 AM, Today</p>
+                                </div>
+                            </div>
+                            <div class="cd-timeline-item completed">
+                                <div class="cd-timeline-icon"><iconify-icon icon="mdi:check-bold"></iconify-icon></div>
+                                <div class="cd-timeline-content">
+                                    <h4>Order Accepted</h4>
+                                    <p>12:00 PM, Today</p>
+                                </div>
+                            </div>
+                            <div class="cd-timeline-item active">
+                                <div class="cd-timeline-icon"><iconify-icon icon="mdi:bike-fast"></iconify-icon></div>
+                                <div class="cd-timeline-content">
+                                    <h4>Out for Delivery</h4>
+                                    <p>Courier is on the way</p>
+                                </div>
+                            </div>
+                            <div class="cd-timeline-item pending">
+                                <div class="cd-timeline-icon"></div>
+                                <div class="cd-timeline-content">
+                                    <h4>Delivered</h4>
+                                    <p>Estimated 12:30 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cd-summary-card">
+                        <h3>Order Details</h3>
+                        <div class="cd-summary-grid">
+                            <div class="cd-summary-item">
+                                <iconify-icon icon="solar:card-outline"></iconify-icon>
+                                <div>
+                                    <label>Payment</label>
+                                    <p>Credit Card</p>
+                                </div>
+                            </div>
+                            <div class="cd-summary-item">
+                                <iconify-icon icon="ion:time-outline"></iconify-icon>
+                                <div>
+                                    <label>Est. Time</label>
+                                    <p>25 Mins</p>
+                                </div>
+                            </div>
+                            <div class="cd-summary-item">
+                                <iconify-icon icon="mdi:receipt-text-outline"></iconify-icon>
+                                <div>
+                                    <label>Transaction ID</label>
+                                    <p>MAA6876643</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Map -->
+                <div class="cd-track-right">
+                    <div class="cd-map-card">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Javascript-files/script.js"></script>
+    <script>
+        function initMap() {
+            const restaurant = { lat: 6.5244, lng: 3.3792 };
+            const customer = { lat: 6.6018, lng: 3.3515 };
+            
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: { lat: (restaurant.lat + customer.lat) / 2, lng: (restaurant.lng + customer.lng) / 2 },
+                disableDefaultUI: true, // cleaner look
+                styles: [
+                    { "featureType": "poi", "stylers": [{ "visibility": "off" }] },
+                    { "featureType": "transit", "stylers": [{ "visibility": "off" }] }
+                ]
+            });
+
+            // Icons
+            const restaurantIcon = {
+                url: 'https://cdn-icons-png.flaticon.com/512/3448/3448650.png',
+                scaledSize: new google.maps.Size(40, 40)
+            };
+            const customerIcon = {
+                url: 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png',
+                scaledSize: new google.maps.Size(35, 35)
+            };
+            const bikeIcon = {
+                url: 'https://cdn-icons-png.flaticon.com/512/3063/3063822.png',
+                scaledSize: new google.maps.Size(40, 40)
+            };
+
+            new google.maps.Marker({ position: restaurant, map: map, icon: restaurantIcon, title: 'Restaurant' });
+            new google.maps.Marker({ position: customer, map: map, icon: customerIcon, title: 'Customer' });
+
+            const polyline = new google.maps.Polyline({
+                path: [restaurant, customer],
+                geodesic: true,
+                strokeColor: '#047857',
+                strokeOpacity: 0.5,
+                strokeWeight: 4,
+                map: map
+            });
+
+            // Live simulation marker
+            const driverMarker = new google.maps.Marker({
+                position: restaurant,
+                map: map,
+                icon: bikeIcon,
+                title: 'Driver',
+                zIndex: 999
+            });
+
+            // Simulate real-time movement
+            let fraction = 0;
+            const speed = 0.0005; // speed of simulation
+
+            function animateDriver() {
+                fraction += speed;
+                if (fraction > 1) {
+                    fraction = 0; // restart or stay at 1. We'll loop it for demo purposes.
+                }
+
+                const currentLat = restaurant.lat + (customer.lat - restaurant.lat) * fraction;
+                const currentLng = restaurant.lng + (customer.lng - restaurant.lng) * fraction;
+
+                driverMarker.setPosition({ lat: currentLat, lng: currentLng });
+                requestAnimationFrame(animateDriver);
+            }
+
+            // Start animation
+            animateDriver();
+        }
+    </script>
+
+</body>
+</html>

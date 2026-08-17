@@ -3,7 +3,7 @@
     box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: open sans, arial; }
-header { padding: 0px 50px;
+header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  padding: 0px 50px;
     margin-top: 30px;
     position: sticky;
     top: 0;
@@ -50,13 +50,13 @@ nav { display: flex;
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     transition: 0.3s;
     white-space: nowrap; }
-.mangiona-nav-links a.active { background-color: #047857;
+.mangiona-nav-links a.active { background-color: #FF6B00;
     color: #fff; }
 .mangiona-order { display: flex;
     gap: 25px;
     align-items: center;
     justify-content: center; }
-.order-btn { background-color: #047857;
+.order-btn { background-color: #FF6B00;
     color: #fff;
     padding: 7px 12px;
     border-radius: 8px;
@@ -64,8 +64,8 @@ nav { display: flex;
     width: auto;
     height: auto;
     font-size: 12px; }
-.order-btn:hover { background-color: #03664a; }
-.order-btn:active { background-color: #024e37; }
+.order-btn:hover { background-color: #E05E00; }
+.order-btn:active { background-color: #C44F00; }
 .nav-username { display: flex !important;
     align-items: center;
     gap: 10px;
@@ -109,7 +109,7 @@ nav { display: flex;
 .confirm-payment-btn { width: 100%;
     margin-top: 18px;
     height: 48px;
-    background: #047857;
+    background: #FF6B00;
     color: #fff;
     border: none; }
 .delivery-section h3 { font-size: 20px;
@@ -126,7 +126,7 @@ nav { display: flex;
   outline: none; }
 .delivery-address.error { border: 1px solid #e74c3c;
         box-shadow: 0 0 0 3px rgba(231,76,60,0.06); }
-.address-btn { background-color: #047857;
+.address-btn { background-color: #FF6B00;
     color: #fff;
     padding: 7px 12px;
     border-radius: 8px;
@@ -226,7 +226,7 @@ nav { display: flex;
 .success-page button { display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #047857;
+    background: #FF6B00;
     color: #fff;
     border: none;
     border-radius: 16px;
@@ -255,7 +255,7 @@ nav { display: flex;
 .expiry { display:flex;
     gap:10px; }
 .expiry div { flex:1; }
-.card-form button { background:#047857;
+.card-form button { background:#FF6B00;
     color:white;
     border:none;
     padding:12px 25px;
@@ -270,8 +270,9 @@ nav { display: flex;
     display:none; }
 .cart-panel { position:fixed;
     top:0;
-    right:-700px;
-    width:550px;
+    right:-480px;
+    width:400px;
+    max-width:90vw;
     height:100vh;
     box-sizing: border-box;
     background:white;
@@ -305,7 +306,7 @@ nav { display: flex;
     color: #fff;
     border: none;
     margin-top: 5px;
-    background-color: #047857; }
+    background-color: #FF6B00; }
 .add-btn2 span { color: #fff; }
 .add-btn2,
 .remove-btn2 { width:31px;
@@ -376,7 +377,7 @@ nav { display: flex;
     margin-top: 10px;
     border: none;
     border-radius: 8px;
-    background: #047857;
+    background: #FF6B00;
     color: #fff;
     font-size: 16px;
     font-weight: 600;
@@ -410,7 +411,7 @@ nav { display: flex;
     border: 1px solid #eaeaea;
     box-shadow: 0 4px 15px rgba(0,0,0,0.02);
     overflow: hidden; }
-.cd-card-header { display: flex;
+.cd-card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 18px 24px;
@@ -422,10 +423,10 @@ nav { display: flex;
     display: flex;
     align-items: center;
     gap: 10px; }
-.cd-card-header h3 iconify-icon { color: #047857; }
+.cd-card-header h3 iconify-icon { color: #FF6B00; }
 .cd-change-btn { background: transparent;
     border: none;
-    color: #047857;
+    color: #FF6B00;
     font-weight: 600;
     font-size: 14px;
     cursor: pointer; }
@@ -456,19 +457,19 @@ nav { display: flex;
     transition: all 0.2s ease;
     background: #fff;
     text-align: center; }
-.cd-payment-option input[type="radio"]:checked ~ .cd-payment-box { border-color: #047857;
+.cd-payment-option input[type="radio"]:checked ~ .cd-payment-box { border-color: #FF6B00;
     background-color: #F0FDF4;
-    box-shadow: 0 0 0 1px #047857; }
+    box-shadow: 0 0 0 1px #FF6B00; }
 .cd-payment-option:hover .cd-payment-box { border-color: #ccc; }
-.wallet-payment-option .cd-payment-box iconify-icon { color: #047857; }
+.wallet-payment-option .cd-payment-box iconify-icon { color: #FF6B00; }
 .wallet-payment-option .cd-payment-box span { color: #111; font-size: 13px; font-weight: 700; }
 .wallet-option-balance { color: #64748b; font-size: 11px; font-weight: 600; }
 .wallet-panel { margin-top: 18px; padding: 18px; border: 1px solid #a7f3d0; border-radius: 14px; background: linear-gradient(135deg, #ecfdf5, #fef3c7); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .wallet-panel[hidden] { display: none; }
 .wallet-panel span { display: block; margin-bottom: 4px; color: #64748b; font-size: 12px; font-weight: 600; }
 .wallet-balance { color: #064e3b; font-size: 22px; }
-.fund-wallet-btn { border: 0; border-radius: 999px; padding: 11px 16px; background: #047857; color: #fff; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
-.fund-wallet-btn:hover { background: #03664a; }
+.fund-wallet-btn { border: 0; border-radius: 999px; padding: 11px 16px; background: #FF6B00; color: #fff; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.fund-wallet-btn:hover { background: #E05E00; }
 .cd-input-group { display: flex;
     flex-direction: column;
     gap: 8px;
@@ -483,7 +484,7 @@ nav { display: flex;
     font-size: 15px;
     outline: none;
     transition: border-color 0.2s; }
-.cd-input-group input:focus { border-color: #047857; }
+.cd-input-group input:focus { border-color: #FF6B00; }
 .cd-row { display: flex;
     gap: 15px; }
 .cd-add-card-btn { width: 100%;
@@ -525,7 +526,7 @@ nav { display: flex;
     font-size: 18px; }
 .cd-checkout-btn { width: 100%;
     padding: 16px;
-    background: #047857;
+    background: #FF6B00;
     color: #fff;
     border: none;
     border-radius: 999px;
@@ -533,7 +534,7 @@ nav { display: flex;
     font-size: 16px;
     cursor: pointer;
     transition: background 0.2s, transform 0.1s; }
-.cd-checkout-btn:hover { background: #03664a; }
+.cd-checkout-btn:hover { background: #E05E00; }
 .cd-checkout-btn:active { transform: scale(0.98); }
 @media (max-width: 900px) { .checkout-container { grid-template-columns: 1fr; }
 .checkout-right { position: static; }

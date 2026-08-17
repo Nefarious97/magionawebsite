@@ -4,7 +4,7 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Open Sans', 'Manrope', arial, sans-serif;
     background-color: #fafafa; }
-header { padding: 0px 50px;
+header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  padding: 0px 50px;
     margin-top: 30px;
     position: sticky;
     top: 0;
@@ -45,11 +45,11 @@ nav { display: flex;
     font-weight: 500;
     font-size: 16px;
     flex-wrap: nowrap; }
-.mangiona-nav-links .active { color: #047857;
+.mangiona-nav-links .active { color: #FF6B00;
     font-weight: 700;
     font-size: 18px; }
 .order-btn { padding: 10px 20px;
-    background-color: #047857;
+    background-color: #FF6B00;
     color: white;
     border: none;
     border-radius: 20px;
@@ -57,13 +57,13 @@ nav { display: flex;
     font-weight: 500;
     font-size: 16px;
     transition: background-color 0.3s; }
-.order-btn:hover { background-color: #03664a; }
+.order-btn:hover { background-color: #E05E00; }
 .mobile-nav-toggle, .mobile-nav-close { display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 5px; }
-@media (max-width: 900px) { header { padding: 0px 20px; }
+@media (max-width: 900px) { header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  padding: 0px 20px; }
 .mangiona-nav-links { position: fixed;
         top: 0;
         right: -100%;
@@ -90,7 +90,7 @@ nav { display: flex;
 .cd-contact-page { padding: 60px 20px 100px;
     background-color: #fafafa;
     min-height: 80vh; }
-.cd-contact-header { text-align: center;
+.cd-contact-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  text-align: center;
     margin-bottom: 50px; }
 .cd-contact-header h1 { font-size: 40px;
     font-weight: 800;
@@ -135,13 +135,13 @@ nav { display: flex;
     transition: all 0.2s ease;
     background-color: #fafafa; }
 .cd-input-group input:focus, 
-.cd-input-group textarea:focus { border-color: #047857;
+.cd-input-group textarea:focus { border-color: #FF6B00;
     background-color: #fff;
     box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.1); }
 .cd-input-group textarea { resize: vertical; }
 .cd-submit-btn { margin-top: 10px;
     padding: 18px;
-    background-color: #047857;
+    background-color: #FF6B00;
     color: #fff;
     border: none;
     border-radius: 999px;
@@ -149,7 +149,7 @@ nav { display: flex;
     font-size: 16px;
     cursor: pointer;
     transition: background 0.2s, transform 0.1s; }
-.cd-submit-btn:hover { background-color: #03664a; }
+.cd-submit-btn:hover { background-color: #E05E00; }
 .cd-submit-btn:active { transform: scale(0.98); }
 .cd-contact-right { display: flex;
     flex-direction: column;
@@ -169,7 +169,7 @@ nav { display: flex;
     height: 48px;
     border-radius: 12px;
     background: #fff5f3;
-    color: #047857;
+    color: #FF6B00;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -205,9 +205,9 @@ nav { display: flex;
     text-decoration: none;
     border: 1px solid #eaeaea;
     transition: all 0.2s ease; }
-.cd-social-icon:hover { background: #047857;
+.cd-social-icon:hover { background: #FF6B00;
     color: #fff;
-    border-color: #047857;
+    border-color: #FF6B00;
     transform: translateY(-2px); }
 @media (max-width: 900px) { .cd-contact-container { grid-template-columns: 1fr; }
 .cd-form-card { padding: 24px; }

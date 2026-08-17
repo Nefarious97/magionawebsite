@@ -16,7 +16,7 @@ body { background-color: #fafafa; }
     margin-bottom: 30px; }
 .cd-auth-logo img { height: 45px;
     object-fit: contain; }
-.cd-auth-header { text-align: center;
+.cd-auth-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  text-align: center;
     margin-bottom: 35px; }
 .cd-auth-header h2 { font-size: 28px;
     font-weight: 800;
@@ -43,7 +43,7 @@ body { background-color: #fafafa; }
     background: #fafafa;
     transition: all 0.2s ease; }
 .cd-input:focus { outline: none;
-    border-color: #047857;
+    border-color: #FF6B00;
     background: #fff;
     box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.1); }
 .cd-password-wrapper { position: relative;
@@ -55,21 +55,21 @@ body { background-color: #fafafa; }
     color: #888;
     cursor: pointer;
     transition: color 0.2s; }
-.cd-password-wrapper .eye-icon:hover { color: #047857; }
+.cd-password-wrapper .eye-icon:hover { color: #FF6B00; }
 .cd-auth-terms { display: flex;
     align-items: center;
     gap: 10px;
     margin-top: 5px; }
 .cd-auth-terms input[type="checkbox"] { width: 18px;
     height: 18px;
-    accent-color: #047857;
+    accent-color: #FF6B00;
     cursor: pointer; }
 .cd-auth-terms label { font-size: 14px;
     color: #555; }
-.cd-auth-terms a { color: #047857;
+.cd-auth-terms a { color: #FF6B00;
     text-decoration: none;
     font-weight: 600; }
-.cd-auth-submit { background: #047857;
+.cd-auth-submit { background: #FF6B00;
     color: #fff;
     border: none;
     padding: 16px;
@@ -79,9 +79,9 @@ body { background-color: #fafafa; }
     cursor: pointer;
     transition: all 0.2s ease;
     margin-top: 10px; }
-.cd-auth-submit:hover { background: #03664a;
+.cd-auth-submit:hover { background: #E05E00;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(4, 120, 87, 0.2); }
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.20); }
 .cd-auth-divider { display: flex;
     align-items: center;
     gap: 15px;
@@ -114,7 +114,7 @@ body { background-color: #fafafa; }
     margin-top: 25px;
     font-size: 15px;
     color: #555; }
-.cd-auth-switch a { color: #047857;
+.cd-auth-switch a { color: #FF6B00;
     font-weight: 700;
     text-decoration: none;
     margin-left: 5px; }

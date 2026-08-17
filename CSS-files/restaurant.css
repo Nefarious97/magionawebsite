@@ -34,14 +34,14 @@
     margin-right: auto;
     border: 1px solid rgba(0,0,0,0.03); }
 .search-icon { font-size: 24px;
-    color: #047857; }
+    color: #FF6B00; }
 .input-box input { outline: none;
     border: none;
     flex: 1;
     font-size: 16px;
     background: transparent;
     font-weight: 500; }
-.search-btn { background-color: #047857;
+.search-btn { background-color: #FF6B00;
     color: #fff;
     border: none;
     padding: 16px 35px;
@@ -50,7 +50,7 @@
     font-size: 16px;
     cursor: pointer;
     transition: transform 0.2s, background-color 0.2s; }
-.search-btn:hover { background-color: #03664a;
+.search-btn:hover { background-color: #E05E00;
     transform: scale(1.05); }
 .sub-hero { width: 100%;
     margin-top: 80px;
@@ -66,7 +66,7 @@
 .restaurant-list { text-align: center;
     margin-top: 100px;
     padding: 0 20px; }
-.restaurant-list h3 { color: #047857;
+.restaurant-list h3 { color: #FF6B00;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -99,8 +99,8 @@
     flex-direction: column;
     text-align: left; }
 .vendor-card:hover { transform: translateY(-6px);
-    box-shadow: 0px 15px 35px rgba(4, 120, 87, 0.15); }
-.card-header { width: 100%;
+    box-shadow: 0px 15px 35px rgba(255, 107, 0, 0.15); }
+.card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  width: 100%;
     height: 200px;
     position: relative; }
 .card-header img { width: 100%;
@@ -130,7 +130,7 @@
     align-items: center;
     gap: 8px;
     color: #666; }
-.icon iconify-icon { color: #047857;
+.icon iconify-icon { color: #FF6B00;
     font-size: 18px; }
 .icon .p { font-size: 14px;
     font-weight: 500; }

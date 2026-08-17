@@ -4,7 +4,7 @@
 .blog-hero .hero { align-items: center;
     gap: 80px; }
 .blog-hero .hero-left { max-width: 560px; }
-.section-label { color: #047857;
+.section-label { color: #FF6B00;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -47,7 +47,7 @@
     padding: 8px 12px;
     border-radius: 999px;
     background: #fef0ec;
-    color: #047857;
+    color: #FF6B00;
     font-size: 12px;
     font-weight: 700;
     margin-bottom: 14px; }
@@ -64,7 +64,7 @@
 .read-more { display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #047857;
+    color: #FF6B00;
     font-weight: 700; }
 .blog-sidebar { flex: 1;
     display: flex;
@@ -86,7 +86,7 @@
     border: 1px solid #e6e6e6;
     font-size: 14px; }
 .search-group button { border: none;
-    background: #047857;
+    background: #FF6B00;
     color: #fff;
     padding: 0 16px;
     border-radius: 14px;
@@ -104,7 +104,7 @@
     color: #5d5d5d;
     background: #faf8f6;
     font-size: 14px; }
-.categories-list li.active { background: #047857;
+.categories-list li.active { background: #FF6B00;
     color: #fff; }
 .recent-item { display: flex;
     gap: 14px;
@@ -128,7 +128,7 @@
     border: 1px solid #e6e6e6;
     font-size: 14px; }
 .subscribe button { border: none;
-    background: #047857;
+    background: #FF6B00;
     color: #fff;
     padding: 14px 16px;
     border-radius: 14px;
@@ -149,7 +149,7 @@
     min-width: 46px;
     cursor: pointer; }
 .page-btn.active,
-.page-btn:hover { background: #047857;
+.page-btn:hover { background: #FF6B00;
     color: #fff;
     border-color: transparent; }
 @media (max-width: 1080px) { .blog-main { flex-direction: column;

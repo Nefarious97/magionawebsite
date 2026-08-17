@@ -26,9 +26,9 @@ function renderSharedFooter() {
           <a class="footer-logo" href="index.html" aria-label="Mangiona home"><img src="image/Logo m 2.png" alt="Mangiona"></a>
           <p class="footer-summary">Fresh meals from restaurants you love, delivered quickly and reliably across Lagos.</p>
           <address class="footer-contact">
-            <a href="https://maps.google.com/?q=18+Admiralty+Way+Lekki+Phase+1+Lagos" target="_blank" rel="noopener noreferrer"><iconify-icon icon="mdi:map-marker-outline"></iconify-icon><span>18 Admiralty Way, Lekki Phase 1,<br>Lagos, Nigeria</span></a>
-            <a href="mailto:mangionafoods@gmail.com"><iconify-icon icon="mdi:email-outline"></iconify-icon><span>mangionafoods@gmail.com</span></a>
-            <a href="tel:+2348123456789"><iconify-icon icon="mdi:phone-outline"></iconify-icon><span>+234 812 345 6789</span></a>
+            <a href="https://maps.google.com/?q=11+Sampson+Ubani+Street+Aba+Abia+State" target="_blank" rel="noopener noreferrer"><iconify-icon icon="mdi:map-marker-outline"></iconify-icon><span>11 Sampson Ubani Street, Aba,<br>Abia State, Nigeria</span></a>
+            <a href="mailto:mangiona@gmail.com"><iconify-icon icon="mdi:email-outline"></iconify-icon><span>mangiona@gmail.com</span></a>
+            <a href="tel:09021449487"><iconify-icon icon="mdi:phone-outline"></iconify-icon><span>09021449487</span></a>
           </address>
         </div>
         <nav class="footer-col links-col" aria-label="Explore"><p class="sub-title">Explore</p><ul><li><a href="index.html">Home</a></li><li><a href="restaurant.html">Restaurants</a></li><li><a href="food.html">Popular meals</a></li><li><a href="track.html">Track an order</a></li></ul></nav>
@@ -344,6 +344,7 @@ function checkout() {
 }
 
 function createCartRow(item) {
+    const row = document.createElement('div');
     row.className = 'cart-flex cart-row';
     row.dataset.id = item.id;
 

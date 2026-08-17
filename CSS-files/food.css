@@ -4,7 +4,7 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Open Sans', 'Manrope', arial, sans-serif;
     background-color: #fafafa; }
-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  padding: 8px 24px;
+header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  padding: 4px 20px;
     margin-top: 30px;
     position: sticky;
     top: 0;

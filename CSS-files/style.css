@@ -35,7 +35,7 @@ body { font-family: 'Manrope', sans-serif;
     overflow-x: clip; }
 a { text-decoration: none; }
 header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  
-    padding: 8px 24px;
+    padding: 4px 20px;
     margin: 20px auto;
     position: sticky;
     top: 20px;
@@ -431,7 +431,7 @@ nav { display: flex;
     gap: 15px;
     margin-bottom: 40px;
     flex-wrap: wrap; }
-.tab-btn { padding: 8px 24px;
+.tab-btn { padding: 4px 20px;
     border-radius: 20px;
     border: 1px solid #ddd;
     background: #fff;
@@ -521,7 +521,7 @@ nav { display: flex;
 @media (max-width: 580px) { .top-restaurants { padding-top: 54px; padding-bottom: 54px; margin: 40px 0; } .top-restaurant-grid { grid-template-columns: 1fr; } .top-restaurant-grid .vendor-card:last-child { grid-column: auto; max-width: none; } .top-restaurant-grid .card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  height: 190px; } .restaurant-meta { align-items: flex-start; flex-direction: column; } }
 
 /* Home: popular meals */
-.popular-meals { margin: 80px auto; }
+.popular-meals { margin: 40px auto; }
 .popular-meals-heading { max-width: 650px; margin: 0 auto 38px; text-align: center; }
 .popular-meals-heading h2 { margin: 12px 0; color: #171717; font-size: clamp(32px, 4vw, 46px); line-height: 1.1; }
 .popular-meals-heading > p { color: #676767; font-size: 16px; line-height: 1.7; }
@@ -1121,7 +1121,7 @@ footer { position: relative; }
  }
 img { max-width: 100%; }
 @media (max-width: 1180px) { header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  
-    padding: 8px 24px;
+    padding: 4px 20px;
     margin: 20px auto;
     position: sticky;
     top: 20px;
@@ -1319,7 +1319,7 @@ input,
     gap: 15px;
     margin-bottom: 40px;
     flex-wrap: wrap; }
-.tab-btn { padding: 8px 24px;
+.tab-btn { padding: 4px 20px;
     border-radius: 20px;
     border: 1px solid #ddd;
     background: #fff;
@@ -1401,7 +1401,7 @@ input,
     gap: 15px;
     margin-bottom: 40px;
     flex-wrap: wrap; }
-.tab-btn { padding: 8px 24px;
+.tab-btn { padding: 4px 20px;
     border-radius: 20px;
     border: 1px solid #ddd;
     background: #fff;
@@ -1514,7 +1514,7 @@ input,
     gap: 15px;
     margin-bottom: 40px;
     flex-wrap: wrap; }
-.tab-btn { padding: 8px 24px;
+.tab-btn { padding: 4px 20px;
     border-radius: 20px;
     border: 1px solid #ddd;
     background: #fff;
@@ -1600,7 +1600,7 @@ input,
     gap: 15px;
     margin-bottom: 40px;
     flex-wrap: wrap; }
-.tab-btn { padding: 8px 24px;
+.tab-btn { padding: 4px 20px;
     border-radius: 20px;
     border: 1px solid #ddd;
     background: #fff;

@@ -2,7 +2,7 @@
 .chowdeck-hero { display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 30px;
     padding: 80px 10%;
     text-align: center;
     background: linear-gradient(135deg, rgba(4, 120, 87,0.05) 0%, rgba(253,199,41,0.05) 100%);
@@ -53,7 +53,7 @@
 .search-btn:hover { background-color: #E05E00;
     transform: scale(1.05); }
 .sub-hero { width: 100%;
-    margin-top: 80px;
+    margin-top: 40px;
     padding: 0 20px; }
 .mangiona-offer { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../image/restaurant_offer_banner.png");
     width: 100%;
@@ -85,7 +85,7 @@
 .chowdeck-grid { display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
-    margin-top: 60px;
+    margin-top: 30px;
     padding-bottom: 80px; }
 .vendor-card { text-decoration: none;
     color: inherit;

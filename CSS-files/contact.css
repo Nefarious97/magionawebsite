@@ -4,7 +4,7 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Open Sans', 'Manrope', arial, sans-serif;
     background-color: #fafafa; }
-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  padding: 0px 50px;
+header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  padding: 8px 24px;
     margin-top: 30px;
     position: sticky;
     top: 0;
@@ -129,7 +129,7 @@ nav { display: flex;
 .cd-input-group textarea { padding: 16px;
     border: 1px solid #eaeaea;
     border-radius: 12px;
-    font-size: 15px;
+    font-size: 13.5px;
     font-family: inherit;
     outline: none;
     transition: all 0.2s ease;

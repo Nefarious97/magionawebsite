@@ -15,7 +15,7 @@
     color: #1c1c1c;
     margin-bottom: 20px; }
 .hero-copy { color: #5c5c5c;
-    font-size: 15px;
+    font-size: 13.5px;
     line-height: 1.8;
     max-width: 540px;
     margin-bottom: 30px; }
@@ -44,7 +44,7 @@
     object-fit: cover; }
 .blog-card-body { padding: 24px; }
 .blog-card-body .tag { display: inline-flex;
-    padding: 8px 12px;
+    padding: 5px 12px;
     border-radius: 999px;
     background: #fef0ec;
     color: #FF6B00;
@@ -167,6 +167,6 @@
  }
 @media (max-width: 520px) { .hero-copy,
     .blog-card-body h3,
-    .section-label { font-size: 15px; }
+    .section-label { font-size: 13.5px; }
 .hero-copy { max-width: 100%; }
  }

@@ -22,7 +22,7 @@ body { background-color: #fafafa; }
     font-weight: 800;
     color: #111;
     margin-bottom: 8px; }
-.cd-auth-header p { font-size: 15px;
+.cd-auth-header p { font-size: 13.5px;
     color: #666; }
 .cd-auth-form { display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@ body { background-color: #fafafa; }
     padding: 15px 18px;
     border: 1px solid #ddd;
     border-radius: 12px;
-    font-size: 15px;
+    font-size: 13.5px;
     font-family: inherit;
     background: #fafafa;
     transition: all 0.2s ease; }
@@ -112,7 +112,7 @@ body { background-color: #fafafa; }
 .cd-social-btn iconify-icon { font-size: 20px; }
 .cd-auth-switch { text-align: center;
     margin-top: 25px;
-    font-size: 15px;
+    font-size: 13.5px;
     color: #555; }
 .cd-auth-switch a { color: #FF6B00;
     font-weight: 700;

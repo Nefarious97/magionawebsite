@@ -35,7 +35,7 @@ body { font-family: 'Manrope', sans-serif;
     overflow-x: clip; }
 a { text-decoration: none; }
 header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  
-    padding: 12px 30px;
+    padding: 8px 24px;
     margin: 20px auto;
     position: sticky;
     top: 20px;
@@ -72,24 +72,24 @@ nav { display: flex;
     color: white; }
 .mangiona-logo { display: flex;
     align-items: center;
-    height: 42px;
+    height: 32px;
     width: auto; }
 .mangiona-logo img { height: 100%;
     width: auto;
-    max-height: 42px;
+    max-height: 32px;
     object-fit: contain;
     margin-left: 0; }
 .mangiona-nav-links ul { list-style: none;
     display: flex;
     gap: 5px; }
 .mangiona-nav-links li { display: inline-block;
-    padding: 10px 15px; }
+    padding: 2px 4px; }
 .mangiona-nav-links a { text-decoration: none;
     color: black;
     background-color: #fff;
-    padding: 8px 12px;
+    padding: 5px 12px;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 13.5px;
     font-weight: 500;
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     transition: 0.3s;
@@ -228,7 +228,7 @@ nav { display: flex;
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 15px;
+    padding: 2px 4px;
     border-radius: 20px;
     z-index: 3;
     margin-top: 170px;
@@ -279,7 +279,7 @@ nav { display: flex;
     color: #1c1c1c;
     margin-bottom: 20px; }
 .hero-copy { color: #5c5c5c;
-    font-size: 15px;
+    font-size: 13.5px;
     line-height: 1.8;
     max-width: 540px;
     margin-bottom: 30px; }
@@ -308,7 +308,7 @@ nav { display: flex;
     object-fit: cover; }
 .blog-card-body { padding: 24px; }
 .blog-card-body .tag { display: inline-flex;
-    padding: 8px 12px;
+    padding: 5px 12px;
     border-radius: 999px;
     background: #fef0ec;
     color: #FF6B00;
@@ -567,7 +567,7 @@ nav { display: flex;
  }
 @media (max-width: 520px) { .hero-copy,
     .blog-card-body h3,
-    .section-label { font-size: 15px; }
+    .section-label { font-size: 13.5px; }
 .hero-copy { max-width: 100%; }
  }
 .mangiona-service { position: relative;
@@ -738,7 +738,7 @@ nav { display: flex;
 .card-icon p { color: #111;
     font-weight: 600;
     margin-top: 18px;
-    font-size: 15px; }
+    font-size: 13.5px; }
 .mangiona-reveiw { padding: 35px 20px;
   display: flex;
   align-items: center;
@@ -969,7 +969,7 @@ footer { position: relative; }
 .store-btn { display: flex;
     align-items: center;
     width: 160px;
-    padding: 8px 12px;
+    padding: 5px 12px;
     gap: 10px;
     border-radius: 8px;
     border: none;
@@ -1048,7 +1048,7 @@ footer { position: relative; }
     align-items: center;
     margin-top: 40px;
     margin-left: 20px; }
-.add-btn2 { font-size: 15px;
+.add-btn2 { font-size: 13.5px;
     color: #fff;
     border: none;
     margin-top: 5px;
@@ -1061,10 +1061,10 @@ footer { position: relative; }
     cursor:pointer; }
 .remove-btn2 { display:none;
     margin-top: 5px;
-    font-size: 15px;
+    font-size: 13.5px;
     color: gray;
     border: 1px solid gray; }
-.cart-items h2 { font-size: 15px;
+.cart-items h2 { font-size: 13.5px;
     font-weight: 600;
     margin-top: 20px; }
 .cart-items { flex: 1;
@@ -1083,7 +1083,7 @@ footer { position: relative; }
     align-items: center;
     gap: 20px; }
 .quantity { font-weight: 500;
-    font-size: 15px; }
+    font-size: 13.5px; }
 .price { margin-top: 20px;
     font-size: 13px; }
 .top-cart-panel { display: flex;
@@ -1121,7 +1121,7 @@ footer { position: relative; }
  }
 img { max-width: 100%; }
 @media (max-width: 1180px) { header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  
-    padding: 12px 30px;
+    padding: 8px 24px;
     margin: 20px auto;
     position: sticky;
     top: 20px;

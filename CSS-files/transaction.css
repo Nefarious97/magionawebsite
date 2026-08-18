@@ -552,7 +552,7 @@ nav { display: flex;
 .home-delivery-visual .courier-badge,
 .badge-1,
 .courier-badge {
-    top: -28px !important;
+    top: -48px !important;
     left: -40px !important;
     right: auto !important;
     bottom: auto !important;
@@ -575,7 +575,7 @@ nav { display: flex;
     .home-delivery-visual .courier-badge,
     .badge-1,
     .courier-badge {
-        top: -24px !important;
+        top: -40px !important;
         left: -20px !important;
         right: auto !important;
         bottom: auto !important;
@@ -604,7 +604,7 @@ nav { display: flex;
     .home-delivery-visual .courier-badge,
     .badge-1,
     .courier-badge {
-        top: -25px !important;
+        top: -38px !important;
         left: -15px !important;
         right: auto !important;
         bottom: auto !important;

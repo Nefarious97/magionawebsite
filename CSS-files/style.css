@@ -1997,7 +1997,7 @@ h2 {
 }
 
 .courier-badge {
-    top: -22px !important;
+    top: -48px !important;
     left: -25px !important;
     right: auto !important;
     z-index: 10 !important;
@@ -2017,7 +2017,7 @@ h2 {
         margin: 35px auto 30px !important;
     }
     .courier-badge {
-        top: -20px !important;
+        top: -38px !important;
         left: -15px !important;
         right: auto !important;
         padding: 8px 12px !important;
@@ -2038,7 +2038,7 @@ h2 {
 .home-delivery-visual .courier-badge,
 .badge-1,
 .courier-badge {
-    top: -28px !important;
+    top: -48px !important;
     left: -40px !important;
     right: auto !important;
     bottom: auto !important;
@@ -2061,7 +2061,7 @@ h2 {
     .home-delivery-visual .courier-badge,
     .badge-1,
     .courier-badge {
-        top: -24px !important;
+        top: -40px !important;
         left: -20px !important;
         right: auto !important;
         bottom: auto !important;
@@ -2090,7 +2090,7 @@ h2 {
     .home-delivery-visual .courier-badge,
     .badge-1,
     .courier-badge {
-        top: -25px !important;
+        top: -38px !important;
         left: -15px !important;
         right: auto !important;
         bottom: auto !important;

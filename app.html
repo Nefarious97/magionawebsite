@@ -181,30 +181,7 @@
 </head>
 <body>
 
-    <!-- Top Screen Selector Navigation Bar (Lucide Icons) -->
-    <div class="top-demo-nav">
-        <button class="demo-nav-btn active" id="demoBtnHome" onclick="switchTab('Home')">
-            <iconify-icon icon="lucide:home"></iconify-icon> Home
-        </button>
-        <button class="demo-nav-btn" id="demoBtnRestaurants" onclick="switchTab('Restaurants')">
-            <iconify-icon icon="lucide:store"></iconify-icon> Restaurants
-        </button>
-        <button class="demo-nav-btn" id="demoBtnMenu" onclick="switchTab('Menu')">
-            <iconify-icon icon="lucide:utensils"></iconify-icon> Menu
-        </button>
-        <button class="demo-nav-btn" id="demoBtnCart" onclick="switchTab('Cart')">
-            <iconify-icon icon="lucide:shopping-bag"></iconify-icon> Cart (2)
-        </button>
-        <button class="demo-nav-btn" id="demoBtnCheckout" onclick="switchTab('Checkout')">
-            <iconify-icon icon="lucide:credit-card"></iconify-icon> Checkout
-        </button>
-        <button class="demo-nav-btn" id="demoBtnTracking" onclick="switchTab('Tracking')">
-            <iconify-icon icon="lucide:bike"></iconify-icon> Live Tracking
-        </button>
-        <button class="demo-nav-btn" id="demoBtnProfile" onclick="switchTab('Profile')">
-            <iconify-icon icon="lucide:user"></iconify-icon> Profile
-        </button>
-    </div>
+
 
     <!-- Phone Shell -->
     <div class="phone-shell">
@@ -831,10 +808,14 @@
             document.getElementById('totalDisplay').textContent = '₦' + total.toLocaleString('en-US') + '.00';
 
             // Update Badges
-            document.getElementById('cartBadgeCount').textContent = totalItems;
-            document.getElementById('demoBtnCart').innerHTML = `<iconify-icon icon="lucide:shopping-bag"></iconify-icon> Cart (${totalItems})`;
-            document.getElementById('checkoutPayTotal').textContent = '₦' + total.toLocaleString('en-US') + '.00';
-            document.getElementById('modalTotalPaid').textContent = '₦' + total.toLocaleString('en-US') + '.00';
+            const cartBadge = document.getElementById('cartBadgeCount');
+            if (cartBadge) cartBadge.textContent = totalItems;
+            const demoBtnCart = document.getElementById('demoBtnCart');
+            if (demoBtnCart) demoBtnCart.innerHTML = `<iconify-icon icon="lucide:shopping-bag"></iconify-icon> Cart (${totalItems})`;
+            const payTotal = document.getElementById('checkoutPayTotal');
+            if (payTotal) payTotal.textContent = '₦' + total.toLocaleString('en-US') + '.00';
+            const modalPaid = document.getElementById('modalTotalPaid');
+            if (modalPaid) modalPaid.textContent = '₦' + total.toLocaleString('en-US') + '.00';
         }
 
         function triggerOrderSuccess() {

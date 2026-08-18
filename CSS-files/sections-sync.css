@@ -204,10 +204,10 @@
 .home-delivery-visual .floating-badge strong,.home-delivery-visual .floating-badge span { display: block; }
 .home-delivery-visual .floating-badge strong { color: #171717; font-size: 12px; line-height: 1.2; }
 .home-delivery-visual .floating-badge span { margin-top: 3px; color: #6c6c6c; font-size: 10px; }
-.courier-badge { top: 7%; right: 0px; animation: floatAnimReverse 3s ease-in-out infinite; }
+.courier-badge { top: -22px !important; left: -25px !important; right: auto !important; animation: floatAnimReverse 3s ease-in-out infinite; }
 .courier-badge > img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
 .courier-badge iconify-icon { color: #f59e0b; vertical-align: middle; }
-.delivery-time-badge { bottom: 9%; left: 0px; animation: floatAnim 3.5s ease-in-out infinite; }
+.delivery-time-badge { bottom: -22px !important; right: -25px !important; left: auto !important; animation: floatAnim 3.5s ease-in-out infinite; }
 .delivery-time-badge span { color: #FF6B00 !important; font-weight: 800; }
 .delivery-badge-icon { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 50%; background: #ecfdf5; color: #047857; }
 .delivery-badge-icon iconify-icon { font-size: 20px; }
@@ -655,5 +655,48 @@
         min-width: 280px !important;
         max-width: 320px !important;
         padding: 24px 20px !important;
+    }
+}
+
+
+/* Hero Badge Offset Fix - Keep clear of courier driver image */
+.home-delivery-visual {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+.courier-badge {
+    top: -22px !important;
+    left: -25px !important;
+    right: auto !important;
+    z-index: 10 !important;
+}
+
+.delivery-time-badge {
+    bottom: -22px !important;
+    right: -25px !important;
+    left: auto !important;
+    z-index: 10 !important;
+}
+
+@media (max-width: 768px) {
+    .home-delivery-visual {
+        width: min(300px, 80vw) !important;
+        height: 320px !important;
+        margin: 35px auto 30px !important;
+    }
+    .courier-badge {
+        top: -20px !important;
+        left: -15px !important;
+        right: auto !important;
+        padding: 8px 12px !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+    }
+    .delivery-time-badge {
+        bottom: -20px !important;
+        right: -15px !important;
+        left: auto !important;
+        padding: 8px 12px !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
     }
 }

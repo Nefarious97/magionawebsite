@@ -955,17 +955,17 @@
             const targetTabBtn = document.getElementById('tabBtn' + tabName);
             if (targetTabBtn) targetTabBtn.classList.add('active');
 
-        // Automatic Onboarding Loading Script -> Fades out & displays Home Page
+        // Automatic Onboarding Loading Script -> 5 Seconds Smooth Progress Fill
         let splashProgress = 0;
         const splashInterval = setInterval(() => {
-            splashProgress += 5;
+            splashProgress += 1;
             const fill = document.getElementById('splashLoaderFill');
             if (fill) fill.style.width = splashProgress + '%';
             if (splashProgress >= 100) {
                 clearInterval(splashInterval);
-                setTimeout(hideSplashScreen, 200);
+                setTimeout(hideSplashScreen, 300);
             }
-        }, 40);
+        }, 50);
 
         function hideSplashScreen() {
             const splash = document.getElementById('appSplashScreen');

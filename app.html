@@ -290,10 +290,6 @@
             <div class="splash-loader-bar">
                 <div class="splash-loader-fill" id="splashLoaderFill"></div>
             </div>
-
-            <button class="splash-get-started-btn" onclick="hideSplashScreen()">
-                Get Started <iconify-icon icon="lucide:arrow-right"></iconify-icon>
-            </button>
         </div>
 
         <!-- Custom In-App Toast Notification (No Browser "localhost says" popup) -->
@@ -948,21 +944,26 @@
             const targetTabBtn = document.getElementById('tabBtn' + tabName);
             if (targetTabBtn) targetTabBtn.classList.add('active');
 
-        // Onboarding Loading Progress Script
+        // Automatic Onboarding Loading Script -> Fades out & displays Home Page
         let splashProgress = 0;
         const splashInterval = setInterval(() => {
-            splashProgress += 4;
+            splashProgress += 5;
             const fill = document.getElementById('splashLoaderFill');
             if (fill) fill.style.width = splashProgress + '%';
             if (splashProgress >= 100) {
                 clearInterval(splashInterval);
-                setTimeout(hideSplashScreen, 350);
+                setTimeout(hideSplashScreen, 200);
             }
-        }, 50);
+        }, 40);
 
         function hideSplashScreen() {
             const splash = document.getElementById('appSplashScreen');
-            if (splash) splash.classList.add('hidden');
+            if (splash) {
+                splash.classList.add('hidden');
+                setTimeout(() => {
+                    splash.style.display = 'none';
+                }, 600);
+            }
         }
     </script>
 </body>

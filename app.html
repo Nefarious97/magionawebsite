@@ -534,8 +534,8 @@
 
             <!-- PAGE 4: CART SCREEN -->
             <div id="pageCart" class="tab-page">
-                <!-- Header Gradient Banner -->
-                <div style="background: linear-gradient(135deg, #FF6B00 0%, #047857 100%); border-radius: 22px; padding: 20px; color: white; margin-bottom: 16px; box-shadow: 0 8px 20px rgba(255, 107, 0, 0.25); display: flex; justify-content: space-between; align-items: center;">
+                <!-- Header Solid Banner -->
+                <div style="background: #FF6B00; border-radius: 22px; padding: 20px; color: white; margin-bottom: 16px; box-shadow: 0 8px 20px rgba(255, 107, 0, 0.25); display: flex; justify-content: space-between; align-items: center;">
                     <div>
                         <iconify-icon icon="lucide:shopping-bag" style="font-size: 28px; margin-bottom: 4px;"></iconify-icon>
                         <div style="font-size: 24px; font-weight: 600;">Your Cart</div>
@@ -546,8 +546,16 @@
                     </button>
                 </div>
 
+                <!-- Empty Cart State Placeholder -->
+                <div id="emptyCartState" style="display: none; background: #FFFFFF; border-radius: 20px; padding: 30px 20px; text-align: center; margin-bottom: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+                    <div style="font-size: 40px; margin-bottom: 8px;">🛒</div>
+                    <div style="font-size: 16px; font-weight: 600; color: #0F172A;">Your cart is empty</div>
+                    <div style="font-size: 12px; color: #64748B; margin-top: 4px; margin-bottom: 16px;">Looks like you haven't added any delicious meals yet.</div>
+                    <button style="background: #FF6B00; color: white; border: none; padding: 10px 20px; border-radius: 12px; font-size: 13px; font-weight: 600; cursor: pointer;" onclick="switchTab('Menu')">Browse Menu</button>
+                </div>
+
                 <!-- Cart Items List -->
-                <div style="background: #FFFFFF; border-radius: 20px; padding: 14px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+                <div id="cartRowItem1" style="background: #FFFFFF; border-radius: 20px; padding: 14px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
                     <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=120" style="width: 54px; height: 54px; border-radius: 14px; object-fit: cover;">
                     <div style="flex: 1; margin: 0 12px;">
                         <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Special Jollof Rice</div>
@@ -560,7 +568,7 @@
                     </div>
                 </div>
 
-                <div style="background: #FFFFFF; border-radius: 20px; padding: 14px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+                <div id="cartRowItem2" style="background: #FFFFFF; border-radius: 20px; padding: 14px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
                     <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=120" style="width: 54px; height: 54px; border-radius: 14px; object-fit: cover;">
                     <div style="flex: 1; margin: 0 12px;">
                         <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Chilled Malt Drink</div>
@@ -896,20 +904,34 @@
         function recalculateCart() {
             const qty1 = cartState.item1.qty;
             const qty2 = cartState.item2.qty;
+            const totalItems = qty1 + qty2;
 
-            document.getElementById('qtyDisplay1').textContent = qty1;
-            document.getElementById('qtyDisplay2').textContent = qty2;
+            const row1 = document.getElementById('cartRowItem1');
+            const row2 = document.getElementById('cartRowItem2');
+            const emptyState = document.getElementById('emptyCartState');
+
+            if (row1) row1.style.display = qty1 > 0 ? 'flex' : 'none';
+            if (row2) row2.style.display = qty2 > 0 ? 'flex' : 'none';
+            if (emptyState) emptyState.style.display = totalItems === 0 ? 'block' : 'none';
+
+            const qty1Elem = document.getElementById('qtyDisplay1');
+            if (qty1Elem) qty1Elem.textContent = qty1;
+            const qty2Elem = document.getElementById('qtyDisplay2');
+            if (qty2Elem) qty2Elem.textContent = qty2;
 
             const subtotal = (qty1 * cartState.item1.price) + (qty2 * cartState.item2.price);
             const deliveryFee = subtotal > 0 ? 1000 : 0;
             const serviceFee = subtotal > 0 ? 500 : 0;
             const total = subtotal + deliveryFee + serviceFee;
-            const totalItems = qty1 + qty2;
 
-            document.getElementById('subtotalDisplay').textContent = '₦' + subtotal.toLocaleString('en-US') + '.00';
-            document.getElementById('deliveryFeeDisplay').textContent = '₦' + deliveryFee.toLocaleString('en-US') + '.00';
-            document.getElementById('serviceFeeDisplay').textContent = '₦' + serviceFee.toLocaleString('en-US') + '.00';
-            document.getElementById('totalDisplay').textContent = '₦' + total.toLocaleString('en-US') + '.00';
+            const subtotalElem = document.getElementById('subtotalDisplay');
+            if (subtotalElem) subtotalElem.textContent = '₦' + subtotal.toLocaleString('en-US') + '.00';
+            const deliveryElem = document.getElementById('deliveryFeeDisplay');
+            if (deliveryElem) deliveryElem.textContent = '₦' + deliveryFee.toLocaleString('en-US') + '.00';
+            const serviceElem = document.getElementById('serviceFeeDisplay');
+            if (serviceElem) serviceElem.textContent = '₦' + serviceFee.toLocaleString('en-US') + '.00';
+            const totalElem = document.getElementById('totalDisplay');
+            if (totalElem) totalElem.textContent = '₦' + total.toLocaleString('en-US') + '.00';
 
             // Update Badges
             const cartBadge = document.getElementById('cartBadgeCount');

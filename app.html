@@ -955,6 +955,10 @@
             const targetTabBtn = document.getElementById('tabBtn' + tabName);
             if (targetTabBtn) targetTabBtn.classList.add('active');
 
+            const targetDemoBtn = document.getElementById('demoBtn' + tabName);
+            if (targetDemoBtn) targetDemoBtn.classList.add('active');
+        }
+
         // Automatic Onboarding Loading Script -> 5 Seconds Smooth Progress Fill
         let splashProgress = 0;
         const splashInterval = setInterval(() => {
@@ -974,6 +978,7 @@
                 splash.classList.add('hidden');
                 setTimeout(() => {
                     splash.style.display = 'none';
+                    switchTab('Home');
                 }, 750);
             }
         }

@@ -15,7 +15,7 @@ body {
     gap: 30px;
 }
 
-.cd-track-header { position: sticky !important; top: 0 !important; z-index: 1000 !important; 
+.cd-track-header { 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,7 +78,7 @@ body {
 
 @media (max-width: 900px) {
     .cd-track-grid { grid-template-columns: 1fr; }
-    .cd-track-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  flex-direction: column; align-items: flex-start; gap: 15px; }
+    .cd-track-header {  flex-direction: column; align-items: flex-start; gap: 15px; }
 }
 
 /* Left Column Cards */

@@ -500,7 +500,7 @@ nav { display: flex;
 .top-restaurant-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .top-restaurant-grid .vendor-card { overflow: hidden; border-radius: 22px; background: #fff; color: #171717; text-decoration: none; box-shadow: 0 18px 45px rgba(91,20,0,.18); transition: transform .3s ease, box-shadow .3s ease; }
 .top-restaurant-grid .vendor-card:hover { transform: translateY(-8px); box-shadow: 0 24px 55px rgba(91,20,0,.28); }
-.top-restaurant-grid .card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  position: relative; height: 210px; overflow: hidden; background: #fff5e8; }
+.top-restaurant-grid .card-header {  position: relative; height: 210px; overflow: hidden; background: #fff5e8; }
 .top-restaurant-grid .card-header img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
 .top-restaurant-grid .vendor-card:hover .card-header img { transform: scale(1.05); }
 .top-restaurant-grid .rating-pill { position: absolute; top: 14px; right: 14px; display: flex; align-items: center; gap: 4px; padding: 7px 10px; border-radius: 999px; background: rgba(255,255,255,.95); color: #242424; font-size: 13px; font-weight: 800; box-shadow: 0 5px 15px rgba(0,0,0,.12); }
@@ -518,7 +518,7 @@ nav { display: flex;
 .view-all-restaurants { width: fit-content; margin: 34px auto 0; display: flex; align-items: center; gap: 8px; padding: 13px 20px; border-radius: 999px; background: #fff; color: #E05E00; text-decoration: none; font-weight: 800; transition: transform .25s ease, box-shadow .25s ease; }
 .view-all-restaurants:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(91,20,0,.2); }
 @media (max-width: 850px) { .top-restaurant-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .top-restaurant-grid .vendor-card:last-child { grid-column: 1 / -1; max-width: calc(50% - 12px); width: 100%; justify-self: center; } }
-@media (max-width: 580px) { .top-restaurants { padding-top: 54px; padding-bottom: 54px; margin: 40px 0; } .top-restaurant-grid { grid-template-columns: 1fr; } .top-restaurant-grid .vendor-card:last-child { grid-column: auto; max-width: none; } .top-restaurant-grid .card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  height: 190px; } .restaurant-meta { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 580px) { .top-restaurants { padding-top: 54px; padding-bottom: 54px; margin: 40px 0; } .top-restaurant-grid { grid-template-columns: 1fr; } .top-restaurant-grid .vendor-card:last-child { grid-column: auto; max-width: none; } .top-restaurant-grid .card-header {  height: 190px; } .restaurant-meta { align-items: flex-start; flex-direction: column; } }
 
 /* Home: popular meals */
 .popular-meals { margin: 40px auto; }
@@ -530,7 +530,7 @@ nav { display: flex;
 .popular-meals-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .popular-meals-grid .vendor-card { overflow: hidden; border: 1px solid #eee8e5; border-radius: 22px; background: #fff; box-shadow: 0 12px 34px rgba(48,25,18,.08); transition: transform .3s ease, box-shadow .3s ease; }
 .popular-meals-grid .vendor-card:hover { transform: translateY(-7px); box-shadow: 0 20px 42px rgba(48,25,18,.14); }
-.popular-meals-grid .card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  position: relative; height: 220px; overflow: hidden; background: #fff6ec; }
+.popular-meals-grid .card-header {  position: relative; height: 220px; overflow: hidden; background: #fff6ec; }
 .popular-meals-grid .card-header img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
 .popular-meals-grid .vendor-card:hover .card-header img { transform: scale(1.05); }
 .meal-rating { position: absolute; top: 14px; right: 14px; display: flex; align-items: center; gap: 4px; padding: 7px 10px; border-radius: 999px; background: rgba(255,255,255,.95); color: #242424; font-size: 13px; font-weight: 800; box-shadow: 0 5px 15px rgba(0,0,0,.1); }
@@ -550,7 +550,7 @@ nav { display: flex;
 .browse-meals-link iconify-icon { font-size: 20px; transition: transform .25s ease; }
 .browse-meals-link:hover iconify-icon { transform: translateX(4px); }
 @media (max-width: 850px) { .popular-meals-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .popular-meals-grid .vendor-card:last-child { grid-column: 1 / -1; max-width: calc(50% - 12px); width: 100%; justify-self: center; } }
-@media (max-width: 580px) { .popular-meals { margin: 55px auto; } .popular-meals-grid { grid-template-columns: 1fr; } .popular-meals-grid .vendor-card:last-child { grid-column: auto; max-width: none; } .popular-meals-grid .card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  height: 200px; } }
+@media (max-width: 580px) { .popular-meals { margin: 55px auto; } .popular-meals-grid { grid-template-columns: 1fr; } .popular-meals-grid .vendor-card:last-child { grid-column: auto; max-width: none; } .popular-meals-grid .card-header {  height: 200px; } }
 .get-app { }
 @media (max-width: 1080px) { .blog-main { flex-direction: column;
         gap: 30px; }
@@ -1745,7 +1745,7 @@ button:active, .btn:active, .action-btn:active, .order-btn:active:active, .updat
     border-color: rgba(255, 107, 0, 0.25) !important;
 }
 
-.top-restaurant-grid .card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important; 
+.top-restaurant-grid .card-header { 
     position: relative !important;
     height: 200px !important;
     overflow: hidden !important;
@@ -1958,7 +1958,7 @@ h2 {
     margin: 24px 0 !important;
 }
 
-.testimonials-header { position: sticky !important; top: 0 !important; z-index: 1000 !important; 
+.testimonials-header { 
     margin-bottom: 28px !important;
 }
 

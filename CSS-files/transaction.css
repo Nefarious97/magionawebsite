@@ -411,7 +411,7 @@ nav { display: flex;
     border: 1px solid #eaeaea;
     box-shadow: 0 4px 15px rgba(0,0,0,0.02);
     overflow: hidden; }
-.cd-card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  display: flex;
+.cd-card-header {  display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 18px 24px;

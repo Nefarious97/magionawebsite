@@ -90,7 +90,7 @@ nav { display: flex;
 .cd-contact-page { padding: 60px 20px 100px;
     background-color: #fafafa;
     min-height: 80vh; }
-.cd-contact-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  text-align: center;
+.cd-contact-header {  text-align: center;
     margin-bottom: 50px; }
 .cd-contact-header h1 { font-size: 40px;
     font-weight: 800;

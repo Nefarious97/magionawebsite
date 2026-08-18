@@ -41,7 +41,7 @@
     box-shadow: 0 15px 40px rgba(4, 120, 87, 0.04) !important;
 }
 
-.how-it-works-header { position: sticky !important; top: 0 !important; z-index: 1000 !important; 
+.how-it-works-header { 
     text-align: center !important;
     max-width: 620px !important;
     margin: 0 auto 40px auto !important;
@@ -362,7 +362,7 @@
 .page-restaurant .restaurant-list > h2 { margin: 10px 0 14px; color: #171717; font-size: clamp(32px,4vw,46px); font-weight: 850; }
 .page-restaurant .restaurant-list > p { max-width: 720px; margin: 0 auto 35px; color: #686868; line-height: 1.7; }
 .page-restaurant .vendor-card,.page-food .cd-menu-card { border: 1px solid #eee8e5; border-radius: 22px !important; background: #fff; box-shadow: 0 12px 32px rgba(55,30,20,.075); }
-.page-restaurant .vendor-card .card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  overflow: hidden; }
+.page-restaurant .vendor-card .card-header {  overflow: hidden; }
 .page-restaurant .vendor-card .rating-pill { border-radius: 999px; }
 .page-food .cd-menu-container { gap: 24px; }
 
@@ -373,7 +373,7 @@
 
 /* Contact */
 .page-contact .cd-contact-page { padding: 35px 24px; background: linear-gradient(180deg,#fff 0%,#fff9f6 100%); }
-.page-contact .cd-contact-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  max-width: 700px; margin: 0 auto 45px; text-align: center; }
+.page-contact .cd-contact-header {  max-width: 700px; margin: 0 auto 45px; text-align: center; }
 .page-contact .cd-contact-header h1 { margin-bottom: 14px; color: #171717; font-size: clamp(38px,5vw,56px); font-weight: 850; letter-spacing: -1.5px; }
 .page-contact .cd-contact-header p { color: #686868; font-size: 16px; line-height: 1.7; }
 .page-contact .cd-contact-container { max-width: 1100px; gap: 24px; }
@@ -384,7 +384,7 @@
 .page-transaction .checkout-page,.page-track .cd-track-page { padding: 30px 24px; background: linear-gradient(180deg,#fff 0%,#fff9f6 100%); }
 .page-transaction .checkout-container,.page-track .cd-track-dashboard { max-width: 1150px; margin: 0 auto; }
 .page-transaction .checkout-left,.page-transaction .checkout-right,.page-track .cd-timeline-card,.page-track .cd-summary-card,.page-track .cd-map-card { border: 1px solid #eee7e3; border-radius: 22px !important; background: #fff; box-shadow: 0 12px 34px rgba(55,30,20,.07); }
-.page-track .cd-track-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  margin-bottom: 30px; }
+.page-track .cd-track-header {  margin-bottom: 30px; }
 .page-track .cd-track-title h2,.page-transaction .cd-page-title { color: #171717; font-size: clamp(30px,4vw,42px); font-weight: 850; }
 .page-track .cd-track-status-pill { border-radius: 999px; }
 
@@ -426,7 +426,7 @@
     margin: 40px 0;
 }
 
-.testimonials-header { position: sticky !important; top: 0 !important; z-index: 1000 !important; 
+.testimonials-header { 
     text-align: center;
     margin-bottom: 50px;
 }
@@ -541,3 +541,119 @@
     margin: 0;
 }
 
+
+
+/* Bulletproof Mobile Responsive Fixes */
+@media (max-width: 992px) {
+    header {
+        position: sticky !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        padding: 10px 16px !important;
+        background: #ffffff !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+    }
+    header nav {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-height: 48px !important;
+    }
+    .mangiona-nav-links {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: #ffffff !important;
+        padding: 70px 24px 40px !important;
+        transform: translateY(-110%);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        z-index: 999999 !important;
+        overflow-y: auto !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2) !important;
+    }
+    .mangiona-nav-links.active {
+        transform: translateY(0) !important;
+    }
+    .mangiona-nav-links ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin-top: 20px !important;
+    }
+    .mangiona-nav-links a {
+        display: block !important;
+        width: 100% !important;
+        padding: 14px 18px !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        color: #111111 !important;
+        background: #f8fafc !important;
+        border-radius: 14px !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        text-align: left !important;
+    }
+    .mangiona-nav-links a.active {
+        background: #FF6B00 !important;
+        color: #ffffff !important;
+        border-color: #FF6B00 !important;
+    }
+    .mobile-nav-close {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        background: #f1f5f9 !important;
+        border-radius: 50% !important;
+        width: 40px !important;
+        height: 40px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #0f172a !important;
+        z-index: 1000000 !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-hero {
+        width: calc(100% - 24px) !important;
+        padding: 30px 16px !important;
+        margin: 10px auto 0 !important;
+        border-radius: 24px !important;
+        flex-direction: column !important;
+    }
+    .home-hero-content h1 {
+        font-size: clamp(28px, 8vw, 42px) !important;
+        letter-spacing: -1px !important;
+    }
+    .hero-trust-row {
+        flex-wrap: wrap !important;
+        gap: 15px !important;
+        justify-content: center !important;
+    }
+    .home-newsletter {
+        width: calc(100% - 24px) !important;
+        padding: 35px 16px !important;
+        margin: 25px auto !important;
+        border-radius: 24px !important;
+    }
+    .home-newsletter p {
+        font-size: 13.5px !important;
+        line-height: 1.5 !important;
+    }
+    .testimonial-card {
+        min-width: 280px !important;
+        max-width: 320px !important;
+        padding: 24px 20px !important;
+    }
+}

@@ -747,7 +747,7 @@ input,
     text-align: left; }
 .vendor-card:hover { transform: translateY(-6px);
     box-shadow: 0px 15px 35px rgba(255, 107, 0, 0.15); }
-.card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important;  width: 100%;
+.card-header {  width: 100%;
     height: 200px;
     position: relative; }
 .card-header img { width: 100%;
@@ -902,7 +902,7 @@ h2 { font-size: 32px;
     transform: translateY(-8px) !important;
     box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
 }
-.vendor-card .card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important; 
+.vendor-card .card-header { 
     overflow: hidden;
 }
 .vendor-card .card-header img {
@@ -1240,7 +1240,7 @@ html, body {
     border-color: rgba(255, 107, 0, 0.25) !important;
 }
 
-.top-restaurant-grid .card-header { position: sticky !important; top: 0 !important; z-index: 1000 !important; 
+.top-restaurant-grid .card-header { 
     position: relative !important;
     height: 200px !important;
     overflow: hidden !important;
@@ -1453,7 +1453,7 @@ h2 {
     margin: 24px 0 !important;
 }
 
-.testimonials-header { position: sticky !important; top: 0 !important; z-index: 1000 !important; 
+.testimonials-header { 
     margin-bottom: 28px !important;
 }
 
@@ -1648,7 +1648,7 @@ h2 {
     margin: 24px 0 !important;
 }
 
-.testimonials-header { position: sticky !important; top: 0 !important; z-index: 1000 !important; 
+.testimonials-header { 
     margin-bottom: 28px !important;
 }
 
@@ -1927,4 +1927,120 @@ h2 {
     font-size: 14.5px !important;
     line-height: 1.65 !important;
     margin: 0 !important;
+}
+
+
+/* Bulletproof Mobile Responsive Fixes */
+@media (max-width: 992px) {
+    header {
+        position: sticky !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        padding: 10px 16px !important;
+        background: #ffffff !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+    }
+    header nav {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-height: 48px !important;
+    }
+    .mangiona-nav-links {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: #ffffff !important;
+        padding: 70px 24px 40px !important;
+        transform: translateY(-110%);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        z-index: 999999 !important;
+        overflow-y: auto !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2) !important;
+    }
+    .mangiona-nav-links.active {
+        transform: translateY(0) !important;
+    }
+    .mangiona-nav-links ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin-top: 20px !important;
+    }
+    .mangiona-nav-links a {
+        display: block !important;
+        width: 100% !important;
+        padding: 14px 18px !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        color: #111111 !important;
+        background: #f8fafc !important;
+        border-radius: 14px !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        text-align: left !important;
+    }
+    .mangiona-nav-links a.active {
+        background: #FF6B00 !important;
+        color: #ffffff !important;
+        border-color: #FF6B00 !important;
+    }
+    .mobile-nav-close {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        background: #f1f5f9 !important;
+        border-radius: 50% !important;
+        width: 40px !important;
+        height: 40px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #0f172a !important;
+        z-index: 1000000 !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-hero {
+        width: calc(100% - 24px) !important;
+        padding: 30px 16px !important;
+        margin: 10px auto 0 !important;
+        border-radius: 24px !important;
+        flex-direction: column !important;
+    }
+    .home-hero-content h1 {
+        font-size: clamp(28px, 8vw, 42px) !important;
+        letter-spacing: -1px !important;
+    }
+    .hero-trust-row {
+        flex-wrap: wrap !important;
+        gap: 15px !important;
+        justify-content: center !important;
+    }
+    .home-newsletter {
+        width: calc(100% - 24px) !important;
+        padding: 35px 16px !important;
+        margin: 25px auto !important;
+        border-radius: 24px !important;
+    }
+    .home-newsletter p {
+        font-size: 13.5px !important;
+        line-height: 1.5 !important;
+    }
+    .testimonial-card {
+        min-width: 280px !important;
+        max-width: 320px !important;
+        padding: 24px 20px !important;
+    }
 }

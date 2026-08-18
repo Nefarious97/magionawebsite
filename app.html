@@ -177,15 +177,124 @@
         .form-group { margin-bottom: 12px; }
         .form-label { font-size: 11px; font-weight: 700; color: #0F172A; margin-bottom: 4px; display: block; }
         .form-input { width: 100%; height: 44px; border-radius: 12px; border: 1px solid #E2E8F0; padding: 0 12px; font-size: 13px; font-weight: 600; outline: none; }
+        /* Onboarding Splash Loading Screen */
+        .splash-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(145deg, #01281b 0%, #047857 50%, #01281b 100%);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 24px;
+            text-align: center;
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .splash-screen.hidden {
+            opacity: 0;
+            transform: scale(1.05);
+            pointer-events: none;
+        }
+        .splash-logo-wrap {
+            width: 90px;
+            height: 90px;
+            border-radius: 28px;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            margin-bottom: 22px;
+            animation: pulseLogo 2s ease-in-out infinite;
+        }
+        .splash-logo {
+            width: 62px;
+            height: auto;
+            object-fit: contain;
+        }
+        .splash-title {
+            font-size: 34px;
+            font-weight: 850;
+            color: #FFFFFF;
+            letter-spacing: -1px;
+            margin-bottom: 6px;
+        }
+        .splash-tagline {
+            font-size: 13px;
+            color: rgba(255,255,255,0.85);
+            font-weight: 600;
+            margin-bottom: 35px;
+            max-width: 260px;
+            line-height: 1.5;
+        }
+        .splash-loader-bar {
+            width: 180px;
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 999px;
+            overflow: hidden;
+            margin-bottom: 28px;
+        }
+        .splash-loader-fill {
+            height: 100%;
+            width: 0%;
+            background: #FF6B00;
+            border-radius: 999px;
+            transition: width 0.05s linear;
+        }
+        .splash-get-started-btn {
+            width: 100%;
+            max-width: 260px;
+            background: #FF6B00;
+            color: #FFFFFF;
+            border: none;
+            padding: 14px;
+            border-radius: 16px;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
+            transition: transform 0.2s ease;
+        }
+        .splash-get-started-btn:active {
+            transform: scale(0.97);
+        }
+        @keyframes pulseLogo {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+        }
     </style>
 </head>
 <body>
 
-
-
     <!-- Phone Shell -->
     <div class="phone-shell">
         <div class="phone-notch"></div>
+
+        <!-- Onboarding Splash / Loading Screen Overlay -->
+        <div id="appSplashScreen" class="splash-screen">
+            <div class="splash-logo-wrap">
+                <img src="image/Logo m 2.png" alt="Mangiona Logo" class="splash-logo">
+            </div>
+            <h1 class="splash-title">Mangiona</h1>
+            <p class="splash-tagline">Fast, Fresh & Reliable Food Delivery</p>
+
+            <div class="splash-loader-bar">
+                <div class="splash-loader-fill" id="splashLoaderFill"></div>
+            </div>
+
+            <button class="splash-get-started-btn" onclick="hideSplashScreen()">
+                Get Started <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+            </button>
+        </div>
 
         <!-- Custom In-App Toast Notification (No Browser "localhost says" popup) -->
         <div id="toastContainer" style="position: absolute; top: 32px; left: 50%; transform: translateX(-50%); z-index: 2000; display: none; background: #0F172A; color: white; padding: 10px 16px; border-radius: 20px; font-size: 12px; font-weight: 800; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); white-space: nowrap; align-items: center; gap: 8px;">
@@ -839,8 +948,21 @@
             const targetTabBtn = document.getElementById('tabBtn' + tabName);
             if (targetTabBtn) targetTabBtn.classList.add('active');
 
-            const targetDemoBtn = document.getElementById('demoBtn' + tabName);
-            if (targetDemoBtn) targetDemoBtn.classList.add('active');
+        // Onboarding Loading Progress Script
+        let splashProgress = 0;
+        const splashInterval = setInterval(() => {
+            splashProgress += 4;
+            const fill = document.getElementById('splashLoaderFill');
+            if (fill) fill.style.width = splashProgress + '%';
+            if (splashProgress >= 100) {
+                clearInterval(splashInterval);
+                setTimeout(hideSplashScreen, 350);
+            }
+        }, 50);
+
+        function hideSplashScreen() {
+            const splash = document.getElementById('appSplashScreen');
+            if (splash) splash.classList.add('hidden');
         }
     </script>
 </body>

@@ -519,7 +519,7 @@
                         <div style="font-size: 11px; color: #64748B;">Smoky jollof rice, fried plantain & grilled chicken</div>
                         <div style="font-size: 14px; font-weight: 600; color: #FF6B00; margin-top: 4px;">₦4,500</div>
                     </div>
-                    <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 600; cursor: pointer;" onclick="showToast('Added Special Jollof Rice to Cart!'); switchTab('Cart');">+ Add</button>
+                    <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 600; cursor: pointer;" onclick="addItemToCart('item1', 'Special Jollof Rice', 4500); switchTab('Cart');">+ Add</button>
                 </div>
 
                 <div style="background: #FFFFFF; border-radius: 16px; padding: 14px; margin-bottom: 10px; display: flex; gap: 12px; align-items: center; justify-content: space-between; border: 1px solid #E2E8F0;">
@@ -528,7 +528,7 @@
                         <div style="font-size: 11px; color: #64748B;">Fresh egusi soup served with tender goat meat</div>
                         <div style="font-size: 14px; font-weight: 600; color: #FF6B00; margin-top: 4px;">₦5,200</div>
                     </div>
-                    <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 600; cursor: pointer;" onclick="showToast('Added Pounded Yam to Cart!'); switchTab('Cart');">+ Add</button>
+                    <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 600; cursor: pointer;" onclick="addItemToCart('item2', 'Chilled Malt Drink', 800); switchTab('Cart');">+ Add</button>
                 </div>
             </div>
 
@@ -820,12 +820,12 @@
                 <span>Home</span>
             </button>
             <button class="nav-item" id="tabBtnRestaurants" onclick="switchTab('Restaurants')">
-                <iconify-icon icon="lucide:store"></iconify-icon>
-                <span>Browse</span>
+                <iconify-icon icon="lucide:search"></iconify-icon>
+                <span>Search</span>
             </button>
             <button class="nav-item" id="tabBtnCart" onclick="switchTab('Cart')" style="position: relative;">
                 <iconify-icon icon="lucide:shopping-bag"></iconify-icon>
-                <span class="cart-badge" id="cartBadgeCount">3</span>
+                <span class="cart-badge" id="cartBadgeCount">0</span>
                 <span>Cart</span>
             </button>
             <button class="nav-item" id="tabBtnTracking" onclick="switchTab('Tracking')">
@@ -881,11 +881,21 @@
             }
         }
 
-        // Dynamic Cart State
+        // Dynamic Cart State (Starts empty by default)
         const cartState = {
-            item1: { name: 'Special Jollof Rice', price: 4500, qty: 1 },
-            item2: { name: 'Chilled Malt Drink', price: 800, qty: 2 }
+            item1: { name: 'Special Jollof Rice', price: 4500, qty: 0 },
+            item2: { name: 'Chilled Malt Drink', price: 800, qty: 0 }
         };
+        recalculateCart();
+
+        function addItemToCart(itemKey, name, price) {
+            if (!cartState[itemKey]) {
+                cartState[itemKey] = { name: name, price: price, qty: 0 };
+            }
+            cartState[itemKey].qty += 1;
+            recalculateCart();
+            showToast('🛒 Added ' + name + ' to Cart!');
+        }
 
         function updateCartQty(itemKey, delta) {
             if (cartState[itemKey]) {

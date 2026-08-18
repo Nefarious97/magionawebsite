@@ -31,7 +31,7 @@
             padding: 7px 12px;
             border-radius: 10px;
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 500;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -92,7 +92,7 @@
             border-radius: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 500;
             color: #0F172A;
         }
 
@@ -118,12 +118,12 @@
             margin-bottom: 16px;
             box-shadow: 0 8px 20px rgba(255, 107, 0, 0.25);
         }
-        .promo-title { font-size: 20px; font-weight: 800; }
+        .promo-title { font-size: 20px; font-weight: 600; }
         .promo-sub { font-size: 12px; opacity: 0.9; margin-top: 2px; }
 
         /* Categories Bar */
         .cat-scroll { display: flex; gap: 10px; overflow-x: auto; margin-bottom: 16px; scrollbar-width: none; padding-bottom: 4px; }
-        .cat-card { background: #FFFFFF; border-radius: 14px; padding: 10px 14px; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; color: #0F172A; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.03); cursor: pointer; }
+        .cat-card { background: #FFFFFF; border-radius: 14px; padding: 10px 14px; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: #0F172A; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,0.03); cursor: pointer; }
         .cat-card.active { background: #FF6B00; color: white; }
 
         /* Restaurant Card */
@@ -137,9 +137,9 @@
         }
         .rest-img { width: 100%; height: 130px; object-fit: cover; }
         .rest-info { padding: 14px; }
-        .rest-name { font-size: 15px; font-weight: 800; color: #0F172A; }
+        .rest-name { font-size: 15px; font-weight: 600; color: #0F172A; }
         .rest-meta { display: flex; gap: 12px; font-size: 11px; color: #64748B; margin-top: 4px; }
-        .rest-tag { background: #ffe8e4; color: #FF6B00; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
+        .rest-tag { background: #ffe8e4; color: #FF6B00; font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 6px; }
 
         /* Buttons */
         .primary-action-btn {
@@ -150,7 +150,7 @@
             padding: 14px;
             border-radius: 14px;
             font-size: 15px;
-            font-weight: 800;
+            font-weight: 600;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -181,7 +181,7 @@
             align-items: center;
             color: #94A3B8;
             font-size: 10px;
-            font-weight: 700;
+            font-weight: 500;
             cursor: pointer;
             border: none;
             background: none;
@@ -198,7 +198,7 @@
 
         /* Form Controls */
         .form-group { margin-bottom: 12px; }
-        .form-label { font-size: 11px; font-weight: 700; color: #0F172A; margin-bottom: 4px; display: block; }
+        .form-label { font-size: 11px; font-weight: 500; color: #0F172A; margin-bottom: 4px; display: block; }
         .form-input { width: 100%; height: 44px; border-radius: 12px; border: 1px solid #E2E8F0; padding: 0 12px; font-size: 13px; font-weight: 600; outline: none; }
         /* Onboarding Splash Loading Screen */
         .splash-screen {
@@ -252,7 +252,7 @@
         }
         .splash-title {
             font-size: 36px;
-            font-weight: 850;
+            font-weight: 600;
             color: #FFFFFF;
             letter-spacing: -1px;
             margin-bottom: 6px;
@@ -292,7 +292,7 @@
         </div>
 
         <!-- Custom In-App Toast Notification (No Browser "localhost says" popup) -->
-        <div id="toastContainer" style="position: absolute; top: 32px; left: 50%; transform: translateX(-50%); z-index: 2000; display: none; background: #0F172A; color: white; padding: 10px 16px; border-radius: 20px; font-size: 12px; font-weight: 800; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); white-space: nowrap; align-items: center; gap: 8px;">
+        <div id="toastContainer" style="position: absolute; top: 32px; left: 50%; transform: translateX(-50%); z-index: 2000; display: none; background: #0F172A; color: white; padding: 10px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); white-space: nowrap; align-items: center; gap: 8px;">
             <iconify-icon icon="lucide:bell" style="color: #10B981; font-size: 16px;"></iconify-icon>
             <span id="toastText">Notification</span>
         </div>
@@ -304,22 +304,22 @@
                 <!-- Top Delivering To & Avatar Row -->
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                     <div>
-                        <div style="font-size: 10px; font-weight: 800; color: #94A3B8; letter-spacing: 1px;">DELIVERING TO</div>
+                        <div style="font-size: 10px; font-weight: 600; color: #94A3B8; letter-spacing: 1px;">DELIVERING TO</div>
                         <div style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; color: #475569; margin-top: 2px; cursor: pointer;">
                             <iconify-icon icon="lucide:map-pin" style="color: #FF6B00;"></iconify-icon>
                             <span>11 Sampson Ubani Street, Aba, Abia State</span>
                             <iconify-icon icon="lucide:chevron-down"></iconify-icon>
                         </div>
                     </div>
-                    <div style="width: 40px; height: 40px; border-radius: 14px; background: #0F172A; color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; cursor: pointer;" onclick="switchTab('Profile')">
+                    <div style="width: 40px; height: 40px; border-radius: 14px; background: #0F172A; color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; cursor: pointer;" onclick="switchTab('Profile')">
                         AO
                     </div>
                 </div>
 
                 <!-- Greeting Title -->
                 <div style="margin-bottom: 16px;">
-                    <div style="font-size: 13px; font-weight: 700; color: #FF6B00;">Hi, Adebayo 👋</div>
-                    <div style="font-size: 24px; font-weight: 800; color: #0F172A; line-height: 1.2; margin-top: 2px;">What are you craving today?</div>
+                    <div style="font-size: 13px; font-weight: 500; color: #FF6B00;">Hi, Adebayo 👋</div>
+                    <div style="font-size: 24px; font-weight: 600; color: #0F172A; line-height: 1.2; margin-top: 2px;">What are you craving today?</div>
                 </div>
 
                 <!-- Active Order Live Tracker Banner -->
@@ -328,8 +328,8 @@
                         <iconify-icon icon="lucide:bike"></iconify-icon>
                     </div>
                     <div style="flex: 1;">
-                        <div style="font-size: 9px; font-weight: 800; color: #059669; letter-spacing: 1px;">ACTIVE ORDER</div>
-                        <div style="font-size: 13px; font-weight: 800; color: #0F172A;">Preparing at Mama Cass</div>
+                        <div style="font-size: 9px; font-weight: 600; color: #059669; letter-spacing: 1px;">ACTIVE ORDER</div>
+                        <div style="font-size: 13px; font-weight: 600; color: #0F172A;">Preparing at Mama Cass</div>
                         <div style="font-size: 11px; color: #64748B;">Order #MNG-89402 • View live map</div>
                     </div>
                     <iconify-icon icon="lucide:chevron-right" style="color: #059669; font-size: 20px;"></iconify-icon>
@@ -352,13 +352,13 @@
 
                 <!-- Order Again Section -->
                 <div style="margin-bottom: 16px;">
-                    <div style="font-size: 15px; font-weight: 800; color: #0F172A; margin-bottom: 10px;">Order again</div>
+                    <div style="font-size: 15px; font-weight: 600; color: #0F172A; margin-bottom: 10px;">Order again</div>
                     <div style="display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px;">
                         <div style="background: #FFFFFF; border-radius: 16px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; border: 1px solid #E2E8F0; min-width: 200px; cursor: pointer;" onclick="switchTab('Menu')">
                             <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=100" style="width: 44px; height: 44px; border-radius: 10px; object-fit: cover;">
                             <div style="flex: 1;">
-                                <div style="font-size: 12px; font-weight: 800; color: #0F172A;">Special Jollof Rice</div>
-                                <div style="font-size: 11px; color: #FF6B00; font-weight: 700;">₦4,500</div>
+                                <div style="font-size: 12px; font-weight: 600; color: #0F172A;">Special Jollof Rice</div>
+                                <div style="font-size: 11px; color: #FF6B00; font-weight: 500;">₦4,500</div>
                             </div>
                             <div style="width: 26px; height: 26px; border-radius: 8px; background: #FF6B00; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px;">+</div>
                         </div>
@@ -367,16 +367,16 @@
 
                 <!-- Promo Banner -->
                 <div class="promo-banner">
-                    <div style="font-size: 10px; font-weight: 800; color: #FF6B00; letter-spacing: 1px; margin-bottom: 4px;">FIRST ORDER OFFER</div>
+                    <div style="font-size: 10px; font-weight: 600; color: #FF6B00; letter-spacing: 1px; margin-bottom: 4px;">FIRST ORDER OFFER</div>
                     <div class="promo-title">Delivery is on us.</div>
                     <div class="promo-sub">Enjoy 0 delivery fees on your order today.</div>
-                    <button style="background: white; color: #FF6B00; border: none; padding: 8px 14px; border-radius: 12px; font-size: 12px; font-weight: 800; margin-top: 12px; cursor: pointer;" onclick="switchTab('Restaurants')">Explore Restaurants →</button>
+                    <button style="background: white; color: #FF6B00; border: none; padding: 8px 14px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-top: 12px; cursor: pointer;" onclick="switchTab('Restaurants')">Explore Restaurants →</button>
                 </div>
 
                 <!-- Featured Restaurants Header -->
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                    <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Featured Restaurants</div>
-                    <a href="#" style="font-size: 12px; font-weight: 700; color: #FF6B00; text-decoration: none;" onclick="switchTab('Restaurants')">View all</a>
+                    <div style="font-size: 16px; font-weight: 600; color: #0F172A;">Featured Restaurants</div>
+                    <a href="#" style="font-size: 12px; font-weight: 500; color: #FF6B00; text-decoration: none;" onclick="switchTab('Restaurants')">View all</a>
                 </div>
 
                 <!-- Restaurant Cards -->
@@ -413,7 +413,7 @@
 
             <!-- PAGE 2: RESTAURANTS DIRECTORY (BROWSE) -->
             <div id="pageRestaurants" class="tab-page">
-                <div style="font-size: 24px; font-weight: 800; color: #0F172A; margin-bottom: 2px;">Discover</div>
+                <div style="font-size: 24px; font-weight: 600; color: #0F172A; margin-bottom: 2px;">Discover</div>
                 <div style="font-size: 13px; color: #64748B; margin-bottom: 16px;">The best food around you</div>
 
                 <!-- Search Row with Filter Button -->
@@ -438,14 +438,14 @@
                 </div>
 
                 <!-- Featured Spotlight Card -->
-                <div style="font-size: 15px; font-weight: 800; color: #0F172A; margin-bottom: 10px;">Featured ✨</div>
+                <div style="font-size: 15px; font-weight: 600; color: #0F172A; margin-bottom: 10px;">Featured ✨</div>
 
                 <div style="position: relative; height: 180px; border-radius: 20px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.12); cursor: pointer;" onclick="switchTab('Menu')">
                     <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%); padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
-                        <span style="align-self: flex-start; background: #FF6B00; color: white; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 10px;">Top Rated</span>
+                        <span style="align-self: flex-start; background: #FF6B00; color: white; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 10px;">Top Rated</span>
                         <div>
-                            <div style="font-size: 18px; font-weight: 800; color: white;">Mama Cass Kitchen</div>
+                            <div style="font-size: 18px; font-weight: 600; color: white;">Mama Cass Kitchen</div>
                             <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(255,255,255,0.9); margin-top: 2px;">
                                 <span>4.8 ★ (340+ reviews)</span>
                                 <span>• 18-25 Mins</span>
@@ -456,7 +456,7 @@
                 </div>
 
                 <!-- All Restaurants Section -->
-                <div style="font-size: 15px; font-weight: 800; color: #0F172A; margin-bottom: 10px;">All Restaurants</div>
+                <div style="font-size: 15px; font-weight: 600; color: #0F172A; margin-bottom: 10px;">All Restaurants</div>
 
                 <div class="rest-card" onclick="switchTab('Menu')">
                     <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500" class="rest-img">
@@ -507,28 +507,28 @@
             <!-- PAGE 3: RESTAURANT MENU DETAILS -->
             <div id="pageMenu" class="tab-page">
                 <div style="background: #FFFFFF; border-radius: 20px; padding: 16px; margin-bottom: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
-                    <div style="font-size: 18px; font-weight: 800; color: #0F172A;">Mama Cass Kitchen</div>
+                    <div style="font-size: 18px; font-weight: 600; color: #0F172A;">Mama Cass Kitchen</div>
                     <div style="font-size: 12px; color: #64748B; margin-top: 2px;">24 Commercial Avenue, Yaba • 4.8 ★ (340 reviews)</div>
                 </div>
 
-                <div style="font-size: 14px; font-weight: 800; color: #0F172A; margin-bottom: 10px;">Popular Menu Items</div>
+                <div style="font-size: 14px; font-weight: 600; color: #0F172A; margin-bottom: 10px;">Popular Menu Items</div>
 
                 <div style="background: #FFFFFF; border-radius: 16px; padding: 14px; margin-bottom: 10px; display: flex; gap: 12px; align-items: center; justify-content: space-between; border: 1px solid #E2E8F0;">
                     <div>
-                        <div style="font-size: 14px; font-weight: 800; color: #0F172A;">Special Jollof Rice Combo</div>
+                        <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Special Jollof Rice Combo</div>
                         <div style="font-size: 11px; color: #64748B;">Smoky jollof rice, fried plantain & grilled chicken</div>
-                        <div style="font-size: 14px; font-weight: 800; color: #FF6B00; margin-top: 4px;">₦4,500</div>
+                        <div style="font-size: 14px; font-weight: 600; color: #FF6B00; margin-top: 4px;">₦4,500</div>
                     </div>
-                    <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 800; cursor: pointer;" onclick="showToast('Added Special Jollof Rice to Cart!'); switchTab('Cart');">+ Add</button>
+                    <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 600; cursor: pointer;" onclick="showToast('Added Special Jollof Rice to Cart!'); switchTab('Cart');">+ Add</button>
                 </div>
 
                 <div style="background: #FFFFFF; border-radius: 16px; padding: 14px; margin-bottom: 10px; display: flex; gap: 12px; align-items: center; justify-content: space-between; border: 1px solid #E2E8F0;">
                     <div>
-                        <div style="font-size: 14px; font-weight: 800; color: #0F172A;">Pounded Yam & Egusi Soup</div>
+                        <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Pounded Yam & Egusi Soup</div>
                         <div style="font-size: 11px; color: #64748B;">Fresh egusi soup served with tender goat meat</div>
-                        <div style="font-size: 14px; font-weight: 800; color: #FF6B00; margin-top: 4px;">₦5,200</div>
+                        <div style="font-size: 14px; font-weight: 600; color: #FF6B00; margin-top: 4px;">₦5,200</div>
                     </div>
-                    <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 800; cursor: pointer;" onclick="showToast('Added Pounded Yam to Cart!'); switchTab('Cart');">+ Add</button>
+                    <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 600; cursor: pointer;" onclick="showToast('Added Pounded Yam to Cart!'); switchTab('Cart');">+ Add</button>
                 </div>
             </div>
 
@@ -538,10 +538,10 @@
                 <div style="background: linear-gradient(135deg, #FF6B00 0%, #047857 100%); border-radius: 22px; padding: 20px; color: white; margin-bottom: 16px; box-shadow: 0 8px 20px rgba(255, 107, 0, 0.25); display: flex; justify-content: space-between; align-items: center;">
                     <div>
                         <iconify-icon icon="lucide:shopping-bag" style="font-size: 28px; margin-bottom: 4px;"></iconify-icon>
-                        <div style="font-size: 24px; font-weight: 800;">Your Cart</div>
+                        <div style="font-size: 24px; font-weight: 600;">Your Cart</div>
                         <div style="font-size: 13px; opacity: 0.9;">Review your selected items</div>
                     </div>
-                    <button style="background: white; color: #FF6B00; border: none; padding: 6px 12px; border-radius: 12px; font-size: 12px; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" onclick="clearCartWeb()">
+                    <button style="background: white; color: #FF6B00; border: none; padding: 6px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" onclick="clearCartWeb()">
                         <iconify-icon icon="lucide:trash-2"></iconify-icon> Clear
                     </button>
                 </div>
@@ -550,26 +550,26 @@
                 <div style="background: #FFFFFF; border-radius: 20px; padding: 14px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
                     <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=120" style="width: 54px; height: 54px; border-radius: 14px; object-fit: cover;">
                     <div style="flex: 1; margin: 0 12px;">
-                        <div style="font-size: 14px; font-weight: 800; color: #0F172A;">Special Jollof Rice</div>
-                        <div style="font-size: 14px; font-weight: 800; color: #FF6B00; margin-top: 2px;">₦4,500</div>
+                        <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Special Jollof Rice</div>
+                        <div style="font-size: 14px; font-weight: 600; color: #FF6B00; margin-top: 2px;">₦4,500</div>
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px; background: #F1F5F9; padding: 4px 10px; border-radius: 20px;">
-                        <button style="width: 26px; height: 26px; border-radius: 13px; background: white; border: none; font-weight: 800; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" onclick="updateCartQty('item1', -1)">-</button>
-                        <span style="font-size: 14px; font-weight: 800;" id="qtyDisplay1">1</span>
-                        <button style="width: 26px; height: 26px; border-radius: 13px; background: white; border: none; font-weight: 800; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" onclick="updateCartQty('item1', 1)">+</button>
+                        <button style="width: 26px; height: 26px; border-radius: 13px; background: white; border: none; font-weight: 600; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" onclick="updateCartQty('item1', -1)">-</button>
+                        <span style="font-size: 14px; font-weight: 600;" id="qtyDisplay1">1</span>
+                        <button style="width: 26px; height: 26px; border-radius: 13px; background: white; border: none; font-weight: 600; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" onclick="updateCartQty('item1', 1)">+</button>
                     </div>
                 </div>
 
                 <div style="background: #FFFFFF; border-radius: 20px; padding: 14px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
                     <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=120" style="width: 54px; height: 54px; border-radius: 14px; object-fit: cover;">
                     <div style="flex: 1; margin: 0 12px;">
-                        <div style="font-size: 14px; font-weight: 800; color: #0F172A;">Chilled Malt Drink</div>
-                        <div style="font-size: 14px; font-weight: 800; color: #FF6B00; margin-top: 2px;">₦800</div>
+                        <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Chilled Malt Drink</div>
+                        <div style="font-size: 14px; font-weight: 600; color: #FF6B00; margin-top: 2px;">₦800</div>
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px; background: #F1F5F9; padding: 4px 10px; border-radius: 20px;">
-                        <button style="width: 26px; height: 26px; border-radius: 13px; background: white; border: none; font-weight: 800; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" onclick="updateCartQty('item2', -1)">-</button>
-                        <span style="font-size: 14px; font-weight: 800;" id="qtyDisplay2">2</span>
-                        <button style="width: 26px; height: 26px; border-radius: 13px; background: white; border: none; font-weight: 800; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" onclick="updateCartQty('item2', 1)">+</button>
+                        <button style="width: 26px; height: 26px; border-radius: 13px; background: white; border: none; font-weight: 600; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" onclick="updateCartQty('item2', -1)">-</button>
+                        <span style="font-size: 14px; font-weight: 600;" id="qtyDisplay2">2</span>
+                        <button style="width: 26px; height: 26px; border-radius: 13px; background: white; border: none; font-weight: 600; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" onclick="updateCartQty('item2', 1)">+</button>
                     </div>
                 </div>
 
@@ -583,20 +583,20 @@
                 <div style="background: #FFFFFF; border-radius: 20px; padding: 16px; margin-bottom: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
                     <div style="display: flex; justify-content: space-between; font-size: 13px; color: #64748B; margin-bottom: 8px;">
                         <span>Subtotal</span>
-                        <span style="font-weight: 700; color: #0F172A;" id="subtotalDisplay">₦6,100.00</span>
+                        <span style="font-weight: 500; color: #0F172A;" id="subtotalDisplay">₦6,100.00</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; font-size: 13px; color: #64748B; margin-bottom: 8px;">
                         <span>Delivery Fee</span>
-                        <span style="font-weight: 700; color: #0F172A;" id="deliveryFeeDisplay">₦1,000.00</span>
+                        <span style="font-weight: 500; color: #0F172A;" id="deliveryFeeDisplay">₦1,000.00</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; font-size: 13px; color: #64748B; margin-bottom: 12px;">
                         <span>Service Fee</span>
-                        <span style="font-weight: 700; color: #0F172A;" id="serviceFeeDisplay">₦500.00</span>
+                        <span style="font-weight: 500; color: #0F172A;" id="serviceFeeDisplay">₦500.00</span>
                     </div>
                     <div style="height: 1px; background: #E2E8F0; margin-bottom: 12px;"></div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 16px; font-weight: 800; color: #0F172A;">Total</span>
-                        <span style="font-size: 22px; font-weight: 800; color: #FF6B00;" id="totalDisplay">₦7,600.00</span>
+                        <span style="font-size: 16px; font-weight: 600; color: #0F172A;">Total</span>
+                        <span style="font-size: 22px; font-weight: 600; color: #FF6B00;" id="totalDisplay">₦7,600.00</span>
                     </div>
                 </div>
 
@@ -607,16 +607,16 @@
 
             <!-- PAGE 5: CHECKOUT SCREEN -->
             <div id="pageCheckout" class="tab-page">
-                <div style="font-size: 18px; font-weight: 800; color: #0F172A; margin-bottom: 14px;">Checkout & Pay</div>
+                <div style="font-size: 18px; font-weight: 600; color: #0F172A; margin-bottom: 14px;">Checkout & Pay</div>
 
                 <div style="background: #FFFFFF; border-radius: 16px; padding: 14px; margin-bottom: 12px;">
-                    <div style="font-size: 11px; font-weight: 700; color: #94A3B8;">DELIVERY ADDRESS</div>
+                    <div style="font-size: 11px; font-weight: 500; color: #94A3B8;">DELIVERY ADDRESS</div>
                     <div style="font-size: 12px; font-weight: 500; color: #475569; margin-top: 2px;">11 Sampson Ubani Street, Aba, Abia State</div>
                 </div>
 
                 <div style="background: #FFFFFF; border-radius: 16px; padding: 14px; margin-bottom: 16px;">
-                    <div style="font-size: 11px; font-weight: 700; color: #94A3B8; margin-bottom: 8px;">PAYMENT METHOD</div>
-                    <div style="display: flex; align-items: center; gap: 10px; background: #ffe8e4; padding: 10px; border-radius: 10px; color: #FF6B00; font-size: 13px; font-weight: 800;">
+                    <div style="font-size: 11px; font-weight: 500; color: #94A3B8; margin-bottom: 8px;">PAYMENT METHOD</div>
+                    <div style="display: flex; align-items: center; gap: 10px; background: #ffe8e4; padding: 10px; border-radius: 10px; color: #FF6B00; font-size: 13px; font-weight: 600;">
                         <iconify-icon icon="lucide:credit-card"></iconify-icon> Debit Card (Paystack / Flutterwave)
                     </div>
                 </div>
@@ -628,12 +628,12 @@
 
             <!-- PAGE 6: LIVE ORDER TRACKING & HISTORY -->
             <div id="pageTracking" class="tab-page">
-                <div style="font-size: 24px; font-weight: 800; color: #0F172A; margin-bottom: 12px;">Orders</div>
+                <div style="font-size: 24px; font-weight: 600; color: #0F172A; margin-bottom: 12px;">Orders</div>
 
                 <!-- Tab Switcher -->
                 <div style="display: flex; background: #E2E8F0; border-radius: 14px; padding: 4px; margin-bottom: 16px;">
-                    <button style="flex: 1; padding: 8px; border-radius: 10px; border: none; background: white; font-weight: 800; font-size: 13px; color: #0F172A; box-shadow: 0 2px 6px rgba(0,0,0,0.06); cursor: pointer;" onclick="document.getElementById('activeOrdersSec').style.display='block'; document.getElementById('historyOrdersSec').style.display='none';">Active (1)</button>
-                    <button style="flex: 1; padding: 8px; border-radius: 10px; border: none; background: transparent; font-weight: 700; font-size: 13px; color: #64748B; cursor: pointer;" onclick="document.getElementById('activeOrdersSec').style.display='none'; document.getElementById('historyOrdersSec').style.display='block';">History</button>
+                    <button style="flex: 1; padding: 8px; border-radius: 10px; border: none; background: white; font-weight: 600; font-size: 13px; color: #0F172A; box-shadow: 0 2px 6px rgba(0,0,0,0.06); cursor: pointer;" onclick="document.getElementById('activeOrdersSec').style.display='block'; document.getElementById('historyOrdersSec').style.display='none';">Active (1)</button>
+                    <button style="flex: 1; padding: 8px; border-radius: 10px; border: none; background: transparent; font-weight: 500; font-size: 13px; color: #64748B; cursor: pointer;" onclick="document.getElementById('activeOrdersSec').style.display='none'; document.getElementById('historyOrdersSec').style.display='block';">History</button>
                 </div>
 
                 <!-- Active Order Section -->
@@ -641,8 +641,8 @@
                     <div style="background: #FFFFFF; border-radius: 22px; padding: 18px; margin-bottom: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.06);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
                             <div>
-                                <div style="font-size: 20px; font-weight: 800; color: #0F172A;">Arriving in 15 mins</div>
-                                <div style="font-size: 13px; font-weight: 700; color: #FF6B00; margin-top: 2px;">Preparing Food at Restaurant</div>
+                                <div style="font-size: 20px; font-weight: 600; color: #0F172A;">Arriving in 15 mins</div>
+                                <div style="font-size: 13px; font-weight: 500; color: #FF6B00; margin-top: 2px;">Preparing Food at Restaurant</div>
                             </div>
                             <div style="width: 50px; height: 50px; border-radius: 25px; background: #FF6B00; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 4px 12px rgba(4, 120, 87, 0.3);">
                                 <iconify-icon icon="lucide:bike"></iconify-icon>
@@ -653,23 +653,23 @@
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative; padding: 0 10px;">
                             <div style="display: flex; flex-direction: column; align-items: center; z-index: 2;">
                                 <div style="width: 14px; height: 14px; border-radius: 7px; background: #FF6B00; border: 3px solid white; box-shadow: 0 0 0 2px #FF6B00;"></div>
-                                <span style="font-size: 10px; font-weight: 800; color: #0F172A; margin-top: 6px;">Preparing</span>
+                                <span style="font-size: 10px; font-weight: 600; color: #0F172A; margin-top: 6px;">Preparing</span>
                             </div>
                             <div style="height: 3px; background: #E2E8F0; flex: 1; margin: -14px 4px 0;"></div>
                             <div style="display: flex; flex-direction: column; align-items: center; z-index: 2;">
                                 <div style="width: 14px; height: 14px; border-radius: 7px; background: #CBD5E1; border: 3px solid white;"></div>
-                                <span style="font-size: 10px; font-weight: 700; color: #94A3B8; margin-top: 6px;">On the way</span>
+                                <span style="font-size: 10px; font-weight: 500; color: #94A3B8; margin-top: 6px;">On the way</span>
                             </div>
                             <div style="height: 3px; background: #E2E8F0; flex: 1; margin: -14px 4px 0;"></div>
                             <div style="display: flex; flex-direction: column; align-items: center; z-index: 2;">
                                 <div style="width: 14px; height: 14px; border-radius: 7px; background: #CBD5E1; border: 3px solid white;"></div>
-                                <span style="font-size: 10px; font-weight: 700; color: #94A3B8; margin-top: 6px;">Delivered</span>
+                                <span style="font-size: 10px; font-weight: 500; color: #94A3B8; margin-top: 6px;">Delivered</span>
                             </div>
                         </div>
 
                         <!-- Meta Info Box -->
                         <div style="background: #F8FAFC; border-radius: 14px; padding: 12px; margin-bottom: 16px;">
-                            <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #0F172A; font-weight: 700; margin-bottom: 6px;">
+                            <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #0F172A; font-weight: 500; margin-bottom: 6px;">
                                 <iconify-icon icon="lucide:map-pin" style="color: #FF6B00;"></iconify-icon> 11 Sampson Ubani Street, Aba, Abia State
                             </div>
                             <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #64748B;">
@@ -690,20 +690,20 @@
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=100" style="width: 42px; height: 42px; border-radius: 12px; object-fit: cover;">
                                 <div>
-                                    <div style="font-size: 14px; font-weight: 800; color: #0F172A;">Mama Cass Kitchen</div>
+                                    <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Mama Cass Kitchen</div>
                                     <div style="font-size: 11px; color: #64748B;">Oct 24, 2025 • Completed</div>
                                 </div>
                             </div>
-                            <span style="font-size: 15px; font-weight: 800; color: #0F172A;">₦7,600</span>
+                            <span style="font-size: 15px; font-weight: 600; color: #0F172A;">₦7,600</span>
                         </div>
                         <div style="font-size: 12px; color: #64748B; margin-bottom: 12px; padding-left: 52px;">
                             1x Special Jollof Rice Combo, 2x Chilled Malt Drink
                         </div>
                         <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #F1F5F9; padding-top: 10px;">
-                            <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 14px; border-radius: 10px; font-size: 12px; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 6px;" onclick="switchTab('Cart')">
+                            <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 14px; border-radius: 10px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;" onclick="switchTab('Cart')">
                                 <iconify-icon icon="lucide:rotate-cw"></iconify-icon> Reorder
                             </button>
-                            <a href="#" style="font-size: 12px; font-weight: 700; color: #64748B; text-decoration: none;" onclick="alert('Viewing receipt #MNG-89402')">View Receipt</a>
+                            <a href="#" style="font-size: 12px; font-weight: 500; color: #64748B; text-decoration: none;" onclick="alert('Viewing receipt #MNG-89402')">View Receipt</a>
                         </div>
                     </div>
                 </div>
@@ -715,10 +715,10 @@
                 <div style="background: linear-gradient(135deg, #FF6B00 0%, #047857 100%); border-radius: 22px; padding: 20px; color: white; margin-bottom: 16px; box-shadow: 0 8px 20px rgba(255, 107, 0, 0.25);">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                            <div style="font-size: 11px; opacity: 0.9; font-weight: 700; text-transform: uppercase;">WALLET BALANCE</div>
-                            <div style="font-size: 26px; font-weight: 800; margin-top: 2px;">₦15,400.00</div>
+                            <div style="font-size: 11px; opacity: 0.9; font-weight: 500; text-transform: uppercase;">WALLET BALANCE</div>
+                            <div style="font-size: 26px; font-weight: 600; margin-top: 2px;">₦15,400.00</div>
                         </div>
-                        <button style="background: white; color: #FF6B00; border: none; padding: 8px 14px; border-radius: 16px; font-size: 12px; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 4px;" onclick="showToast('Top Up Wallet Initiated!')">
+                        <button style="background: white; color: #FF6B00; border: none; padding: 8px 14px; border-radius: 16px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px;" onclick="showToast('Top Up Wallet Initiated!')">
                             <iconify-icon icon="lucide:plus"></iconify-icon> Top up
                         </button>
                     </div>
@@ -735,7 +735,7 @@
                         </div>
                     </div>
                     <div style="flex: 1;">
-                        <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Adebayo Okoro</div>
+                        <div style="font-size: 16px; font-weight: 600; color: #0F172A;">Adebayo Okoro</div>
                         <div style="font-size: 12px; color: #64748B;">09021449487</div>
                     </div>
                     <button style="background: #ffe8e4; color: #FF6B00; border: none; width: 34px; height: 34px; border-radius: 17px; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="showToast('Edit Profile details')">
@@ -750,7 +750,7 @@
                             <iconify-icon icon="lucide:bike"></iconify-icon>
                         </div>
                         <div>
-                            <div style="font-size: 13px; font-weight: 800; color: #059669;">Driver Mode (Deliver & Earn)</div>
+                            <div style="font-size: 13px; font-weight: 600; color: #059669;">Driver Mode (Deliver & Earn)</div>
                             <div style="font-size: 11px; color: #059669;">Earn up to ₦150k weekly</div>
                         </div>
                     </div>
@@ -759,15 +759,15 @@
 
                 <!-- My Account Group -->
                 <div style="background: #FFFFFF; border-radius: 20px; padding: 14px; margin-bottom: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-                    <div style="font-size: 12px; font-weight: 800; color: #94A3B8; margin-bottom: 10px; text-transform: uppercase;">MY ACCOUNT</div>
+                    <div style="font-size: 12px; font-weight: 600; color: #94A3B8; margin-bottom: 10px; text-transform: uppercase;">MY ACCOUNT</div>
                     <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #F1F5F9; cursor: pointer;">
-                        <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: #0F172A;">
+                        <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: #0F172A;">
                             <iconify-icon icon="lucide:map-pin" style="color: #10B981; font-size: 18px;"></iconify-icon> Saved Addresses (2)
                         </div>
                         <iconify-icon icon="lucide:chevron-right" style="color: #CBD5E1;"></iconify-icon>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; cursor: pointer;">
-                        <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: #0F172A;">
+                        <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: #0F172A;">
                             <iconify-icon icon="lucide:credit-card" style="color: #8B5CF6; font-size: 18px;"></iconify-icon> Payment Methods (Visa ****9021)
                         </div>
                         <iconify-icon icon="lucide:chevron-right" style="color: #CBD5E1;"></iconify-icon>
@@ -776,21 +776,21 @@
 
                 <!-- Offers & Orders Group -->
                 <div style="background: #FFFFFF; border-radius: 20px; padding: 14px; margin-bottom: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-                    <div style="font-size: 12px; font-weight: 800; color: #94A3B8; margin-bottom: 10px; text-transform: uppercase;">OFFERS & ORDERS</div>
+                    <div style="font-size: 12px; font-weight: 600; color: #94A3B8; margin-bottom: 10px; text-transform: uppercase;">OFFERS & ORDERS</div>
                     <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #F1F5F9; cursor: pointer;" onclick="switchTab('Tracking')">
-                        <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: #0F172A;">
+                        <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: #0F172A;">
                             <iconify-icon icon="lucide:file-text" style="color: #F59E0B; font-size: 18px;"></iconify-icon> Order History
                         </div>
                         <iconify-icon icon="lucide:chevron-right" style="color: #CBD5E1;"></iconify-icon>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #F1F5F9; cursor: pointer;">
-                        <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: #0F172A;">
+                        <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: #0F172A;">
                             <iconify-icon icon="lucide:tag" style="color: #EC4899; font-size: 18px;"></iconify-icon> Promo Codes (MANGIONA500)
                         </div>
                         <iconify-icon icon="lucide:chevron-right" style="color: #CBD5E1;"></iconify-icon>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; cursor: pointer;">
-                        <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: #0F172A;">
+                        <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: #0F172A;">
                             <iconify-icon icon="lucide:share-2" style="color: #3B82F6; font-size: 18px;"></iconify-icon> Share & Earn ₦1,000
                         </div>
                         <iconify-icon icon="lucide:chevron-right" style="color: #CBD5E1;"></iconify-icon>
@@ -836,21 +836,21 @@
                 <iconify-icon icon="lucide:check"></iconify-icon>
             </div>
             
-            <div style="font-size: 22px; font-weight: 800; color: white; margin-bottom: 6px;">Order Placed! 🎉</div>
+            <div style="font-size: 22px; font-weight: 600; color: white; margin-bottom: 6px;">Order Placed! 🎉</div>
             <div style="font-size: 13px; color: #94A3B8; margin-bottom: 20px;">Your delicious food is being prepared.</div>
 
             <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 18px; padding: 16px; width: 100%; margin-bottom: 24px;">
                 <div style="display: flex; justify-content: space-between; font-size: 12px; color: #CBD5E1; margin-bottom: 8px;">
                     <span>Order Number</span>
-                    <span style="font-weight: 800; color: #10B981;">#MNG-89402</span>
+                    <span style="font-weight: 600; color: #10B981;">#MNG-89402</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; font-size: 12px; color: #CBD5E1; margin-bottom: 8px;">
                     <span>Estimated Arrival</span>
-                    <span style="font-weight: 800; color: white;">15 Minutes</span>
+                    <span style="font-weight: 600; color: white;">15 Minutes</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; font-size: 12px; color: #CBD5E1;">
                     <span>Total Paid</span>
-                    <span style="font-weight: 800; color: #FF6B00;" id="modalTotalPaid">₦7,600.00</span>
+                    <span style="font-weight: 600; color: #FF6B00;" id="modalTotalPaid">₦7,600.00</span>
                 </div>
             </div>
 

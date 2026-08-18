@@ -140,3 +140,81 @@
         padding: 15px; }
 .search-btn { width: 100%; }
  }
+
+
+/* High-Specificity Master Hero Badge Positioning - Zero Overlap with Driver Image */
+.home-delivery-visual .floating-badge.badge-1,
+.home-delivery-visual .courier-badge,
+.badge-1,
+.courier-badge {
+    top: -28px !important;
+    left: -40px !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: 20 !important;
+}
+
+.home-delivery-visual .floating-badge.badge-2,
+.home-delivery-visual .delivery-time-badge,
+.badge-2,
+.delivery-time-badge {
+    bottom: -28px !important;
+    right: -40px !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 20 !important;
+}
+
+@media (max-width: 980px) {
+    .home-delivery-visual .floating-badge.badge-1,
+    .home-delivery-visual .courier-badge,
+    .badge-1,
+    .courier-badge {
+        top: -24px !important;
+        left: -20px !important;
+        right: auto !important;
+        bottom: auto !important;
+        padding: 8px 14px !important;
+    }
+    .home-delivery-visual .floating-badge.badge-2,
+    .home-delivery-visual .delivery-time-badge,
+    .badge-2,
+    .delivery-time-badge {
+        bottom: -24px !important;
+        right: -20px !important;
+        top: auto !important;
+        left: auto !important;
+        padding: 8px 14px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-delivery-visual {
+        width: min(280px, 75vw) !important;
+        height: 300px !important;
+        margin: 35px auto !important;
+        overflow: visible !important;
+    }
+    .home-delivery-visual .floating-badge.badge-1,
+    .home-delivery-visual .courier-badge,
+    .badge-1,
+    .courier-badge {
+        top: -25px !important;
+        left: -15px !important;
+        right: auto !important;
+        bottom: auto !important;
+        padding: 7px 11px !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+    }
+    .home-delivery-visual .floating-badge.badge-2,
+    .home-delivery-visual .delivery-time-badge,
+    .badge-2,
+    .delivery-time-badge {
+        bottom: -25px !important;
+        right: -15px !important;
+        top: auto !important;
+        left: auto !important;
+        padding: 7px 11px !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+    }
+}

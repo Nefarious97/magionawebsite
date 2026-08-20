@@ -511,24 +511,13 @@
                     <div style="font-size: 12px; color: #64748B; margin-top: 2px;">24 Commercial Avenue, Yaba • 4.8 ★ (340 reviews)</div>
                 </div>
 
-                <div style="font-size: 14px; font-weight: 600; color: #0F172A; margin-bottom: 10px;">Popular Menu Items</div>
-
-                <div style="background: #FFFFFF; border-radius: 16px; padding: 14px; margin-bottom: 10px; display: flex; gap: 12px; align-items: center; justify-content: space-between; border: 1px solid #E2E8F0;">
-                    <div>
-                        <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Special Jollof Rice Combo</div>
-                        <div style="font-size: 11px; color: #64748B;">Smoky jollof rice, fried plantain & grilled chicken</div>
-                        <div style="font-size: 14px; font-weight: 600; color: #FF6B00; margin-top: 4px;">₦4,500</div>
-                    </div>
-                    <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 600; cursor: pointer;" onclick="addItemToCart('item1', 'Special Jollof Rice', 4500); switchTab('Cart');">+ Add</button>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Live Menu (Synced with Vendor Hub)</div>
+                    <a href="restaurant-dashboard.html" target="_blank" style="font-size: 11px; font-weight: 600; color: #FF6B00; text-decoration: none;">+ Upload Meals 🏬</a>
                 </div>
 
-                <div style="background: #FFFFFF; border-radius: 16px; padding: 14px; margin-bottom: 10px; display: flex; gap: 12px; align-items: center; justify-content: space-between; border: 1px solid #E2E8F0;">
-                    <div>
-                        <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Pounded Yam & Egusi Soup</div>
-                        <div style="font-size: 11px; color: #64748B;">Fresh egusi soup served with tender goat meat</div>
-                        <div style="font-size: 14px; font-weight: 600; color: #FF6B00; margin-top: 4px;">₦5,200</div>
-                    </div>
-                    <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 600; cursor: pointer;" onclick="addItemToCart('item2', 'Chilled Malt Drink', 800); switchTab('Cart');">+ Add</button>
+                <div id="liveVendorMenuContainer">
+                    <!-- Dynamically rendered live from restaurant-dashboard.html -->
                 </div>
             </div>
 
@@ -880,6 +869,45 @@
                 }, 2800);
             }
         }
+
+        const VENDOR_STORAGE_KEY = 'mangiona_shared_menu';
+
+        function renderCustomerVendorMenu() {
+            const container = document.getElementById('liveVendorMenuContainer');
+            if (!container) return;
+
+            let menuData = [];
+            try {
+                const stored = localStorage.getItem(VENDOR_STORAGE_KEY);
+                if (stored) menuData = JSON.parse(stored);
+            } catch(e) {}
+
+            if (!menuData || menuData.length === 0) {
+                menuData = [
+                    { id: 'item1', name: 'Special Jollof Rice Combo', price: 4500, desc: 'Smoky jollof rice, fried plantain & grilled chicken', image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500', available: true },
+                    { id: 'item2', name: 'Pounded Yam & Egusi Soup', price: 5200, desc: 'Fresh egusi soup served with tender goat meat', image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500', available: true }
+                ];
+            }
+
+            container.innerHTML = menuData.filter(item => item.available !== false).map(item => `
+                <div style="background: #FFFFFF; border-radius: 16px; padding: 14px; margin-bottom: 10px; display: flex; gap: 12px; align-items: center; justify-content: space-between; border: 1px solid #E2E8F0; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                    <div style="display: flex; gap: 12px; align-items: center; flex: 1;">
+                        <img src="${item.image || 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500'}" style="width: 52px; height: 52px; border-radius: 12px; object-fit: cover;">
+                        <div style="flex: 1;">
+                            <div style="font-size: 14px; font-weight: 600; color: #0F172A;">${item.name}</div>
+                            <div style="font-size: 11px; color: #64748B; margin-top: 2px;">${item.desc || 'Freshly prepared meal'}</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #FF6B00; margin-top: 4px;">₦${Number(item.price).toLocaleString('en-US')}</div>
+                        </div>
+                    </div>
+                    <button style="background: #ffe8e4; color: #FF6B00; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 600; cursor: pointer; white-space: nowrap;" onclick="addItemToCart('${item.id}', '${item.name.replace(/'/g, "\\'")}', ${item.price}); switchTab('Cart');">+ Add</button>
+                </div>
+            `).join('');
+        }
+
+        window.addEventListener('storage', renderCustomerVendorMenu);
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCustomerVendorMenu();
+        });
 
         // Dynamic Cart State (Starts empty by default)
         const cartState = {

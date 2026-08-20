@@ -1146,17 +1146,7 @@
                 splash.classList.add('hidden');
                 setTimeout(() => {
                     splash.style.display = 'none';
-                    const storedUser = localStorage.getItem(USER_KEY);
-                    if (storedUser) {
-                        try {
-                            const u = JSON.parse(storedUser);
-                            openMainApp(u.storeName, u.storeAddress);
-                        } catch(e) {
-                            switchAuthTab('login');
-                        }
-                    } else {
-                        switchAuthTab('login');
-                    }
+                    switchAuthTab('login');
                 }, 750);
             }
         }, 4500);

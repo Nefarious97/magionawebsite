@@ -44,11 +44,11 @@
             z-index: 100;
         }
 
-        .app-container { flex: 1; display: flex; flex-direction: column; overflow-y: auto; scrollbar-width: none; }
+        .app-container { flex: 1; display: flex; flex-direction: column; overflow-y: auto; scrollbar-width: none; position: relative; }
         .app-container::-webkit-scrollbar { display: none; }
 
         /* Screens */
-        .app-screen { display: none; flex-direction: column; min-height: 100%; }
+        .app-screen { display: none; flex-direction: column; min-height: 100%; padding-bottom: 70px; }
         .app-screen.active { display: flex; }
 
         /* Modern Dark Emerald Background */
@@ -61,6 +61,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            padding-bottom: 20px;
         }
 
         /* Glow Light Accent */
@@ -76,7 +77,7 @@
             border-radius: 50%;
         }
 
-        .auth-header { text-align: center; margin-bottom: 14px; position: relative; z-index: 2; }
+        .auth-header { text-align: center; margin-bottom: 12px; position: relative; z-index: 2; }
         .auth-logo { width: 44px; height: auto; margin-bottom: 4px; }
         .auth-title { font-size: 22px; font-weight: 850; color: #FFFFFF; letter-spacing: -0.5px; }
         .auth-sub { font-size: 11px; color: #A7F3D0; margin-top: 2px; font-weight: 500; }
@@ -88,7 +89,7 @@
             border-radius: 999px;
             padding: 3px;
             display: flex;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             border: 1px solid rgba(255, 255, 255, 0.15);
             position: relative;
             z-index: 2;
@@ -96,7 +97,7 @@
 
         .seg-tab-btn {
             flex: 1;
-            padding: 8px 0;
+            padding: 7px 0;
             border: none;
             background: transparent;
             color: rgba(255, 255, 255, 0.7);
@@ -222,17 +223,79 @@
         .m-stat-val { font-size: 15px; font-weight: 800; color: #0F172A; margin-top: 2px; }
         .m-stat-lbl { font-size: 10px; color: #64748B; font-weight: 600; }
 
-        /* Menu Header */
-        .menu-top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-        .menu-head-txt { font-size: 14px; font-weight: 800; color: #0F172A; }
-        .upload-meal-btn { background: #FF6B00; color: white; border: none; padding: 7px 14px; border-radius: 10px; font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3); }
+        /* Order Cards */
+        .order-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
 
-        .m-food-row { background: #FFFFFF; border-radius: 16px; padding: 10px 12px; margin-bottom: 8px; border: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
-        .m-food-title { font-size: 13px; font-weight: 700; color: #0F172A; }
-        .m-food-meta { font-size: 11px; color: #FF6B00; font-weight: 700; margin-top: 2px; }
+        .order-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+        .order-id { font-size: 13px; font-weight: 800; color: #0F172A; }
+        .order-status-tag { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; }
+        .tag-pending { background: #FFF7ED; color: #FF6B00; }
+        .tag-prep { background: #FEF3C7; color: #D97706; }
+        .tag-ready { background: #ECFDF5; color: #059669; }
 
-        .row-actions { display: flex; align-items: center; gap: 8px; }
-        .trash-btn { width: 28px; height: 28px; border-radius: 10px; background: #FEF2F2; border: 1px solid #FEE2E2; color: #EF4444; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .order-items { font-size: 12px; color: #475569; margin-bottom: 10px; line-height: 1.4; }
+        .order-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #F1F5F9; padding-top: 8px; }
+        .order-total { font-size: 14px; font-weight: 800; color: #FF6B00; }
+
+        .order-btn {
+            background: #FF6B00;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* Floating Capsule Bottom Nav Bar */
+        .app-bottom-nav {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 54px;
+            background: rgba(15, 23, 42, 0.94);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 6px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            z-index: 400;
+        }
+
+        .nav-item-btn {
+            background: none;
+            border: none;
+            color: #94A3B8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 20px;
+            transition: all 0.25s ease;
+        }
+        .nav-item-btn iconify-icon { font-size: 18px; }
+        .nav-item-btn.active {
+            color: #FFFFFF;
+            background: #FF6B00;
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
+        }
 
         /* Upload Sheet Modal Overlay */
         .sheet-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(6px); z-index: 500; display: none; align-items: flex-end; }
@@ -429,9 +492,8 @@
                 </div>
             </div>
 
-            <!-- SCREEN 3: PARTNER DASHBOARD -->
+            <!-- SCREEN 3: PARTNER DASHBOARD (TAB 1: HOME) -->
             <div id="screenDashboard" class="app-screen dash-screen">
-                <!-- Hero Store Card -->
                 <div class="dash-hero-card">
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <div class="store-avatar">MC</div>
@@ -450,10 +512,9 @@
                     </div>
                 </div>
 
-                <!-- Stats Overview -->
                 <div class="stats-grid">
                     <div class="m-stat-card">
-                        <div class="m-stat-lbl">Today's Revenue</div>
+                        <div class="m-stat-lbl">Revenue Today</div>
                         <div class="m-stat-val">₦84,500</div>
                     </div>
                     <div class="m-stat-card">
@@ -462,28 +523,87 @@
                     </div>
                     <div class="m-stat-card">
                         <div class="m-stat-lbl">Pending Prep</div>
-                        <div class="m-stat-val" style="color: #FF6B00;">3 Active</div>
+                        <div class="m-stat-val" style="color: #FF6B00;" id="pendingCountTxt">3 Active</div>
                     </div>
                 </div>
 
-                <!-- Menu Items Top Bar -->
-                <div class="menu-top-bar">
-                    <div class="menu-head-txt">Uploaded Menu (<span id="appMealCount">0</span>)</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <div style="font-size: 13px; font-weight: 800; color: #0F172A;">Incoming Kitchen Orders</div>
+                    <button onclick="simulateNewOrder()" style="background: #FFE8E4; color: #FF6B00; border: none; padding: 4px 8px; border-radius: 6px; font-size: 10px; font-weight: 700; cursor: pointer;">+ Test Order 👨‍🍳</button>
+                </div>
+
+                <div id="dashboardOrdersList">
+                    <!-- Dynamic rendering -->
+                </div>
+            </div>
+
+            <!-- TAB 2: MENU MANAGER SCREEN -->
+            <div id="screenMenuManager" class="app-screen dash-screen">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <div>
+                        <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Menu Catalog</div>
+                        <div style="font-size: 11px; color: #64748B;">Synced live with Customer App</div>
+                    </div>
                     <button class="upload-meal-btn" onclick="openAppUploadModal()">
-                        <iconify-icon icon="lucide:plus-circle"></iconify-icon> + Upload Meal
+                        <iconify-icon icon="lucide:plus-circle"></iconify-icon> + Add Meal
                     </button>
                 </div>
 
                 <div id="appFoodList">
-                    <!-- Dynamic rendering from localStorage -->
-                </div>
-
-                <div style="margin-top: auto; padding-top: 10px; text-align: center;">
-                    <a href="app.html" target="_blank" style="font-size: 11px; font-weight: 700; color: #2563EB; text-decoration: none;">View Live Customer App 📱</a>
+                    <!-- Dynamic rendering -->
                 </div>
             </div>
 
+            <!-- TAB 3: LIVE ORDERS SCREEN -->
+            <div id="screenLiveOrders" class="app-screen dash-screen">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <div>
+                        <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Live Orders Manager</div>
+                        <div style="font-size: 11px; color: #64748B;">Accept & dispatch food to drivers</div>
+                    </div>
+                    <button onclick="simulateNewOrder()" class="upload-meal-btn" style="background: #10B981;">+ Receive Order</button>
+                </div>
+
+                <div id="fullLiveOrdersList">
+                    <!-- Dynamic orders list -->
+                </div>
+            </div>
+
+            <!-- TAB 4: STORE PROFILE SCREEN -->
+            <div id="screenProfile" class="app-screen dash-screen">
+                <div style="background: #FFFFFF; border-radius: 20px; padding: 16px; border: 1px solid #E2E8F0; margin-bottom: 14px; text-align: center;">
+                    <div style="width: 60px; height: 60px; border-radius: 20px; background: #FFE8E4; color: #FF6B00; font-size: 26px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">MC</div>
+                    <div style="font-size: 16px; font-weight: 800; color: #0F172A;" id="profStoreName">Mama Cass Kitchen</div>
+                    <div style="font-size: 12px; color: #64748B;" id="profStoreAddress">24 Commercial Avenue, Yaba</div>
+                    <div style="font-size: 11px; color: #10B981; font-weight: 700; margin-top: 4px;">Verified Partner Store • 4.8 ★</div>
+                </div>
+
+                <div style="background: #FFFFFF; border-radius: 16px; padding: 14px; border: 1px solid #E2E8F0; margin-bottom: 14px;">
+                    <div style="font-size: 12px; color: #64748B;">Partner Wallet Balance</div>
+                    <div style="font-size: 24px; font-weight: 800; color: #FF6B00; margin-top: 2px;">₦84,500.00</div>
+                    <button style="width: 100%; margin-top: 10px; background: #10B981; color: white; border: none; padding: 10px; border-radius: 10px; font-size: 12px; font-weight: 700; cursor: pointer;">Withdraw Earnings to Bank 🏦</button>
+                </div>
+
+                <button onclick="handleLogOut()" style="width: 100%; background: #FEF2F2; color: #EF4444; border: 1px solid #FEE2E2; padding: 12px; border-radius: 12px; font-size: 13px; font-weight: 800; cursor: pointer;">Log Out of Partner Account 🚪</button>
+            </div>
+
         </div>
+
+        <!-- FLOATING CAPSULE BOTTOM NAVIGATION BAR -->
+        <nav class="app-bottom-nav" id="appBottomNav" style="display: none;">
+            <button class="nav-item-btn active" id="navHome" onclick="switchNavTab('screenDashboard', 'navHome')">
+                <iconify-icon icon="lucide:home"></iconify-icon> Home
+            </button>
+            <button class="nav-item-btn" id="navMenu" onclick="switchNavTab('screenMenuManager', 'navMenu')">
+                <iconify-icon icon="lucide:utensils"></iconify-icon> Menu
+            </button>
+            <button class="nav-item-btn" id="navOrders" onclick="switchNavTab('screenLiveOrders', 'navOrders')">
+                <iconify-icon icon="lucide:chef-hat"></iconify-icon> Orders
+            </button>
+            <button class="nav-item-btn" id="navProfile" onclick="switchNavTab('screenProfile', 'navProfile')">
+                <iconify-icon icon="lucide:user"></iconify-icon> Profile
+            </button>
+        </nav>
 
         <!-- UPLOAD MEAL MODAL SHEET -->
         <div class="sheet-overlay" id="appUploadModal">
@@ -533,6 +653,12 @@
 
     <script>
         const STORAGE_KEY = 'mangiona_shared_menu';
+        const USER_KEY = 'mangiona_vendor_user';
+
+        let liveOrders = [
+            { id: '#1042', customer: 'Chidi O.', items: '2x Special Jollof Rice, 1x Malt', total: 9800, status: 'pending' },
+            { id: '#1043', customer: 'Amina K.', items: '1x Pounded Yam & Egusi', total: 5200, status: 'prep' }
+        ];
 
         function showAppToast(msg) {
             const toast = document.getElementById('appToast');
@@ -546,6 +672,7 @@
         function switchAuthTab(tab) {
             const screens = document.querySelectorAll('.app-screen');
             screens.forEach(s => s.classList.remove('active'));
+            document.getElementById('appBottomNav').style.display = 'none';
 
             if (tab === 'login') {
                 document.getElementById('screenLogin').classList.add('active');
@@ -554,28 +681,125 @@
             }
         }
 
+        function switchNavTab(screenId, navBtnId) {
+            const screens = document.querySelectorAll('.app-screen');
+            screens.forEach(s => s.classList.remove('active'));
+
+            const navBtns = document.querySelectorAll('.nav-item-btn');
+            navBtns.forEach(b => b.classList.remove('active'));
+
+            document.getElementById(screenId).classList.add('active');
+            document.getElementById(navBtnId).classList.add('active');
+
+            if (screenId === 'screenDashboard' || screenId === 'screenLiveOrders') {
+                renderLiveOrders();
+            }
+        }
+
+        function openMainApp(storeName, storeAddress) {
+            localStorage.setItem(USER_KEY, JSON.stringify({ storeName, storeAddress }));
+            document.getElementById('dispStoreName').textContent = storeName;
+            document.getElementById('dispStoreLoc').textContent = storeAddress;
+            document.getElementById('profStoreName').textContent = storeName;
+            document.getElementById('profStoreAddress').textContent = storeAddress;
+
+            document.getElementById('screenLogin').classList.remove('active');
+            document.getElementById('screenRegister').classList.remove('active');
+            document.getElementById('screenDashboard').classList.add('active');
+            document.getElementById('appBottomNav').style.display = 'flex';
+
+            renderAppMenuList();
+            renderLiveOrders();
+        }
+
         function handleLogin(e) {
             e.preventDefault();
-            switchAuthTab('dash');
-            document.getElementById('screenDashboard').classList.add('active');
+            openMainApp('Mama Cass Kitchen', '24 Commercial Avenue, Yaba');
             showAppToast('🔐 Welcome back to Partner Hub!');
-            renderAppMenuList();
         }
 
         function handleRegistration(e) {
             e.preventDefault();
             const name = document.getElementById('regName').value;
             const address = document.getElementById('regAddress').value;
+            openMainApp(name, address);
+            showAppToast('🎉 Partner Account Created Successfully!');
+        }
 
-            document.getElementById('dispStoreName').textContent = name;
-            document.getElementById('dispStoreLoc').textContent = address;
-
+        function handleLogOut() {
+            localStorage.removeItem(USER_KEY);
             const screens = document.querySelectorAll('.app-screen');
             screens.forEach(s => s.classList.remove('active'));
-            document.getElementById('screenDashboard').classList.add('active');
+            document.getElementById('appBottomNav').style.display = 'none';
+            document.getElementById('screenLogin').classList.add('active');
+            showAppToast('🚪 Logged out of Partner Account.');
+        }
 
-            showAppToast('🎉 Partner Account Created Successfully!');
-            renderAppMenuList();
+        function renderLiveOrders() {
+            const dashBox = document.getElementById('dashboardOrdersList');
+            const fullBox = document.getElementById('fullLiveOrdersList');
+            const pCount = document.getElementById('pendingCountTxt');
+
+            const pendingOrders = liveOrders.filter(o => o.status !== 'ready');
+            if (pCount) pCount.textContent = pendingOrders.length + ' Active';
+
+            const html = liveOrders.map(o => {
+                let tagClass = 'tag-pending';
+                let tagTxt = 'Pending Accept';
+                let btnTxt = 'Accept Order 👨‍🍳';
+                let nextStatus = 'prep';
+
+                if (o.status === 'prep') {
+                    tagClass = 'tag-prep';
+                    tagTxt = 'Kitchen Prep...';
+                    btnTxt = 'Ready for Driver 🛵';
+                    nextStatus = 'ready';
+                } else if (o.status === 'ready') {
+                    tagClass = 'tag-ready';
+                    tagTxt = 'Driver Dispatched';
+                    btnTxt = 'Completed ✅';
+                    nextStatus = 'done';
+                }
+
+                return `
+                    <div class="order-card">
+                        <div class="order-head">
+                            <div class="order-id">${o.id} • ${o.customer}</div>
+                            <span class="order-status-tag ${tagClass}">${tagTxt}</span>
+                        </div>
+                        <div class="order-items">${o.items}</div>
+                        <div class="order-footer">
+                            <div class="order-total">₦${o.total.toLocaleString()}</div>
+                            ${o.status !== 'ready' ? `<button class="order-btn" onclick="updateOrderStatus('${o.id}', '${nextStatus}')">${btnTxt}</button>` : '<span style="font-size: 11px; color: #10B981; font-weight: 700;">Driver en route</span>'}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            if (dashBox) dashBox.innerHTML = html;
+            if (fullBox) fullBox.innerHTML = html;
+        }
+
+        function updateOrderStatus(id, nextStatus) {
+            const target = liveOrders.find(o => o.id === id);
+            if (target) {
+                target.status = nextStatus;
+                renderLiveOrders();
+                showAppToast('Order ' + id + ' status updated!');
+            }
+        }
+
+        function simulateNewOrder() {
+            const newId = '#' + (1040 + Math.floor(Math.random() * 90));
+            liveOrders.unshift({
+                id: newId,
+                customer: 'Customer ' + Math.floor(Math.random() * 50),
+                items: '1x Special Jollof Rice Combo',
+                total: 4500,
+                status: 'pending'
+            });
+            renderLiveOrders();
+            showAppToast('🔔 New Live Order ' + newId + ' Received!');
         }
 
         function getSharedMenu() {
@@ -599,7 +823,7 @@
             if (countElem) countElem.textContent = list.length;
 
             if (list.length === 0) {
-                container.innerHTML = `<div style="text-align: center; color: #94A3B8; padding: 30px; font-size: 12px;">No meals uploaded yet. Click "+ Upload Meal" above.</div>`;
+                container.innerHTML = `<div style="text-align: center; color: #94A3B8; padding: 30px; font-size: 12px;">No meals uploaded yet. Click "+ Add Meal" above.</div>`;
                 return;
             }
 
@@ -700,7 +924,17 @@
                 splash.classList.add('hidden');
                 setTimeout(() => {
                     splash.style.display = 'none';
-                    switchAuthTab('login');
+                    const storedUser = localStorage.getItem(USER_KEY);
+                    if (storedUser) {
+                        try {
+                            const u = JSON.parse(storedUser);
+                            openMainApp(u.storeName, u.storeAddress);
+                        } catch(e) {
+                            switchAuthTab('login');
+                        }
+                    } else {
+                        switchAuthTab('login');
+                    }
                 }, 750);
             }
         }, 4500);

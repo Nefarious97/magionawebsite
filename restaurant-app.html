@@ -7,9 +7,12 @@
     <link rel="shortcut icon" href="image/Logo m 2.png" type="image/x-icon">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+        
         body {
-            background-color: #0A0F1D;
+            background-color: #030712;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -21,10 +24,10 @@
         .phone-shell {
             width: 390px;
             height: 780px;
-            background: #F8FAFC;
-            border-radius: 44px;
-            border: 10px solid #1E293B;
-            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.15);
+            background: #0B132B;
+            border-radius: 46px;
+            border: 10px solid #1F2937;
+            box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.12);
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -34,7 +37,7 @@
         .phone-notch {
             width: 130px;
             height: 22px;
-            background: #1E293B;
+            background: #1F2937;
             border-bottom-left-radius: 14px;
             border-bottom-right-radius: 14px;
             position: absolute;
@@ -48,13 +51,13 @@
         .app-container::-webkit-scrollbar { display: none; }
 
         /* Screens */
-        .app-screen { display: none; flex-direction: column; min-height: 100%; padding-bottom: 75px; }
+        .app-screen { display: none; flex-direction: column; min-height: 100%; padding-bottom: 78px; }
         .app-screen.active { display: flex; }
 
-        /* Modern Dark Emerald Background */
+        /* Ultra Dark Emerald Ambient Auth Background */
         .auth-bg {
-            background: radial-gradient(circle at top right, #064E3B 0%, #011F15 60%, #011810 100%);
-            padding: 40px 18px 16px;
+            background: radial-gradient(ellipse at top left, #0D281E 0%, #030F0A 60%, #010805 100%);
+            padding: 44px 20px 20px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -63,68 +66,80 @@
             overflow: hidden;
         }
 
-        /* Glow Light Accent */
         .auth-bg::before {
             content: '';
             position: absolute;
-            top: -60px;
-            right: -60px;
-            width: 220px;
-            height: 220px;
-            background: rgba(255, 107, 0, 0.18);
-            filter: blur(50px);
+            top: -80px;
+            right: -80px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 107, 0, 0.22);
+            filter: blur(65px);
             border-radius: 50%;
         }
 
-        .auth-header { text-align: center; margin-bottom: 12px; position: relative; z-index: 2; }
-        .auth-logo { width: 44px; height: auto; margin-bottom: 4px; }
-        .auth-title { font-size: 22px; font-weight: 850; color: #FFFFFF; letter-spacing: -0.5px; }
-        .auth-sub { font-size: 11px; color: #A7F3D0; margin-top: 2px; font-weight: 500; }
+        .auth-header { text-align: center; margin-bottom: 16px; position: relative; z-index: 2; }
+        .auth-logo-badge {
+            width: 54px;
+            height: 54px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .auth-logo { width: 34px; height: auto; }
+        .auth-title { font-size: 24px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.5px; }
+        .auth-sub { font-size: 11px; color: #6EE7B7; margin-top: 4px; font-weight: 500; }
 
         /* Segmented Control Switcher */
         .segmented-tab-row {
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
             border-radius: 999px;
-            padding: 3px;
+            padding: 4px;
             display: flex;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
             position: relative;
             z-index: 2;
         }
 
         .seg-tab-btn {
             flex: 1;
-            padding: 7px 0;
+            padding: 8px 0;
             border: none;
             background: transparent;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.65);
             font-size: 12px;
             font-weight: 700;
             border-radius: 999px;
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .seg-tab-btn.active {
-            background: #FF6B00;
+            background: linear-gradient(135deg, #FF6B00 0%, #FF3D00 100%);
             color: #FFFFFF;
-            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.35);
+            box-shadow: 0 4px 14px rgba(255, 107, 0, 0.45);
         }
 
         /* Glassmorphic Auth Card */
         .auth-card {
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(24px) saturate(180%);
+            border-radius: 26px;
+            padding: 18px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255, 255, 255, 0.3);
             position: relative;
             z-index: 2;
         }
 
-        .input-group { margin-bottom: 8px; }
-        .input-label { font-size: 10px; font-weight: 700; color: #334155; margin-bottom: 3px; display: block; text-transform: uppercase; letter-spacing: 0.3px; }
+        .input-group { margin-bottom: 10px; }
+        .input-label { font-size: 10px; font-weight: 800; color: #475569; margin-bottom: 4px; display: block; text-transform: uppercase; letter-spacing: 0.4px; }
         
         .input-wrapper {
             position: relative;
@@ -134,45 +149,46 @@
 
         .input-icon {
             position: absolute;
-            left: 12px;
+            left: 14px;
             color: #94A3B8;
-            font-size: 16px;
+            font-size: 17px;
             pointer-events: none;
         }
 
         .modern-input {
             width: 100%;
-            height: 36px;
-            border-radius: 10px;
+            height: 38px;
+            border-radius: 12px;
             border: 1px solid #E2E8F0;
-            padding: 0 12px 0 36px;
+            padding: 0 12px 0 40px;
             font-size: 12px;
+            font-weight: 600;
             outline: none;
             background: #F8FAFC;
             color: #0F172A;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
         .modern-input:focus {
             border-color: #FF6B00;
             background: #FFFFFF;
-            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+            box-shadow: 0 0 0 3.5px rgba(255, 107, 0, 0.18);
         }
 
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 
         .action-btn {
             width: 100%;
-            height: 42px;
-            background: linear-gradient(135deg, #FF6B00 0%, #E05300 100%);
+            height: 44px;
+            background: linear-gradient(135deg, #FF6B00 0%, #FF3D00 100%);
             color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 14px;
             font-size: 14px;
             font-weight: 800;
             cursor: pointer;
-            margin-top: 10px;
-            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.35);
-            transition: all 0.2s ease;
+            margin-top: 12px;
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
+            transition: all 0.25s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -180,47 +196,60 @@
         }
         .action-btn:active { transform: scale(0.98); }
 
-        /* Dashboard & App Screens Styling */
-        .dash-screen { padding: 32px 14px 14px; background: #F8FAFC; flex: 1; }
+        /* Modern Dashboard Styling */
+        .dash-screen { padding: 36px 14px 14px; background: #F8FAFC; flex: 1; }
 
         .dash-hero-card {
-            background: linear-gradient(135deg, #064E3B 0%, #01281b 100%);
-            border-radius: 20px;
-            padding: 14px;
+            background: linear-gradient(135deg, #064E3B 0%, #022C22 100%);
+            border-radius: 24px;
+            padding: 16px;
             color: white;
-            margin-bottom: 12px;
-            box-shadow: 0 10px 25px rgba(6, 78, 59, 0.25);
+            margin-bottom: 14px;
+            box-shadow: 0 14px 30px rgba(6, 78, 59, 0.3);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: relative;
+            overflow: hidden;
         }
 
-        .store-avatar { width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; color: #FF6B00; }
-        .store-title { font-size: 15px; font-weight: 800; color: #FFFFFF; }
-        .store-sub { font-size: 11px; color: #A7F3D0; margin-top: 2px; }
+        .dash-hero-card::after {
+            content: '';
+            position: absolute;
+            top: -30px; right: -30px;
+            width: 120px; height: 120px;
+            background: rgba(255, 107, 0, 0.25);
+            border-radius: 50%;
+            filter: blur(30px);
+        }
 
-        .status-badge { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); padding: 6px 10px; border-radius: 999px; }
+        .store-avatar { width: 44px; height: 44px; border-radius: 14px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; color: #FF6B00; backdrop-filter: blur(10px); }
+        .store-title { font-size: 16px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.3px; }
+        .store-sub { font-size: 11px; color: #A7F3D0; margin-top: 2px; font-weight: 500; }
+
+        .status-badge { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); padding: 6px 12px; border-radius: 999px; backdrop-filter: blur(8px); }
         .pulse-dot { width: 8px; height: 8px; border-radius: 4px; background: #10B981; animation: pulseGlow 1.5s infinite; }
         .pulse-dot.offline { background: #94A3B8; animation: none; }
 
         @keyframes pulseGlow {
             0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-            50% { transform: scale(1.2); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            50% { transform: scale(1.25); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
         }
 
         /* Switch Toggle Input */
-        .switch { position: relative; display: inline-block; width: 36px; height: 20px; }
+        .switch { position: relative; display: inline-block; width: 38px; height: 22px; }
         .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(203, 213, 225, 0.6); transition: .3s; border-radius: 20px; }
-        .slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background-color: white; transition: .3s; border-radius: 50%; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255,255,255,0.3); transition: .3s; border-radius: 22px; }
+        .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px; background-color: white; transition: .3s; border-radius: 50%; }
         input:checked + .slider { background-color: #10B981; }
         input:checked + .slider:before { transform: translateX(16px); }
 
         /* Modern Stats Grid */
         .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
-        .m-stat-card { background: #FFFFFF; border-radius: 16px; padding: 10px; border: 1px solid #E2E8F0; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
-        .m-stat-val { font-size: 15px; font-weight: 800; color: #0F172A; margin-top: 2px; }
-        .m-stat-lbl { font-size: 10px; color: #64748B; font-weight: 600; }
+        .m-stat-card { background: #FFFFFF; border-radius: 18px; padding: 12px; border: 1px solid #E2E8F0; box-shadow: 0 4px 16px rgba(0,0,0,0.03); }
+        .m-stat-val { font-size: 16px; font-weight: 800; color: #0F172A; margin-top: 3px; }
+        .m-stat-lbl { font-size: 10px; color: #64748B; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; }
+        .m-stat-trend { font-size: 9px; font-weight: 700; color: #10B981; margin-top: 2px; }
 
         /* Filter Chips Bar */
         .filter-chips-row {
@@ -237,34 +266,35 @@
             background: #FFFFFF;
             border: 1px solid #E2E8F0;
             color: #64748B;
-            padding: 6px 12px;
+            padding: 6px 14px;
             border-radius: 999px;
             font-size: 11px;
             font-weight: 700;
             white-space: nowrap;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
         .chip-btn.active {
-            background: #FF6B00;
+            background: linear-gradient(135deg, #FF6B00 0%, #FF3D00 100%);
             color: #FFFFFF;
             border-color: #FF6B00;
-            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.25);
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.35);
         }
 
         /* Order Cards */
         .order-card {
             background: #FFFFFF;
-            border-radius: 16px;
-            padding: 12px;
+            border-radius: 18px;
+            padding: 14px;
             margin-bottom: 10px;
             border: 1px solid #E2E8F0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
         }
 
-        .order-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-        .order-id { font-size: 13px; font-weight: 800; color: #0F172A; }
-        .order-status-tag { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; text-transform: uppercase; }
+        .order-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .order-id { font-size: 14px; font-weight: 800; color: #0F172A; }
+        .order-status-tag { font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.3px; }
         
         .tag-new { background: #EFF6FF; color: #2563EB; }
         .tag-accepted { background: #FEF3C7; color: #D97706; }
@@ -273,60 +303,61 @@
         .tag-completed { background: #F1F5F9; color: #475569; }
         .tag-cancelled { background: #FEF2F2; color: #EF4444; }
 
-        .order-items { font-size: 12px; color: #475569; margin-bottom: 10px; line-height: 1.4; }
-        .order-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #F1F5F9; padding-top: 8px; }
-        .order-total { font-size: 14px; font-weight: 800; color: #FF6B00; }
+        .order-items { font-size: 12px; color: #475569; margin-bottom: 10px; line-height: 1.4; font-weight: 500; }
+        .order-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #F1F5F9; padding-top: 10px; }
+        .order-total { font-size: 15px; font-weight: 800; color: #FF6B00; }
 
         .order-action-btns { display: flex; gap: 6px; }
         .order-btn {
-            background: #FF6B00;
+            background: linear-gradient(135deg, #FF6B00 0%, #FF3D00 100%);
             color: white;
             border: none;
-            padding: 6px 12px;
-            border-radius: 8px;
+            padding: 7px 14px;
+            border-radius: 10px;
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
         }
         .cancel-btn {
             background: #FEF2F2;
             color: #EF4444;
             border: 1px solid #FEE2E2;
-            padding: 6px 10px;
-            border-radius: 8px;
+            padding: 7px 12px;
+            border-radius: 10px;
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
         }
 
         /* Business Section Cards */
         .biz-card {
             background: #FFFFFF;
-            border-radius: 16px;
+            border-radius: 18px;
             padding: 14px;
             border: 1px solid #E2E8F0;
             margin-bottom: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.02);
         }
         .biz-title { font-size: 13px; font-weight: 800; color: #0F172A; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
 
         /* Floating Capsule Bottom Nav Bar */
         .app-bottom-nav {
             position: absolute;
-            bottom: 10px;
+            bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
             width: 92%;
-            height: 56px;
+            height: 58px;
             background: rgba(15, 23, 42, 0.94);
-            backdrop-filter: blur(12px);
-            border-radius: 28px;
+            backdrop-filter: blur(16px) saturate(180%);
+            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 8px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             z-index: 400;
         }
 
@@ -337,30 +368,30 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2px;
+            gap: 3px;
             font-size: 9px;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
-            padding: 6px 8px;
-            border-radius: 18px;
-            transition: all 0.25s ease;
+            padding: 6px 10px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
         }
-        .nav-item-btn iconify-icon { font-size: 18px; }
+        .nav-item-btn iconify-icon { font-size: 19px; }
         .nav-item-btn.active {
             color: #FFFFFF;
-            background: #FF6B00;
-            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
+            background: linear-gradient(135deg, #FF6B00 0%, #FF3D00 100%);
+            box-shadow: 0 4px 14px rgba(255, 107, 0, 0.45);
         }
 
-        /* Modal Overlay */
-        .sheet-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(6px); z-index: 500; display: none; align-items: flex-end; }
-        .sheet-content { background: #FFFFFF; border-top-left-radius: 28px; border-top-right-radius: 28px; padding: 20px; width: 100%; max-height: 88%; overflow-y: auto; }
+        /* Modal Sheet Overlay */
+        .sheet-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px); z-index: 500; display: none; align-items: flex-end; }
+        .sheet-content { background: #FFFFFF; border-top-left-radius: 30px; border-top-right-radius: 30px; padding: 22px; width: 100%; max-height: 88%; overflow-y: auto; }
 
         /* Splash Overlay */
         .partner-splash {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, #064E3B 0%, #011810 100%);
+            background: radial-gradient(circle at center, #0D281E 0%, #010805 100%);
             z-index: 9999;
             display: flex;
             flex-direction: column;
@@ -373,14 +404,14 @@
         .partner-splash.hidden { opacity: 0; pointer-events: none; }
 
         .partner-logo-wrap {
-            width: 96px;
-            height: 96px;
-            border-radius: 30px;
+            width: 100px;
+            height: 100px;
+            border-radius: 32px;
             background: #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
             margin-bottom: 20px;
             animation: logoGlowPulse 1.8s ease-in-out infinite;
             transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.75s ease-out, filter 0.75s ease-out;
@@ -388,13 +419,13 @@
         .partner-splash.zoom-out .partner-logo-wrap { transform: scale(7.5); opacity: 0; filter: blur(8px); }
         .partner-splash.zoom-out .partner-splash-title,
         .partner-splash.zoom-out .partner-splash-sub { opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; }
-        .partner-logo-img { width: 64px; height: auto; object-fit: contain; }
-        .partner-splash-title { font-size: 30px; font-weight: 850; color: #FFFFFF; letter-spacing: -0.5px; margin-bottom: 6px; }
-        .partner-splash-sub { font-size: 13px; color: #A7F3D0; font-weight: 500; max-width: 250px; line-height: 1.5; }
+        .partner-logo-img { width: 68px; height: auto; object-fit: contain; }
+        .partner-splash-title { font-size: 32px; font-weight: 850; color: #FFFFFF; letter-spacing: -0.5px; margin-bottom: 6px; }
+        .partner-splash-sub { font-size: 13px; color: #6EE7B7; font-weight: 500; max-width: 250px; line-height: 1.5; }
 
         @keyframes logoGlowPulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 0 0 0 rgba(255, 107, 0, 0.4); }
-            50% { transform: scale(1.1); box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 35px 12px rgba(255, 107, 0, 0.6); }
+            0%, 100% { transform: scale(1); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 0 0 rgba(255, 107, 0, 0.4); }
+            50% { transform: scale(1.1); box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 40px 14px rgba(255, 107, 0, 0.65); }
         }
 
         /* Toast Notification */
@@ -405,16 +436,16 @@
             transform: translateX(-50%);
             z-index: 1000;
             display: none;
-            background: rgba(15, 23, 42, 0.92);
-            backdrop-filter: blur(8px);
+            background: rgba(15, 23, 42, 0.94);
+            backdrop-filter: blur(12px);
             color: white;
-            padding: 10px 18px;
+            padding: 10px 20px;
             border-radius: 999px;
             font-size: 11px;
-            font-weight: 700;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            font-weight: 800;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
             white-space: nowrap;
-            border: 1px solid rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.15);
         }
     </style>
 </head>
@@ -441,7 +472,9 @@
             <!-- MODULE 1: AUTHENTICATION - LOG IN -->
             <div id="screenLogin" class="app-screen auth-bg active">
                 <div class="auth-header">
-                    <img src="image/Logo m 2.png" alt="Mangiona" class="auth-logo">
+                    <div class="auth-logo-badge">
+                        <img src="image/Logo m 2.png" alt="Mangiona" class="auth-logo">
+                    </div>
                     <div class="auth-title">Partner Log In</div>
                     <div class="auth-sub">Manage your restaurant orders, revenue & live menu</div>
                 </div>
@@ -479,7 +512,9 @@
             <!-- MODULE 1: AUTHENTICATION - SIGN UP / REGISTER -->
             <div id="screenRegister" class="app-screen auth-bg">
                 <div class="auth-header">
-                    <img src="image/Logo m 2.png" alt="Mangiona" class="auth-logo">
+                    <div class="auth-logo-badge">
+                        <img src="image/Logo m 2.png" alt="Mangiona" class="auth-logo">
+                    </div>
                     <div class="auth-title">Register Restaurant</div>
                     <div class="auth-sub">Start receiving live customer orders across your city</div>
                 </div>
@@ -550,7 +585,7 @@
             <!-- MODULE 2: DASHBOARD (TODAY'S ORDERS, REVENUE, PENDING) -->
             <div id="screenDashboard" class="app-screen dash-screen">
                 <div class="dash-hero-card">
-                    <div style="display: flex; gap: 10px; align-items: center;">
+                    <div style="display: flex; gap: 10px; align-items: center; position: relative; z-index: 2;">
                         <div class="store-avatar">MC</div>
                         <div>
                             <div class="store-title" id="dispStoreName">Mama Cass Kitchen</div>
@@ -558,7 +593,7 @@
                         </div>
                     </div>
 
-                    <div class="status-badge">
+                    <div class="status-badge" style="position: relative; z-index: 2;">
                         <div class="pulse-dot" id="appPulseDot"></div>
                         <label class="switch">
                             <input type="checkbox" checked id="appStatusSwitch" onchange="toggleAppStatus()">
@@ -571,20 +606,25 @@
                     <div class="m-stat-card">
                         <div class="m-stat-lbl">Today's Orders</div>
                         <div class="m-stat-val" id="dashTodayCount">18 Orders</div>
+                        <div class="m-stat-trend">↑ +12.5%</div>
                     </div>
                     <div class="m-stat-card">
                         <div class="m-stat-lbl">Revenue Overview</div>
                         <div class="m-stat-val" style="color: #10B981;">₦84,500</div>
+                        <div class="m-stat-trend">↑ +18.4%</div>
                     </div>
                     <div class="m-stat-card">
                         <div class="m-stat-lbl">Pending Orders</div>
                         <div class="m-stat-val" style="color: #FF6B00;" id="pendingCountTxt">3 Active</div>
+                        <div class="m-stat-trend" style="color: #FF6B00;">Prep Fast 👨‍🍳</div>
                     </div>
                 </div>
 
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                    <div style="font-size: 13px; font-weight: 800; color: #0F172A;">Kitchen Live Feed</div>
-                    <button onclick="simulateNewOrder()" style="background: #FFE8E4; color: #FF6B00; border: none; padding: 4px 8px; border-radius: 6px; font-size: 10px; font-weight: 700; cursor: pointer;">+ Simulate Order 👨‍🍳</button>
+                    <div style="font-size: 14px; font-weight: 800; color: #0F172A;">Kitchen Live Feed</div>
+                    <button onclick="simulateNewOrder()" style="background: #FFE8E4; color: #FF6B00; border: none; padding: 5px 10px; border-radius: 8px; font-size: 11px; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                        <iconify-icon icon="lucide:plus-circle"></iconify-icon> Test Order
+                    </button>
                 </div>
 
                 <div id="dashboardOrdersList">
@@ -596,10 +636,10 @@
             <div id="screenLiveOrders" class="app-screen dash-screen">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                     <div>
-                        <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Orders Manager</div>
-                        <div style="font-size: 11px; color: #64748B;">Manage order states in real-time</div>
+                        <div style="font-size: 17px; font-weight: 800; color: #0F172A; letter-spacing: -0.3px;">Orders Manager</div>
+                        <div style="font-size: 11px; color: #64748B; font-weight: 500;">Dispatch kitchen orders in real-time</div>
                     </div>
-                    <button onclick="simulateNewOrder()" style="background: #10B981; color: white; border: none; padding: 6px 10px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer;">+ New Order</button>
+                    <button onclick="simulateNewOrder()" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white; border: none; padding: 7px 12px; border-radius: 10px; font-size: 11px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">+ New Order</button>
                 </div>
 
                 <!-- Order Status Filter Chips -->
@@ -622,8 +662,8 @@
             <div id="screenMenuManager" class="app-screen dash-screen">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                     <div>
-                        <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Menu & Inventory</div>
-                        <div style="font-size: 11px; color: #64748B;">Synced live with Customer App</div>
+                        <div style="font-size: 17px; font-weight: 800; color: #0F172A; letter-spacing: -0.3px;">Menu & Inventory</div>
+                        <div style="font-size: 11px; color: #64748B; font-weight: 500;">Live catalog synced with Customer App</div>
                     </div>
                     <button class="upload-meal-btn" onclick="openAppUploadModal()">
                         <iconify-icon icon="lucide:plus-circle"></iconify-icon> + Add Food
@@ -647,10 +687,10 @@
                 <!-- Sub View 2: Categories -->
                 <div id="menuSubCategories" style="display: none;">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800;">Main Dishes</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">4 Dishes</div></div>
-                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800;">Soups & Swallows</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">3 Dishes</div></div>
-                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800;">Chilled Drinks</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">5 Drinks</div></div>
-                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800;">Fast Food & Snacks</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">6 Snacks</div></div>
+                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800; color: #0F172A;">Main Dishes</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">4 Dishes Active</div></div>
+                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800; color: #0F172A;">Soups & Swallows</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">3 Dishes Active</div></div>
+                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800; color: #0F172A;">Chilled Drinks</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">5 Drinks Active</div></div>
+                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800; color: #0F172A;">Fast Food & Snacks</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">6 Snacks Active</div></div>
                     </div>
                 </div>
 
@@ -664,13 +704,13 @@
 
             <!-- MODULE 5: BUSINESS (PROFILE, HOURS, PROMOTIONS, REVIEWS, EARNINGS, SETTINGS) -->
             <div id="screenBusiness" class="app-screen dash-screen">
-                <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin-bottom: 12px;">Business Management</div>
+                <div style="font-size: 17px; font-weight: 800; color: #0F172A; margin-bottom: 12px; letter-spacing: -0.3px;">Business Hub</div>
 
                 <!-- Profile Card -->
                 <div class="biz-card">
                     <div class="biz-title"><iconify-icon icon="lucide:store" style="color: #FF6B00;"></iconify-icon> Restaurant Profile</div>
-                    <div style="font-size: 14px; font-weight: 800; color: #0F172A;" id="bizStoreName">Mama Cass Kitchen</div>
-                    <div style="font-size: 11px; color: #64748B;" id="bizStoreLoc">24 Commercial Avenue, Yaba</div>
+                    <div style="font-size: 15px; font-weight: 800; color: #0F172A;" id="bizStoreName">Mama Cass Kitchen</div>
+                    <div style="font-size: 12px; color: #64748B; margin-top: 2px;" id="bizStoreLoc">24 Commercial Avenue, Yaba</div>
                     <div style="font-size: 11px; color: #10B981; font-weight: 700; margin-top: 4px;">Verified Partner Store • 4.8 ★</div>
                 </div>
 
@@ -679,33 +719,33 @@
                     <div class="biz-title"><iconify-icon icon="lucide:clock" style="color: #3B82F6;"></iconify-icon> Business Hours</div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div style="font-size: 12px; font-weight: 700; color: #0F172A;">Mon - Sun (08:00 AM - 10:00 PM)</div>
-                        <span style="font-size: 10px; font-weight: 700; background: #ECFDF5; color: #059669; padding: 2px 8px; border-radius: 999px;">Open Now</span>
+                        <span style="font-size: 10px; font-weight: 800; background: #ECFDF5; color: #059669; padding: 3px 10px; border-radius: 999px;">Open Now</span>
                     </div>
                 </div>
 
                 <!-- Earnings -->
                 <div class="biz-card">
                     <div class="biz-title"><iconify-icon icon="lucide:wallet" style="color: #10B981;"></iconify-icon> Earnings & Payouts</div>
-                    <div style="font-size: 20px; font-weight: 800; color: #0F172A;">₦84,500.00</div>
-                    <button style="width: 100%; margin-top: 8px; background: #10B981; color: white; border: none; padding: 8px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;">Withdraw Earnings to Bank 🏦</button>
+                    <div style="font-size: 22px; font-weight: 800; color: #0F172A;">₦84,500.00</div>
+                    <button style="width: 100%; margin-top: 10px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white; border: none; padding: 10px; border-radius: 12px; font-size: 12px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);">Withdraw Earnings to Bank 🏦</button>
                 </div>
 
                 <!-- Promotions & Reviews -->
                 <div class="grid-2">
                     <div class="biz-card">
                         <div class="biz-title"><iconify-icon icon="lucide:tag" style="color: #FF6B00;"></iconify-icon> Active Promos</div>
-                        <div style="font-size: 11px; font-weight: 700; color: #0F172A;">10% OFF Jollof</div>
+                        <div style="font-size: 12px; font-weight: 800; color: #0F172A;">10% OFF Jollof</div>
                     </div>
                     <div class="biz-card">
                         <div class="biz-title"><iconify-icon icon="lucide:star" style="color: #F59E0B;"></iconify-icon> Reviews</div>
-                        <div style="font-size: 11px; font-weight: 700; color: #0F172A;">4.8 ★ (340 reviews)</div>
+                        <div style="font-size: 12px; font-weight: 800; color: #0F172A;">4.8 ★ (340 reviews)</div>
                     </div>
                 </div>
 
                 <!-- Settings & Log Out -->
-                <div class="biz-card" style="margin-top: 4px;">
+                <div class="biz-card" style="margin-top: 2px;">
                     <div class="biz-title"><iconify-icon icon="lucide:settings" style="color: #64748B;"></iconify-icon> Settings</div>
-                    <button onclick="handleLogOut()" style="width: 100%; background: #FEF2F2; color: #EF4444; border: 1px solid #FEE2E2; padding: 10px; border-radius: 10px; font-size: 12px; font-weight: 800; cursor: pointer;">Log Out of Account 🚪</button>
+                    <button onclick="handleLogOut()" style="width: 100%; background: #FEF2F2; color: #EF4444; border: 1px solid #FEE2E2; padding: 10px; border-radius: 12px; font-size: 12px; font-weight: 800; cursor: pointer;">Log Out of Account 🚪</button>
                 </div>
             </div>
 
@@ -730,8 +770,8 @@
         <!-- ADD FOOD MODAL SHEET -->
         <div class="sheet-overlay" id="appUploadModal">
             <div class="sheet-content">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                    <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Upload New Food Item</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                    <div style="font-size: 17px; font-weight: 800; color: #0F172A;">Upload New Food Item</div>
                     <button style="background: none; border: none; font-size: 20px; cursor: pointer; color: #64748B;" onclick="closeAppUploadModal()">✕</button>
                 </div>
 
@@ -761,7 +801,7 @@
                         <input type="text" class="modern-input" id="mDishPrep" value="15-20 Mins" style="padding-left: 12px;">
                     </div>
 
-                    <div class="input-group" style="margin-bottom: 10px;">
+                    <div class="input-group" style="margin-bottom: 12px;">
                         <label class="input-label">Short Description</label>
                         <input type="text" class="modern-input" id="mDishDesc" placeholder="Portion size & ingredients..." style="padding-left: 12px;">
                     </div>
@@ -905,15 +945,15 @@
                 } else if (o.status === 'ready') {
                     tagClass = 'tag-ready';
                     tagTxt = 'Ready for Pickup';
-                    actionBtnHtml = `<button class="order-btn" style="background: #10B981;" onclick="updateOrderStatus('${o.id}', 'completed')">Complete Order ✅</button>`;
+                    actionBtnHtml = `<button class="order-btn" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);" onclick="updateOrderStatus('${o.id}', 'completed')">Complete Order ✅</button>`;
                 } else if (o.status === 'completed') {
                     tagClass = 'tag-completed';
                     tagTxt = 'Completed';
-                    actionBtnHtml = `<span style="font-size: 11px; color: #10B981; font-weight: 700;">Delivered ✅</span>`;
+                    actionBtnHtml = `<span style="font-size: 11px; color: #10B981; font-weight: 800;">Delivered ✅</span>`;
                 } else if (o.status === 'cancelled') {
                     tagClass = 'tag-cancelled';
                     tagTxt = 'Cancelled';
-                    actionBtnHtml = `<span style="font-size: 11px; color: #EF4444; font-weight: 700;">Cancelled ✕</span>`;
+                    actionBtnHtml = `<span style="font-size: 11px; color: #EF4444; font-weight: 800;">Cancelled ✕</span>`;
                 }
 
                 return `

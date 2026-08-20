@@ -48,7 +48,7 @@
         .app-container::-webkit-scrollbar { display: none; }
 
         /* Screens */
-        .app-screen { display: none; flex-direction: column; min-height: 100%; padding-bottom: 70px; }
+        .app-screen { display: none; flex-direction: column; min-height: 100%; padding-bottom: 75px; }
         .app-screen.active { display: flex; }
 
         /* Modern Dark Emerald Background */
@@ -61,7 +61,6 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding-bottom: 20px;
         }
 
         /* Glow Light Accent */
@@ -181,7 +180,7 @@
         }
         .action-btn:active { transform: scale(0.98); }
 
-        /* Modern Dashboard Styling */
+        /* Dashboard & App Screens Styling */
         .dash-screen { padding: 32px 14px 14px; background: #F8FAFC; flex: 1; }
 
         .dash-hero-card {
@@ -212,7 +211,7 @@
         /* Switch Toggle Input */
         .switch { position: relative; display: inline-block; width: 36px; height: 20px; }
         .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255,255,255,0.3); transition: .3s; border-radius: 20px; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(203, 213, 225, 0.6); transition: .3s; border-radius: 20px; }
         .slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background-color: white; transition: .3s; border-radius: 50%; }
         input:checked + .slider { background-color: #10B981; }
         input:checked + .slider:before { transform: translateX(16px); }
@@ -222,6 +221,36 @@
         .m-stat-card { background: #FFFFFF; border-radius: 16px; padding: 10px; border: 1px solid #E2E8F0; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
         .m-stat-val { font-size: 15px; font-weight: 800; color: #0F172A; margin-top: 2px; }
         .m-stat-lbl { font-size: 10px; color: #64748B; font-weight: 600; }
+
+        /* Filter Chips Bar */
+        .filter-chips-row {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            margin-bottom: 12px;
+            padding-bottom: 2px;
+        }
+        .filter-chips-row::-webkit-scrollbar { display: none; }
+
+        .chip-btn {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            color: #64748B;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .chip-btn.active {
+            background: #FF6B00;
+            color: #FFFFFF;
+            border-color: #FF6B00;
+            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.25);
+        }
 
         /* Order Cards */
         .order-card {
@@ -235,15 +264,20 @@
 
         .order-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
         .order-id { font-size: 13px; font-weight: 800; color: #0F172A; }
-        .order-status-tag { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; }
-        .tag-pending { background: #FFF7ED; color: #FF6B00; }
-        .tag-prep { background: #FEF3C7; color: #D97706; }
+        .order-status-tag { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; text-transform: uppercase; }
+        
+        .tag-new { background: #EFF6FF; color: #2563EB; }
+        .tag-accepted { background: #FEF3C7; color: #D97706; }
+        .tag-prep { background: #FFF7ED; color: #FF6B00; }
         .tag-ready { background: #ECFDF5; color: #059669; }
+        .tag-completed { background: #F1F5F9; color: #475569; }
+        .tag-cancelled { background: #FEF2F2; color: #EF4444; }
 
         .order-items { font-size: 12px; color: #475569; margin-bottom: 10px; line-height: 1.4; }
         .order-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #F1F5F9; padding-top: 8px; }
         .order-total { font-size: 14px; font-weight: 800; color: #FF6B00; }
 
+        .order-action-btns { display: flex; gap: 6px; }
         .order-btn {
             background: #FF6B00;
             color: white;
@@ -254,23 +288,44 @@
             font-weight: 700;
             cursor: pointer;
         }
+        .cancel-btn {
+            background: #FEF2F2;
+            color: #EF4444;
+            border: 1px solid #FEE2E2;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* Business Section Cards */
+        .biz-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 14px;
+            border: 1px solid #E2E8F0;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .biz-title { font-size: 13px; font-weight: 800; color: #0F172A; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
 
         /* Floating Capsule Bottom Nav Bar */
         .app-bottom-nav {
             position: absolute;
-            bottom: 12px;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 90%;
-            height: 54px;
+            width: 92%;
+            height: 56px;
             background: rgba(15, 23, 42, 0.94);
             backdrop-filter: blur(12px);
             border-radius: 28px;
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            padding: 0 6px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            justify-content: space-between;
+            padding: 0 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
             border: 1px solid rgba(255, 255, 255, 0.12);
             z-index: 400;
         }
@@ -283,11 +338,11 @@
             flex-direction: column;
             align-items: center;
             gap: 2px;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 700;
             cursor: pointer;
-            padding: 6px 12px;
-            border-radius: 20px;
+            padding: 6px 8px;
+            border-radius: 18px;
             transition: all 0.25s ease;
         }
         .nav-item-btn iconify-icon { font-size: 18px; }
@@ -297,7 +352,7 @@
             box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
         }
 
-        /* Upload Sheet Modal Overlay */
+        /* Modal Overlay */
         .sheet-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(6px); z-index: 500; display: none; align-items: flex-end; }
         .sheet-content { background: #FFFFFF; border-top-left-radius: 28px; border-top-right-radius: 28px; padding: 20px; width: 100%; max-height: 88%; overflow-y: auto; }
 
@@ -383,7 +438,7 @@
 
         <div class="app-container">
 
-            <!-- SCREEN 1: RESTAURANT LOG IN -->
+            <!-- MODULE 1: AUTHENTICATION - LOG IN -->
             <div id="screenLogin" class="app-screen auth-bg active">
                 <div class="auth-header">
                     <img src="image/Logo m 2.png" alt="Mangiona" class="auth-logo">
@@ -421,7 +476,7 @@
                 </div>
             </div>
 
-            <!-- SCREEN 2: RESTAURANT SIGN UP / REGISTER -->
+            <!-- MODULE 1: AUTHENTICATION - SIGN UP / REGISTER -->
             <div id="screenRegister" class="app-screen auth-bg">
                 <div class="auth-header">
                     <img src="image/Logo m 2.png" alt="Mangiona" class="auth-logo">
@@ -492,7 +547,7 @@
                 </div>
             </div>
 
-            <!-- SCREEN 3: PARTNER DASHBOARD (TAB 1: HOME) -->
+            <!-- MODULE 2: DASHBOARD (TODAY'S ORDERS, REVENUE, PENDING) -->
             <div id="screenDashboard" class="app-screen dash-screen">
                 <div class="dash-hero-card">
                     <div style="display: flex; gap: 10px; align-items: center;">
@@ -514,22 +569,22 @@
 
                 <div class="stats-grid">
                     <div class="m-stat-card">
-                        <div class="m-stat-lbl">Revenue Today</div>
-                        <div class="m-stat-val">₦84,500</div>
+                        <div class="m-stat-lbl">Today's Orders</div>
+                        <div class="m-stat-val" id="dashTodayCount">18 Orders</div>
                     </div>
                     <div class="m-stat-card">
-                        <div class="m-stat-lbl">Completed</div>
-                        <div class="m-stat-val" style="color: #10B981;">18 Orders</div>
+                        <div class="m-stat-lbl">Revenue Overview</div>
+                        <div class="m-stat-val" style="color: #10B981;">₦84,500</div>
                     </div>
                     <div class="m-stat-card">
-                        <div class="m-stat-lbl">Pending Prep</div>
+                        <div class="m-stat-lbl">Pending Orders</div>
                         <div class="m-stat-val" style="color: #FF6B00;" id="pendingCountTxt">3 Active</div>
                     </div>
                 </div>
 
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                    <div style="font-size: 13px; font-weight: 800; color: #0F172A;">Incoming Kitchen Orders</div>
-                    <button onclick="simulateNewOrder()" style="background: #FFE8E4; color: #FF6B00; border: none; padding: 4px 8px; border-radius: 6px; font-size: 10px; font-weight: 700; cursor: pointer;">+ Test Order 👨‍🍳</button>
+                    <div style="font-size: 13px; font-weight: 800; color: #0F172A;">Kitchen Live Feed</div>
+                    <button onclick="simulateNewOrder()" style="background: #FFE8E4; color: #FF6B00; border: none; padding: 4px 8px; border-radius: 6px; font-size: 10px; font-weight: 700; cursor: pointer;">+ Simulate Order 👨‍🍳</button>
                 </div>
 
                 <div id="dashboardOrdersList">
@@ -537,79 +592,146 @@
                 </div>
             </div>
 
-            <!-- TAB 2: MENU MANAGER SCREEN -->
-            <div id="screenMenuManager" class="app-screen dash-screen">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <!-- MODULE 3: ORDERS (NEW, ACCEPTED, PREPARING, READY, COMPLETED, CANCELLED) -->
+            <div id="screenLiveOrders" class="app-screen dash-screen">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                     <div>
-                        <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Menu Catalog</div>
-                        <div style="font-size: 11px; color: #64748B;">Synced live with Customer App</div>
+                        <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Orders Manager</div>
+                        <div style="font-size: 11px; color: #64748B;">Manage order states in real-time</div>
                     </div>
-                    <button class="upload-meal-btn" onclick="openAppUploadModal()">
-                        <iconify-icon icon="lucide:plus-circle"></iconify-icon> + Add Meal
-                    </button>
+                    <button onclick="simulateNewOrder()" style="background: #10B981; color: white; border: none; padding: 6px 10px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer;">+ New Order</button>
                 </div>
 
-                <div id="appFoodList">
+                <!-- Order Status Filter Chips -->
+                <div class="filter-chips-row">
+                    <button class="chip-btn active" onclick="filterOrdersTab('all', this)">All (6)</button>
+                    <button class="chip-btn" onclick="filterOrdersTab('new', this)">New</button>
+                    <button class="chip-btn" onclick="filterOrdersTab('accepted', this)">Accepted</button>
+                    <button class="chip-btn" onclick="filterOrdersTab('prep', this)">Preparing</button>
+                    <button class="chip-btn" onclick="filterOrdersTab('ready', this)">Ready</button>
+                    <button class="chip-btn" onclick="filterOrdersTab('completed', this)">Completed</button>
+                    <button class="chip-btn" onclick="filterOrdersTab('cancelled', this)">Cancelled</button>
+                </div>
+
+                <div id="fullLiveOrdersList">
                     <!-- Dynamic rendering -->
                 </div>
             </div>
 
-            <!-- TAB 3: LIVE ORDERS SCREEN -->
-            <div id="screenLiveOrders" class="app-screen dash-screen">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <!-- MODULE 4: MENU (MENU LIST, ADD FOOD, EDIT FOOD, CATEGORIES, INVENTORY) -->
+            <div id="screenMenuManager" class="app-screen dash-screen">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                     <div>
-                        <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Live Orders Manager</div>
-                        <div style="font-size: 11px; color: #64748B;">Accept & dispatch food to drivers</div>
+                        <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Menu & Inventory</div>
+                        <div style="font-size: 11px; color: #64748B;">Synced live with Customer App</div>
                     </div>
-                    <button onclick="simulateNewOrder()" class="upload-meal-btn" style="background: #10B981;">+ Receive Order</button>
+                    <button class="upload-meal-btn" onclick="openAppUploadModal()">
+                        <iconify-icon icon="lucide:plus-circle"></iconify-icon> + Add Food
+                    </button>
                 </div>
 
-                <div id="fullLiveOrdersList">
-                    <!-- Dynamic orders list -->
+                <!-- Menu Sub-Tabs Filter Chips -->
+                <div class="filter-chips-row">
+                    <button class="chip-btn active" onclick="switchMenuSubTab('list', this)">Menu List</button>
+                    <button class="chip-btn" onclick="switchMenuSubTab('categories', this)">Categories</button>
+                    <button class="chip-btn" onclick="switchMenuSubTab('inventory', this)">Inventory</button>
+                </div>
+
+                <!-- Sub View 1: Menu List -->
+                <div id="menuSubList">
+                    <div id="appFoodList">
+                        <!-- Dynamic food rendering -->
+                    </div>
+                </div>
+
+                <!-- Sub View 2: Categories -->
+                <div id="menuSubCategories" style="display: none;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800;">Main Dishes</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">4 Dishes</div></div>
+                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800;">Soups & Swallows</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">3 Dishes</div></div>
+                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800;">Chilled Drinks</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">5 Drinks</div></div>
+                        <div class="biz-card"><div style="font-size: 13px; font-weight: 800;">Fast Food & Snacks</div><div style="font-size: 11px; color: #64748B; margin-top: 2px;">6 Snacks</div></div>
+                    </div>
+                </div>
+
+                <!-- Sub View 3: Inventory Stock Controls -->
+                <div id="menuSubInventory" style="display: none;">
+                    <div id="appInventoryList">
+                        <!-- Dynamic stock toggle rendering -->
+                    </div>
                 </div>
             </div>
 
-            <!-- TAB 4: STORE PROFILE SCREEN -->
-            <div id="screenProfile" class="app-screen dash-screen">
-                <div style="background: #FFFFFF; border-radius: 20px; padding: 16px; border: 1px solid #E2E8F0; margin-bottom: 14px; text-align: center;">
-                    <div style="width: 60px; height: 60px; border-radius: 20px; background: #FFE8E4; color: #FF6B00; font-size: 26px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">MC</div>
-                    <div style="font-size: 16px; font-weight: 800; color: #0F172A;" id="profStoreName">Mama Cass Kitchen</div>
-                    <div style="font-size: 12px; color: #64748B;" id="profStoreAddress">24 Commercial Avenue, Yaba</div>
+            <!-- MODULE 5: BUSINESS (PROFILE, HOURS, PROMOTIONS, REVIEWS, EARNINGS, SETTINGS) -->
+            <div id="screenBusiness" class="app-screen dash-screen">
+                <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin-bottom: 12px;">Business Management</div>
+
+                <!-- Profile Card -->
+                <div class="biz-card">
+                    <div class="biz-title"><iconify-icon icon="lucide:store" style="color: #FF6B00;"></iconify-icon> Restaurant Profile</div>
+                    <div style="font-size: 14px; font-weight: 800; color: #0F172A;" id="bizStoreName">Mama Cass Kitchen</div>
+                    <div style="font-size: 11px; color: #64748B;" id="bizStoreLoc">24 Commercial Avenue, Yaba</div>
                     <div style="font-size: 11px; color: #10B981; font-weight: 700; margin-top: 4px;">Verified Partner Store • 4.8 ★</div>
                 </div>
 
-                <div style="background: #FFFFFF; border-radius: 16px; padding: 14px; border: 1px solid #E2E8F0; margin-bottom: 14px;">
-                    <div style="font-size: 12px; color: #64748B;">Partner Wallet Balance</div>
-                    <div style="font-size: 24px; font-weight: 800; color: #FF6B00; margin-top: 2px;">₦84,500.00</div>
-                    <button style="width: 100%; margin-top: 10px; background: #10B981; color: white; border: none; padding: 10px; border-radius: 10px; font-size: 12px; font-weight: 700; cursor: pointer;">Withdraw Earnings to Bank 🏦</button>
+                <!-- Business Hours -->
+                <div class="biz-card">
+                    <div class="biz-title"><iconify-icon icon="lucide:clock" style="color: #3B82F6;"></iconify-icon> Business Hours</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="font-size: 12px; font-weight: 700; color: #0F172A;">Mon - Sun (08:00 AM - 10:00 PM)</div>
+                        <span style="font-size: 10px; font-weight: 700; background: #ECFDF5; color: #059669; padding: 2px 8px; border-radius: 999px;">Open Now</span>
+                    </div>
                 </div>
 
-                <button onclick="handleLogOut()" style="width: 100%; background: #FEF2F2; color: #EF4444; border: 1px solid #FEE2E2; padding: 12px; border-radius: 12px; font-size: 13px; font-weight: 800; cursor: pointer;">Log Out of Partner Account 🚪</button>
+                <!-- Earnings -->
+                <div class="biz-card">
+                    <div class="biz-title"><iconify-icon icon="lucide:wallet" style="color: #10B981;"></iconify-icon> Earnings & Payouts</div>
+                    <div style="font-size: 20px; font-weight: 800; color: #0F172A;">₦84,500.00</div>
+                    <button style="width: 100%; margin-top: 8px; background: #10B981; color: white; border: none; padding: 8px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;">Withdraw Earnings to Bank 🏦</button>
+                </div>
+
+                <!-- Promotions & Reviews -->
+                <div class="grid-2">
+                    <div class="biz-card">
+                        <div class="biz-title"><iconify-icon icon="lucide:tag" style="color: #FF6B00;"></iconify-icon> Active Promos</div>
+                        <div style="font-size: 11px; font-weight: 700; color: #0F172A;">10% OFF Jollof</div>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-title"><iconify-icon icon="lucide:star" style="color: #F59E0B;"></iconify-icon> Reviews</div>
+                        <div style="font-size: 11px; font-weight: 700; color: #0F172A;">4.8 ★ (340 reviews)</div>
+                    </div>
+                </div>
+
+                <!-- Settings & Log Out -->
+                <div class="biz-card" style="margin-top: 4px;">
+                    <div class="biz-title"><iconify-icon icon="lucide:settings" style="color: #64748B;"></iconify-icon> Settings</div>
+                    <button onclick="handleLogOut()" style="width: 100%; background: #FEF2F2; color: #EF4444; border: 1px solid #FEE2E2; padding: 10px; border-radius: 10px; font-size: 12px; font-weight: 800; cursor: pointer;">Log Out of Account 🚪</button>
+                </div>
             </div>
 
         </div>
 
-        <!-- FLOATING CAPSULE BOTTOM NAVIGATION BAR -->
+        <!-- 5-TAB FLOATING CAPSULE BOTTOM NAVIGATION BAR -->
         <nav class="app-bottom-nav" id="appBottomNav" style="display: none;">
-            <button class="nav-item-btn active" id="navHome" onclick="switchNavTab('screenDashboard', 'navHome')">
-                <iconify-icon icon="lucide:home"></iconify-icon> Home
+            <button class="nav-item-btn active" id="navDash" onclick="switchNavTab('screenDashboard', 'navDash')">
+                <iconify-icon icon="lucide:layout-dashboard"></iconify-icon> Dash
+            </button>
+            <button class="nav-item-btn" id="navOrders" onclick="switchNavTab('screenLiveOrders', 'navOrders')">
+                <iconify-icon icon="lucide:shopping-bag"></iconify-icon> Orders
             </button>
             <button class="nav-item-btn" id="navMenu" onclick="switchNavTab('screenMenuManager', 'navMenu')">
                 <iconify-icon icon="lucide:utensils"></iconify-icon> Menu
             </button>
-            <button class="nav-item-btn" id="navOrders" onclick="switchNavTab('screenLiveOrders', 'navOrders')">
-                <iconify-icon icon="lucide:chef-hat"></iconify-icon> Orders
-            </button>
-            <button class="nav-item-btn" id="navProfile" onclick="switchNavTab('screenProfile', 'navProfile')">
-                <iconify-icon icon="lucide:user"></iconify-icon> Profile
+            <button class="nav-item-btn" id="navBiz" onclick="switchNavTab('screenBusiness', 'navBiz')">
+                <iconify-icon icon="lucide:building-2"></iconify-icon> Business
             </button>
         </nav>
 
-        <!-- UPLOAD MEAL MODAL SHEET -->
+        <!-- ADD FOOD MODAL SHEET -->
         <div class="sheet-overlay" id="appUploadModal">
             <div class="sheet-content">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                    <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Upload New Meal</div>
+                    <div style="font-size: 16px; font-weight: 800; color: #0F172A;">Upload New Food Item</div>
                     <button style="background: none; border: none; font-size: 20px; cursor: pointer; color: #64748B;" onclick="closeAppUploadModal()">✕</button>
                 </div>
 
@@ -629,8 +751,8 @@
                         <select class="modern-input" id="mDishCategory" style="padding-left: 12px;">
                             <option value="Main Dish">Main Dish</option>
                             <option value="Soups">Soups & Swallows</option>
-                            <option value="Drinks">Drinks & Malt</option>
-                            <option value="Fast Food">Fast Food</option>
+                            <option value="Drinks">Chilled Drinks</option>
+                            <option value="Fast Food">Fast Food & Snacks</option>
                         </select>
                     </div>
 
@@ -656,9 +778,15 @@
         const USER_KEY = 'mangiona_vendor_user';
 
         let liveOrders = [
-            { id: '#1042', customer: 'Chidi O.', items: '2x Special Jollof Rice, 1x Malt', total: 9800, status: 'pending' },
-            { id: '#1043', customer: 'Amina K.', items: '1x Pounded Yam & Egusi', total: 5200, status: 'prep' }
+            { id: '#1042', customer: 'Chidi O.', items: '2x Special Jollof Rice Combo, 1x Malt', total: 9800, status: 'new' },
+            { id: '#1043', customer: 'Amina K.', items: '1x Pounded Yam & Egusi Soup', total: 5200, status: 'accepted' },
+            { id: '#1044', customer: 'Bayo A.', items: '3x Peppered Suya Platter', total: 11400, status: 'prep' },
+            { id: '#1045', customer: 'Grace E.', items: '2x Gourmet Beef Burger Combo', total: 8000, status: 'ready' },
+            { id: '#1040', customer: 'Emeka U.', items: '1x Jollof Rice Special', total: 4500, status: 'completed' },
+            { id: '#1039', customer: 'David O.', items: '1x Malt Drink', total: 800, status: 'cancelled' }
         ];
+
+        let currentOrderFilter = 'all';
 
         function showAppToast(msg) {
             const toast = document.getElementById('appToast');
@@ -700,8 +828,8 @@
             localStorage.setItem(USER_KEY, JSON.stringify({ storeName, storeAddress }));
             document.getElementById('dispStoreName').textContent = storeName;
             document.getElementById('dispStoreLoc').textContent = storeAddress;
-            document.getElementById('profStoreName').textContent = storeName;
-            document.getElementById('profStoreAddress').textContent = storeAddress;
+            document.getElementById('bizStoreName').textContent = storeName;
+            document.getElementById('bizStoreLoc').textContent = storeAddress;
 
             document.getElementById('screenLogin').classList.remove('active');
             document.getElementById('screenRegister').classList.remove('active');
@@ -735,30 +863,57 @@
             showAppToast('🚪 Logged out of Partner Account.');
         }
 
+        function filterOrdersTab(filter, btnElem) {
+            currentOrderFilter = filter;
+            if (btnElem) {
+                const chips = btnElem.parentElement.querySelectorAll('.chip-btn');
+                chips.forEach(c => c.classList.remove('active'));
+                btnElem.classList.add('active');
+            }
+            renderLiveOrders();
+        }
+
         function renderLiveOrders() {
             const dashBox = document.getElementById('dashboardOrdersList');
             const fullBox = document.getElementById('fullLiveOrdersList');
             const pCount = document.getElementById('pendingCountTxt');
+            const dCount = document.getElementById('dashTodayCount');
 
-            const pendingOrders = liveOrders.filter(o => o.status !== 'ready');
-            if (pCount) pCount.textContent = pendingOrders.length + ' Active';
+            const activeOrders = liveOrders.filter(o => o.status !== 'completed' && o.status !== 'cancelled');
+            if (pCount) pCount.textContent = activeOrders.length + ' Active';
+            if (dCount) dCount.textContent = liveOrders.length + ' Orders';
 
-            const html = liveOrders.map(o => {
-                let tagClass = 'tag-pending';
-                let tagTxt = 'Pending Accept';
-                let btnTxt = 'Accept Order 👨‍🍳';
-                let nextStatus = 'prep';
+            let filteredList = liveOrders;
+            if (currentOrderFilter !== 'all') {
+                filteredList = liveOrders.filter(o => o.status === currentOrderFilter);
+            }
 
-                if (o.status === 'prep') {
+            const html = filteredList.map(o => {
+                let tagClass = 'tag-new';
+                let tagTxt = 'New Order';
+                let actionBtnHtml = `<button class="order-btn" onclick="updateOrderStatus('${o.id}', 'accepted')">Accept Order 👨‍🍳</button>
+                                     <button class="cancel-btn" onclick="updateOrderStatus('${o.id}', 'cancelled')">Cancel</button>`;
+
+                if (o.status === 'accepted') {
+                    tagClass = 'tag-accepted';
+                    tagTxt = 'Accepted';
+                    actionBtnHtml = `<button class="order-btn" onclick="updateOrderStatus('${o.id}', 'prep')">Start Prep 🍳</button>`;
+                } else if (o.status === 'prep') {
                     tagClass = 'tag-prep';
-                    tagTxt = 'Kitchen Prep...';
-                    btnTxt = 'Ready for Driver 🛵';
-                    nextStatus = 'ready';
+                    tagTxt = 'Preparing';
+                    actionBtnHtml = `<button class="order-btn" onclick="updateOrderStatus('${o.id}', 'ready')">Mark Ready 🛵</button>`;
                 } else if (o.status === 'ready') {
                     tagClass = 'tag-ready';
-                    tagTxt = 'Driver Dispatched';
-                    btnTxt = 'Completed ✅';
-                    nextStatus = 'done';
+                    tagTxt = 'Ready for Pickup';
+                    actionBtnHtml = `<button class="order-btn" style="background: #10B981;" onclick="updateOrderStatus('${o.id}', 'completed')">Complete Order ✅</button>`;
+                } else if (o.status === 'completed') {
+                    tagClass = 'tag-completed';
+                    tagTxt = 'Completed';
+                    actionBtnHtml = `<span style="font-size: 11px; color: #10B981; font-weight: 700;">Delivered ✅</span>`;
+                } else if (o.status === 'cancelled') {
+                    tagClass = 'tag-cancelled';
+                    tagTxt = 'Cancelled';
+                    actionBtnHtml = `<span style="font-size: 11px; color: #EF4444; font-weight: 700;">Cancelled ✕</span>`;
                 }
 
                 return `
@@ -770,14 +925,14 @@
                         <div class="order-items">${o.items}</div>
                         <div class="order-footer">
                             <div class="order-total">₦${o.total.toLocaleString()}</div>
-                            ${o.status !== 'ready' ? `<button class="order-btn" onclick="updateOrderStatus('${o.id}', '${nextStatus}')">${btnTxt}</button>` : '<span style="font-size: 11px; color: #10B981; font-weight: 700;">Driver en route</span>'}
+                            <div class="order-action-btns">${actionBtnHtml}</div>
                         </div>
                     </div>
                 `;
             }).join('');
 
             if (dashBox) dashBox.innerHTML = html;
-            if (fullBox) fullBox.innerHTML = html;
+            if (fullBox) fullBox.innerHTML = html || `<div style="text-align: center; color: #94A3B8; padding: 24px; font-size: 12px;">No orders found in this category.</div>`;
         }
 
         function updateOrderStatus(id, nextStatus) {
@@ -785,7 +940,7 @@
             if (target) {
                 target.status = nextStatus;
                 renderLiveOrders();
-                showAppToast('Order ' + id + ' status updated!');
+                showAppToast('Order ' + id + ' updated to ' + nextStatus.toUpperCase());
             }
         }
 
@@ -796,10 +951,21 @@
                 customer: 'Customer ' + Math.floor(Math.random() * 50),
                 items: '1x Special Jollof Rice Combo',
                 total: 4500,
-                status: 'pending'
+                status: 'new'
             });
             renderLiveOrders();
             showAppToast('🔔 New Live Order ' + newId + ' Received!');
+        }
+
+        function switchMenuSubTab(sub, btnElem) {
+            if (btnElem) {
+                const chips = btnElem.parentElement.querySelectorAll('.chip-btn');
+                chips.forEach(c => c.classList.remove('active'));
+                btnElem.classList.add('active');
+            }
+            document.getElementById('menuSubList').style.display = sub === 'list' ? 'block' : 'none';
+            document.getElementById('menuSubCategories').style.display = sub === 'categories' ? 'block' : 'none';
+            document.getElementById('menuSubInventory').style.display = sub === 'inventory' ? 'block' : 'none';
         }
 
         function getSharedMenu() {
@@ -819,31 +985,46 @@
         function renderAppMenuList() {
             const list = getSharedMenu();
             const container = document.getElementById('appFoodList');
-            const countElem = document.getElementById('appMealCount');
-            if (countElem) countElem.textContent = list.length;
+            const invContainer = document.getElementById('appInventoryList');
 
-            if (list.length === 0) {
-                container.innerHTML = `<div style="text-align: center; color: #94A3B8; padding: 30px; font-size: 12px;">No meals uploaded yet. Click "+ Add Meal" above.</div>`;
-                return;
+            if (container) {
+                if (list.length === 0) {
+                    container.innerHTML = `<div style="text-align: center; color: #94A3B8; padding: 30px; font-size: 12px;">No food items added yet. Click "+ Add Food" above.</div>`;
+                } else {
+                    container.innerHTML = list.map(item => `
+                        <div class="m-food-row">
+                            <div>
+                                <div class="m-food-title">${item.name}</div>
+                                <div class="m-food-meta">₦${Number(item.price).toLocaleString('en-US')} • ${item.category}</div>
+                            </div>
+                            <div class="row-actions">
+                                <label class="switch" title="Inventory Availability">
+                                    <input type="checkbox" ${item.available ? 'checked' : ''} onchange="toggleItemAvailability('${item.id}')">
+                                    <span class="slider"></span>
+                                </label>
+                                <button class="trash-btn" onclick="deleteAppMeal('${item.id}')">
+                                    <iconify-icon icon="lucide:trash-2" style="font-size: 14px;"></iconify-icon>
+                                </button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
             }
 
-            container.innerHTML = list.map(item => `
-                <div class="m-food-row">
-                    <div>
-                        <div class="m-food-title">${item.name}</div>
-                        <div class="m-food-meta">₦${Number(item.price).toLocaleString('en-US')} • ${item.category}</div>
-                    </div>
-                    <div class="row-actions">
+            if (invContainer) {
+                invContainer.innerHTML = list.map(item => `
+                    <div class="biz-card" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-size: 13px; font-weight: 700; color: #0F172A;">${item.name}</div>
+                            <div style="font-size: 11px; color: ${item.available ? '#10B981' : '#EF4444'}; font-weight: 700;">${item.available ? 'In Stock' : 'Out of Stock'}</div>
+                        </div>
                         <label class="switch">
                             <input type="checkbox" ${item.available ? 'checked' : ''} onchange="toggleItemAvailability('${item.id}')">
                             <span class="slider"></span>
                         </label>
-                        <button class="trash-btn" onclick="deleteAppMeal('${item.id}')">
-                            <iconify-icon icon="lucide:trash-2" style="font-size: 14px;"></iconify-icon>
-                        </button>
                     </div>
-                </div>
-            `).join('');
+                `).join('');
+            }
         }
 
         function openAppUploadModal() {
@@ -888,7 +1069,8 @@
             if (item) {
                 item.available = !item.available;
                 saveSharedMenu(list);
-                showAppToast(item.name + ' availability updated!');
+                renderAppMenuList();
+                showAppToast(item.name + ' stock status updated!');
             }
         }
 
@@ -897,7 +1079,7 @@
             list = list.filter(i => i.id !== id);
             saveSharedMenu(list);
             renderAppMenuList();
-            showAppToast('🗑️ Meal removed from Customer App.');
+            showAppToast('🗑️ Food item deleted.');
         }
 
         function toggleAppStatus() {

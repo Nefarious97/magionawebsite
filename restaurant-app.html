@@ -107,8 +107,57 @@
         .modal-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(4px); z-index: 500; display: none; align-items: flex-end; }
         .modal-sheet { background: #FFFFFF; border-top-left-radius: 28px; border-top-right-radius: 28px; padding: 20px; width: 100%; max-height: 85%; overflow-y: auto; }
 
-        /* Toast */
-        .app-toast { position: absolute; top: 32px; left: 50%; transform: translateX(-50%); z-index: 1000; display: none; background: #0F172A; color: white; padding: 10px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+        /* Splash Screen Styling */
+        .partner-splash {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #01281b;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+            transition: opacity 0.75s ease-out;
+        }
+        .partner-splash.hidden { opacity: 0; pointer-events: none; }
+
+        .partner-logo-wrap {
+            width: 100px;
+            height: 100px;
+            border-radius: 32px;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+            margin-bottom: 24px;
+            animation: logoGlowPulse 1.8s ease-in-out infinite;
+            transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.75s ease-out, filter 0.75s ease-out;
+        }
+        .partner-splash.zoom-out .partner-logo-wrap {
+            transform: scale(7.5);
+            opacity: 0;
+            filter: blur(8px);
+        }
+        .partner-splash.zoom-out .partner-splash-title,
+        .partner-splash.zoom-out .partner-splash-sub {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .partner-logo-img { width: 68px; height: auto; object-fit: contain; }
+        .partner-splash-title { font-size: 32px; font-weight: 850; color: #FFFFFF; letter-spacing: -1px; margin-bottom: 6px; }
+        .partner-splash-sub { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 600; max-width: 250px; line-height: 1.5; }
+
+        @keyframes logoGlowPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 0 0 0 rgba(255, 107, 0, 0.4); }
+            50% { transform: scale(1.12); box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 35px 12px rgba(255, 107, 0, 0.6); }
+        }
+
+        /* Toggle Link */
+        .auth-toggle-btn { background: none; border: none; color: #FF6B00; font-size: 12px; font-weight: 700; cursor: pointer; margin-top: 14px; text-decoration: underline; display: block; width: 100%; text-align: center; }
     </style>
 </head>
 <body>
@@ -117,13 +166,46 @@
     <div class="phone-shell">
         <div class="phone-notch"></div>
 
+        <!-- ONBOARDING SPLASH SCREEN OVERLAY -->
+        <div id="partnerSplashScreen" class="partner-splash">
+            <div class="partner-logo-wrap">
+                <img src="image/Logo m 2.png" alt="Mangiona Logo" class="partner-logo-img">
+            </div>
+            <h1 class="partner-splash-title">Mangiona Partner</h1>
+            <p class="partner-splash-sub">Fast Food Delivery Management for Restaurants</p>
+        </div>
+
         <!-- Toast Container -->
         <div class="app-toast" id="appToast">Notification</div>
 
         <div class="app-container">
 
-            <!-- SCREEN 1: RESTAURANT REGISTER -->
-            <div id="screenRegister" class="app-screen register-bg active">
+            <!-- SCREEN 1: RESTAURANT LOGIN -->
+            <div id="screenLogin" class="app-screen register-bg active">
+                <div class="reg-brand-box">
+                    <div class="reg-brand-title">Partner Log In</div>
+                    <div class="reg-brand-sub">Access your restaurant orders, sales & menu</div>
+                </div>
+
+                <div class="reg-card">
+                    <form onsubmit="handleLogin(event)">
+                        <label class="reg-label">Business Email</label>
+                        <input type="email" class="reg-input" id="loginEmail" value="mamacass@gmail.com" required>
+
+                        <label class="reg-label">Password</label>
+                        <input type="password" class="reg-input" value="••••••••" required>
+
+                        <button type="submit" class="reg-btn">Log In to Dashboard 🔐</button>
+                    </form>
+
+                    <button class="auth-toggle-btn" onclick="showScreen('screenRegister')">
+                        Don't have a partner account? Register / Sign Up
+                    </button>
+                </div>
+            </div>
+
+            <!-- SCREEN 2: RESTAURANT REGISTER -->
+            <div id="screenRegister" class="app-screen register-bg">
                 <div class="reg-brand-box">
                     <div class="reg-brand-title">Mangiona Partner</div>
                     <div class="reg-brand-sub">Register Your Restaurant to Receive Live Orders</div>
@@ -149,8 +231,12 @@
                         <label class="reg-label">Password</label>
                         <input type="password" class="reg-input" value="••••••••" required>
 
-                        <button type="submit" class="reg-btn">Register Restaurant 🚀</button>
+                        <button type="submit" class="reg-btn">Create Partner Account 🚀</button>
                     </form>
+
+                    <button class="auth-toggle-btn" onclick="showScreen('screenLogin')">
+                        Already have a partner account? Log In
+                    </button>
                 </div>
             </div>
 
@@ -250,6 +336,20 @@
             }
         }
 
+        function showScreen(screenId) {
+            const screens = document.querySelectorAll('.app-screen');
+            screens.forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(screenId);
+            if (target) target.classList.add('active');
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            showScreen('screenDashboard');
+            showAppToast('🔐 Welcome back to Partner Hub!');
+            renderAppMenuList();
+        }
+
         function handleRegistration(e) {
             e.preventDefault();
             const name = document.getElementById('regName').value;
@@ -258,10 +358,8 @@
             document.getElementById('dispStoreName').textContent = name;
             document.getElementById('dispStoreLoc').textContent = address;
 
-            document.getElementById('screenRegister').classList.remove('active');
-            document.getElementById('screenDashboard').classList.add('active');
-
-            showAppToast('🎉 Restaurant Registered Successfully!');
+            showScreen('screenDashboard');
+            showAppToast('🎉 Partner Account Created Successfully!');
             renderAppMenuList();
         }
 
@@ -378,6 +476,19 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderAppMenuList();
         });
+
+        // Automatic Animated Logo Splash Screen -> 4.5 Seconds to Login Screen
+        setTimeout(() => {
+            const splash = document.getElementById('partnerSplashScreen');
+            if (splash) {
+                splash.classList.add('zoom-out');
+                splash.classList.add('hidden');
+                setTimeout(() => {
+                    splash.style.display = 'none';
+                    showScreen('screenLogin');
+                }, 750);
+            }
+        }, 4500);
     </script>
 </body>
 </html>
